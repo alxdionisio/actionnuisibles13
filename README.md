@@ -74,6 +74,24 @@ Après le premier push sur `main`, le workflow `.github/workflows/deploy-pages.y
 - Le base path est défini automatiquement à `/<nom-du-repo>/` pour que les assets et le routage fonctionnent.
 - Une copie de `index.html` en `404.html` permet au SPA de gérer les routes directes (ex. `/contact`).
 
+### Domaine personnalisé et HTTPS (CNAME)
+
+Pour servir le site sur ton propre domaine (ex. `www.actionnuisibles13.com`) avec le certificat HTTPS fourni par GitHub Pages :
+
+1. **Fichier CNAME**  
+   Le fichier `public/CNAME` contient une seule ligne : le nom de domaine (ex. `www.actionnuisibles13.com`). Il est copié dans `dist/` au build, donc déployé avec le site. Modifie cette ligne si ton domaine est différent.
+
+2. **Paramétrage sur GitHub**  
+   Dans le dépôt : **Settings → Pages** → **Custom domain** : saisis le même domaine que dans `public/CNAME` (ex. `www.actionnuisibles13.com`) → **Save**.
+
+3. **DNS chez ton hébergeur**  
+   Chez le gestionnaire de ton nom de domaine, ajoute un enregistrement :
+   - **Pour `www`** : type **CNAME**, nom `www`, valeur `alxdionisio.github.io` (remplace par ton `<username>.github.io`).
+   - **Pour la racine (apex)** : si tu veux aussi `actionnuisibles13.com` sans www, utilise un enregistrement **A** ou **ALIAS** vers les IP de GitHub (voir la [doc GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)).
+
+4. **HTTPS**  
+   GitHub Pages délivre et renouvelle automatiquement le certificat HTTPS pour le domaine indiqué dans CNAME. Une fois le DNS propagé (quelques minutes à 24 h), coche **Enforce HTTPS** dans **Settings → Pages** pour forcer la redirection HTTP → HTTPS.
+
 ## 📁 Structure du projet
 
 ```

@@ -36,8 +36,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Base path pour GitHub Pages : https://<user>.github.io/<repo>/
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          # Si la variable de dépôt VITE_BASE_URL est définie (ex. / pour domaine personnalisé), elle est utilisée.
+          # Sinon : base path GitHub Pages par défaut https://<user>.github.io/<repo>/
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_URL != '' && vars.VITE_BASE_URL || format('/{0}/', github.event.repository.name) }}
 
 
       - name: SPA fallback for GitHub Pages
