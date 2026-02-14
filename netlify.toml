@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA : les requêtes qui ne correspondent pas à un fichier (ex. /contact) renvoient index.html.
+# Les fichiers statiques (/, /assets/*, /*.png, etc.) sont servis en priorité par Netlify.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
