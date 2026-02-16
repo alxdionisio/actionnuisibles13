@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
+import OptimizedImage from '../components/OptimizedImage';
 import { LinkifyThematiques, linkifyThematiques } from '../components/LinkifyThematiques';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { articles, getArticleBySlug } from '../data/articles';
@@ -60,7 +61,7 @@ function ArticleDetailPage() {
                 <span className="article-hero-category">{category}</span>
               </div>
               <div className="article-hero-image-wrap">
-                <img src={image} alt={title} className="article-hero-image" />
+                <OptimizedImage src={image} alt={title} className="article-hero-image" width={800} height={420} loading="lazy" />
               </div>
             </div>
           </div>
@@ -119,7 +120,7 @@ function ArticleDetailPage() {
                   .map((a) => (
                     <Link key={a.id} to={`/articles/${a.slug}`} className="article-other-card">
                       <div className="article-other-image">
-                        <img src={a.image} alt="" loading="lazy" />
+                        <OptimizedImage src={a.image} alt="" width={320} height={213} loading="lazy" />
                       </div>
                       <div className="article-other-content">
                         <span className="article-other-meta">{a.date} · {a.readMinutes} min</span>

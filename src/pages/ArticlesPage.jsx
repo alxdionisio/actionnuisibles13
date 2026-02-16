@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import OptimizedImage from '../components/OptimizedImage';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { IconBullet } from '../components/Icons';
 import { articles } from '../data/articles';
@@ -47,7 +48,7 @@ function ArticlesPage() {
                   onClick={() => track('article_click', { article_title: article.title })}
                 >
                   <div className="blog-image">
-                    <img src={article.image} alt={article.title} loading="lazy" />
+                    <OptimizedImage src={article.image} alt={article.title} width={630} height={420} loading="lazy" />
                   </div>
                   <div className="blog-content">
                     <div className="blog-meta">

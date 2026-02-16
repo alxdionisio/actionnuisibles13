@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useForm } from '@formspree/react';
 import Seo from '../components/Seo';
+import OptimizedImage from '../components/OptimizedImage';
 import { LinkifyThematiques } from '../components/LinkifyThematiques';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { getServiceBySlug } from '../data/services';
@@ -146,7 +147,7 @@ function ServiceDetailPage() {
                 </Link>
               </div>
               <div className="page-hero-image service-detail-hero-image">
-                <img src={heroImage} alt={title} />
+                <OptimizedImage src={heroImage} alt={title} width={630} height={420} />
               </div>
             </div>
           </div>

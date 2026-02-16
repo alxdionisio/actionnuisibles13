@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import OptimizedImage from '../components/OptimizedImage';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import Contact from '../components/Contact';
 import { services } from '../data/services';
@@ -48,7 +49,7 @@ function ServicesPage() {
                   onClick={() => track('service_click', { service_title: service.title })}
                 >
                   <div className="service-image">
-                    <img src={service.image} alt={service.title} loading="lazy" />
+                    <OptimizedImage src={service.image} alt={service.title} width={630} height={420} loading="lazy" />
                   </div>
                   <div className="service-content">
                     <h3>{service.title}</h3>

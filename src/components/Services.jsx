@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { IconArrowRight } from './Icons';
 import { services } from '../data/services';
@@ -36,7 +37,7 @@ function Services() {
               onClick={() => track('service_click', { service_title: service.title, from: 'home' })}
             >
               <div className="service-image">
-                <img src={service.image} alt={service.title} loading="lazy" />
+                <OptimizedImage src={service.image} alt={service.title} width={630} height={420} loading="lazy" />
               </div>
               <div className="service-content">
                 <h3>{service.title}</h3>

@@ -1,4 +1,5 @@
 import React from 'react';
+import OptimizedImage from './OptimizedImage';
 import { Link } from 'react-router-dom';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { track } from '../utils/tracking';
@@ -29,10 +30,12 @@ function Footer() {
             <div className="footer-main-grid">
               <div className="footer-brand-block">
                 <Link to="/" className="footer-logo-row">
-                  <img
+                  <OptimizedImage
                     src={logos.footer}
                     alt=""
                     className="footer-logo-img"
+                    width={140}
+                    height={140}
                   />
                   <span className="footer-logo-text">Action Nuisibles 13</span>
                 </Link>

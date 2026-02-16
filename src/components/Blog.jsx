@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { articles } from '../data/articles';
 import { track } from '../utils/tracking';
@@ -33,7 +34,7 @@ function Blog() {
               onClick={() => track('article_click', { article_title: article.title, from: 'home' })}
             >
               <div className="blog-image">
-                <img src={article.image} alt={article.title} loading="lazy" />
+                <OptimizedImage src={article.image} alt={article.title} width={630} height={420} loading="lazy" />
               </div>
               <div className="blog-content">
                 <div className="blog-meta">

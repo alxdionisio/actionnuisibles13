@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { IconPhone } from './Icons';
+import OptimizedImage from './OptimizedImage';
 import { logos } from '../utils/publicAssets';
 import { getThematiqueBySlug } from '../data/thematiques';
 import { SITE_NAME } from '../utils/siteConfig';
@@ -43,10 +44,12 @@ function Header() {
         <div className="container">
           <nav className="nav-container">
             <Link to="/" className="logo">
-              <img
+              <OptimizedImage
                 src={logos.header}
                 alt=""
                 className="header-logo-img"
+                width={140}
+                height={140}
               />
               <span className="header-logo-text">Action Nuisibles 13</span>
             </Link>
