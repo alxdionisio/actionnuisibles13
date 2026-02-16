@@ -16,19 +16,19 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, '..', 'public');
 
-/** Règles de redimensionnement : dimensions affichées (1x) pour limiter la taille. */
+/** Règles : maxWidth, maxHeight, optionnel quality (défaut 82). */
 const RULES = [
   // Logos (affichés 140×140, 2x pour écrans densité 2)
   { pattern: /action-nuisibles-13-(noir|blanc)\.png$/i, maxWidth: 280, maxHeight: 280 },
-  // Grandes images de cartes / hero (affichées 630×420 → 1x pour PageSpeed)
+  // Grandes images de cartes / hero (affichées 630×420 → 1x)
   { pattern: /nuisibles-solution-pro\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /nid-abeilles\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /invasion-cafards\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /invasion-insectes-interieur\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /fourmis\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /chenilles-processionnaires\.jpg$/i, maxWidth: 630, maxHeight: 420 },
-  // Bande nuisibles (affichées 158×158 → 1x)
-  { pattern: /nuisibles[/\\][^/\\]+\.png$/i, maxWidth: 158, maxHeight: 158 },
+  // Bande nuisibles (158×158, qualité plus basse pour réduire la taille)
+  { pattern: /nuisibles[/\\][^/\\]+\.png$/i, maxWidth: 158, maxHeight: 158, quality: 75 },
   // Par défaut : largeur max 1200
   { pattern: /.*/, maxWidth: 1200, maxHeight: null },
 ];
@@ -37,10 +37,14 @@ function getRule(filename, relativePath) {
   const pathForMatch = relativePath.replace(/\\/g, '/');
   for (const rule of RULES) {
     if (rule.pattern.test(pathForMatch) || rule.pattern.test(filename)) {
-      return { maxWidth: rule.maxWidth, maxHeight: rule.maxHeight };
+      return {
+        maxWidth: rule.maxWidth,
+        maxHeight: rule.maxHeight,
+        quality: rule.quality ?? 82,
+      };
     }
   }
-  return { maxWidth: 1200, maxHeight: null };
+  return { maxWidth: 1200, maxHeight: null, quality: 82 };
 }
 
 function* walkDir(dir, base = '') {
@@ -60,7 +64,7 @@ async function main() {
 
   let count = 0;
   for (const { fullPath, relativePath, name } of walkDir(publicDir)) {
-    const { maxWidth, maxHeight } = getRule(name, relativePath);
+    const { maxWidth, maxHeight, quality } = getRule(name, relativePath);
     const outPath = fullPath.replace(/\.(png|jpe?g)$/i, '.webp');
     if (outPath === fullPath) continue;
 
@@ -78,7 +82,7 @@ async function main() {
           fit: 'inside',
           withoutEnlargement: true,
         })
-        .webp({ quality: 82 })
+        .webp({ quality })
         .toFile(outPath);
 
       const afterMeta = await sharp(outPath).metadata();
