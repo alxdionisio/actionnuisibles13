@@ -1,0 +1,12 @@
+# Cache long pour les visites répétées (PageSpeed)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/nuisibles/*
+  Cache-Control: public, max-age=31536000
+
+/*.webp
+  Cache-Control: public, max-age=31536000
+
+/*.png
+  Cache-Control: public, max-age=31536000

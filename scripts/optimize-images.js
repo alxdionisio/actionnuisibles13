@@ -16,19 +16,19 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, '..', 'public');
 
-/** Règles de redimensionnement : maxWidth x maxHeight (ratio conservé). null = pas de limite sur cette dimension. */
+/** Règles de redimensionnement : dimensions affichées (1x) pour limiter la taille. */
 const RULES = [
-  // Logos (affichés 140×140, on garde 2x pour écrans densité 2)
+  // Logos (affichés 140×140, 2x pour écrans densité 2)
   { pattern: /action-nuisibles-13-(noir|blanc)\.png$/i, maxWidth: 280, maxHeight: 280 },
-  // Grandes images de cartes / hero (affichées 630×420, 2x = 1260×840)
-  { pattern: /nuisibles-solution-pro\.png$/i, maxWidth: 1260, maxHeight: 840 },
-  { pattern: /nid-abeilles\.png$/i, maxWidth: 1260, maxHeight: 840 },
-  { pattern: /invasion-cafards\.png$/i, maxWidth: 1260, maxHeight: 840 },
-  { pattern: /invasion-insectes-interieur\.png$/i, maxWidth: 1260, maxHeight: 840 },
-  { pattern: /fourmis\.png$/i, maxWidth: 1260, maxHeight: 840 },
-  { pattern: /chenilles-processionnaires\.jpg$/i, maxWidth: 1260, maxHeight: 840 },
-  // Bande nuisibles (affichées 158×158, 2x = 316)
-  { pattern: /nuisibles[/\\][^/\\]+\.png$/i, maxWidth: 316, maxHeight: 316 },
+  // Grandes images de cartes / hero (affichées 630×420 → 1x pour PageSpeed)
+  { pattern: /nuisibles-solution-pro\.png$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /nid-abeilles\.png$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /invasion-cafards\.png$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /invasion-insectes-interieur\.png$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /fourmis\.png$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /chenilles-processionnaires\.jpg$/i, maxWidth: 630, maxHeight: 420 },
+  // Bande nuisibles (affichées 158×158 → 1x)
+  { pattern: /nuisibles[/\\][^/\\]+\.png$/i, maxWidth: 158, maxHeight: 158 },
   // Par défaut : largeur max 1200
   { pattern: /.*/, maxWidth: 1200, maxHeight: null },
 ];
@@ -78,7 +78,7 @@ async function main() {
           fit: 'inside',
           withoutEnlargement: true,
         })
-        .webp({ quality: 85 })
+        .webp({ quality: 82 })
         .toFile(outPath);
 
       const afterMeta = await sharp(outPath).metadata();

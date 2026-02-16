@@ -18,6 +18,11 @@
   [headers.values]
   Cache-Control = "public, max-age=31536000"
 
+[[headers]]
+  for = "/nuisibles/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000"
+
 # SPA : les requêtes qui ne correspondent pas à un fichier (ex. /contact) renvoient index.html.
 # Les fichiers statiques (/, /assets/*, /*.png, etc.) sont servis en priorité par Netlify.
 [[redirects]]
