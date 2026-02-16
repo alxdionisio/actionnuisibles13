@@ -10,6 +10,7 @@ function NotFoundPage() {
         title="Page introuvable"
         description="La page que vous recherchez n'existe pas ou a été déplacée. Retour à l'accueil Action Nuisibles 13."
         canonicalPath="/404"
+        noindex
       />
       <main>
         <section className="page-hero page-hero--dark page-hero--minimal">

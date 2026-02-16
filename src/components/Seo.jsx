@@ -14,7 +14,10 @@ function Seo({
   structuredData,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
-  const canonicalUrl = canonicalPath ? `${SITE_URL.replace(/\/$/, '')}${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}` : SITE_URL;
+  // URL canonique absolue (sans slash final) : recommandation Google pour l'indexation.
+  const baseUrl = SITE_URL.replace(/\/$/, '');
+  const path = canonicalPath ? (canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`).replace(/\/$/, '') || '/' : '';
+  const canonicalUrl = baseUrl + (path === '/' ? '' : path);
   const imageUrl = image && (image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`);
 
   useEffect(() => {
