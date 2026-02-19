@@ -44,6 +44,9 @@ jobs:
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
 
+      - name: Generate SPA routes (200 instead of 404 for direct URLs)
+        run: node scripts/generate-spa-fallback-pages.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
