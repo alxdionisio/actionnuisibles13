@@ -28,27 +28,30 @@ function Services() {
           </div>
         </div>
 
-        <div className="services-grid">
-          {services.map((service) => (
-            <Link
-              key={service.id}
-              to={`/services/${service.slug}`}
-              className="service-card"
-              onClick={() => track('service_click', { service_title: service.title, from: 'home' })}
-            >
-              <div className="service-image">
-                <OptimizedImage src={service.image} alt={service.title} width={630} height={420} loading="lazy" />
-              </div>
-              <div className="service-content">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <span className="service-link">
-                  En savoir plus
-                  <span className="service-link-arrow"><IconArrowRight size={16} /></span>
-                </span>
-              </div>
-            </Link>
-          ))}
+        <div className="services-slider-wrap" role="region" aria-label="Services, faites défiler pour voir plus">
+          <div className="services-grid">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                to={`/services/${service.slug}`}
+                className="service-card"
+                onClick={() => track('service_click', { service_title: service.title, from: 'home' })}
+              >
+                <div className="service-image">
+                  <OptimizedImage src={service.image} alt={service.title} width={630} height={420} loading="lazy" />
+                </div>
+                <div className="service-content">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <span className="service-link">
+                    En savoir plus
+                    <span className="service-link-arrow"><IconArrowRight size={16} /></span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="services-slider-fade" aria-hidden="true" />
         </div>
       </div>
     </section>

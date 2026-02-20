@@ -25,29 +25,32 @@ function Blog() {
           </div>
         </div>
 
-        <div className="blog-grid">
-          {articles.map((article) => (
-            <Link
-              key={article.id}
-              to={`/articles/${article.slug}`}
-              className="blog-card"
-              onClick={() => track('article_click', { article_title: article.title, from: 'home' })}
-            >
-              <div className="blog-image">
-                <OptimizedImage src={article.image} alt={article.title} width={630} height={420} loading="lazy" />
-              </div>
-              <div className="blog-content">
-                <div className="blog-meta">
-                  <span className="blog-meta-date">{article.date}</span>
-                  <span className="blog-meta-dot" aria-hidden="true" />
-                  <span className="blog-meta-read">
-                    {article.readMinutes} min de lecture
-                  </span>
+        <div className="blog-slider-wrap" role="region" aria-label="Articles, faites défiler pour voir plus">
+          <div className="blog-grid">
+            {articles.map((article) => (
+              <Link
+                key={article.id}
+                to={`/articles/${article.slug}`}
+                className="blog-card"
+                onClick={() => track('article_click', { article_title: article.title, from: 'home' })}
+              >
+                <div className="blog-image">
+                  <OptimizedImage src={article.image} alt={article.title} width={630} height={420} loading="lazy" />
                 </div>
-                <h3 className="blog-title">{article.title}</h3>
-              </div>
-            </Link>
-          ))}
+                <div className="blog-content">
+                  <div className="blog-meta">
+                    <span className="blog-meta-date">{article.date}</span>
+                    <span className="blog-meta-dot" aria-hidden="true" />
+                    <span className="blog-meta-read">
+                      {article.readMinutes} min de lecture
+                    </span>
+                  </div>
+                  <h3 className="blog-title">{article.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="blog-slider-fade" aria-hidden="true" />
         </div>
       </div>
     </section>
