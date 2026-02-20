@@ -70,19 +70,6 @@ img {
   display: block;
 }
 
-/* Filtre gris sur toutes les photos : harmonie graphique, le jaune reste la seule couleur de contraste */
-.hero-image,
-.about-image img,
-.about-page-image img,
-.about-approach-image-wrap img,
-.service-image img,
-.service-detail-hero-image img,
-.blog-image img,
-.article-hero-image,
-.page-hero-image img {
-  filter: grayscale(1);
-}
-
 button {
   cursor: pointer;
   border: none;
@@ -624,17 +611,11 @@ p {
   gap: 0.5rem;
 }
 
-.nuisibles-strip-item:hover .nuisibles-strip-img {
-  filter: none;
-}
-
 .nuisibles-strip-img {
   width: 100%;
   height: 80px;
   object-fit: contain;
   object-position: center;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
 }
 
 .nuisibles-strip-label {
@@ -682,10 +663,6 @@ p {
     height: 90px;
   }
 
-  /* Sur mobile, afficher en couleur au tap (équivalent du hover) */
-  .nuisibles-strip-item:active .nuisibles-strip-img {
-    filter: none;
-  }
 }
 
 /* Page hero (pages internes : À propos, Services, Articles) - même rendu que Contact */
@@ -1276,12 +1253,10 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .article-other-card:hover .article-other-image img {
-  filter: none;
   transform: scale(1.05);
 }
 
