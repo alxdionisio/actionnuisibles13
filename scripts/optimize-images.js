@@ -1,6 +1,7 @@
 /**
  * Génère des versions WebP redimensionnées des images de public/
  * pour améliorer le PageSpeed (taille et format moderne).
+ * Prend en charge : PNG, JPEG, AVIF (les AVIF sont convertis en .webp).
  *
  * Usage : npm run optimize-images
  * Dépendance : sharp (devDependency)
@@ -27,6 +28,9 @@ const RULES = [
   { pattern: /invasion-insectes-interieur\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /fourmis\.png$/i, maxWidth: 630, maxHeight: 420 },
   { pattern: /chenilles-processionnaires\.jpg$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /invasion-rat\.(avif|webp)$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /punaises-de-lit\.(avif|webp)$/i, maxWidth: 630, maxHeight: 420 },
+  { pattern: /nettoyage-maison\.(avif|webp)$/i, maxWidth: 630, maxHeight: 420 },
   // Bande nuisibles (158×158, qualité plus basse pour réduire la taille)
   { pattern: /nuisibles[/\\][^/\\]+\.png$/i, maxWidth: 158, maxHeight: 158, quality: 75 },
   // Par défaut : largeur max 1200
@@ -53,7 +57,7 @@ function* walkDir(dir, base = '') {
     const rel = base ? `${base}/${e.name}` : e.name;
     if (e.isDirectory()) {
       yield* walkDir(path.join(dir, e.name), rel);
-    } else if (e.isFile() && /\.(png|jpe?g)$/i.test(e.name)) {
+    } else if (e.isFile() && /\.(png|jpe?g|avif)$/i.test(e.name)) {
       yield { fullPath: path.join(dir, e.name), relativePath: rel, name: e.name };
     }
   }
@@ -65,7 +69,7 @@ async function main() {
   let count = 0;
   for (const { fullPath, relativePath, name } of walkDir(publicDir)) {
     const { maxWidth, maxHeight, quality } = getRule(name, relativePath);
-    const outPath = fullPath.replace(/\.(png|jpe?g)$/i, '.webp');
+    const outPath = fullPath.replace(/\.(png|jpe?g|avif)$/i, '.webp');
     if (outPath === fullPath) continue;
 
     try {

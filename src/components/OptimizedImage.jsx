@@ -15,12 +15,12 @@ function OptimizedImage({ src, ...imgProps }) {
     return (
       <picture>
         <source srcSet={webpSrc} type="image/webp" />
-        <img src={src} {...imgProps} alt={imgProps.alt ?? ''} />
+        <img src={src} decoding="async" {...imgProps} alt={imgProps.alt ?? ''} />
       </picture>
     );
   }
 
-  return <img src={src} {...imgProps} alt={imgProps.alt ?? ''} />;
+  return <img src={src} decoding="async" {...imgProps} alt={imgProps.alt ?? ''} />;
 }
 
 export default OptimizedImage;

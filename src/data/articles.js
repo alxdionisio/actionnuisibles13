@@ -61,7 +61,7 @@ export const articles = [
     date: '15 Jan. 2026',
     category: 'Conseils anti-nuisibles',
     readMinutes: 3,
-    image: images.fourmis,
+    image: images.nettoyageMaison,
     content: {
       introHeading: "Garder votre maison sans nuisible : conseils essentiels",
       introParagraph:
@@ -108,7 +108,7 @@ export const articles = [
     date: '9 Fév. 2026',
     category: 'Services de lutte anti-nuisibles',
     readMinutes: 4,
-    image: images.chenillesProcessionnaires,
+    image: images.invasionRat,
     content: {
       introHeading: "Reconnaître les premiers signes d'une infestation de nuisibles",
       introParagraph:
@@ -206,7 +206,7 @@ export const articles = [
     date: '5 Déc. 2025',
     category: 'Punaises de lit',
     readMinutes: 4,
-    image: images.invasionCafards,
+    image: images.punaisesDeLit,
     content: {
       introHeading: 'Éliminer les punaises de lit : méthode et rigueur',
       introParagraph: "Les punaises de lit nécessitent un traitement méthodique. Un protocole adapté, souvent en plusieurs passages, permet de s'en débarrasser durablement.",

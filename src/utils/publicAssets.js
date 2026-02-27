@@ -19,6 +19,9 @@ export const images = {
   invasionCafards: `${BASE}/invasion-cafards.png`,
   fourmis: `${BASE}/fourmis.png`,
   chenillesProcessionnaires: `${BASE}/chenilles-processionnaires.jpg`,
+  invasionRat: `${BASE}/invasion-rat.webp`,
+  punaisesDeLit: `${BASE}/punaises-de-lit.webp`,
+  nettoyageMaison: `${BASE}/nettoyage-maison.webp`,
 };
 
 /** Images de la bande nuisibles (home, sous la hero). Dossier public/nuisibles/ */
