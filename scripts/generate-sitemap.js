@@ -1,7 +1,7 @@
 /**
  * Génère public/sitemap.xml à partir des routes et des données du site.
+ * Une seule version canonique dans le sitemap : https://www.actionnuisibles13.com (jamais http ni apex).
  * À lancer avant le build : npm run generate-sitemap && npm run build
- * Utilise VITE_SITE_URL (ex. https://www.actionnuisibles13.com) ou valeur par défaut.
  */
 import fs from 'fs';
 import path from 'path';
@@ -10,7 +10,16 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
-const BASE_URL = (process.env.VITE_SITE_URL || 'https://www.actionnuisibles13.com').replace(/\/$/, '');
+const CANONICAL_BASE = 'https://www.actionnuisibles13.com';
+
+function normalizeSitemapBase(url) {
+  let base = (url || CANONICAL_BASE).replace(/\/$/, '');
+  if (base.startsWith('http://')) base = 'https' + base.slice(4);
+  if (base.includes('actionnuisibles13.com') && !base.includes('www.')) base = CANONICAL_BASE;
+  return base;
+}
+
+const BASE_URL = normalizeSitemapBase(process.env.VITE_SITE_URL);
 const TODAY = new Date().toISOString().slice(0, 10);
 
 function slugify(text) {

@@ -1,13 +1,21 @@
 /**
  * Configuration du site pour SEO et données structurées.
- * SITE_URL : URL de base du site (origine + base path si déploiement sous un sous-chemin, ex. GitHub Pages).
- * Pour forcer une URL : définir VITE_SITE_URL (ex. https://www.actionnuisibles13.com).
+ * Une seule URL canonique : https://www.actionnuisibles13.com (sans slash final).
+ * Sitemap et balises canonical n'utilisent que cette forme (jamais http ni apex).
  */
+const CANONICAL_BASE = 'https://www.actionnuisibles13.com';
+
 function getSiteUrl() {
-  if (import.meta.env.VITE_SITE_URL) return import.meta.env.VITE_SITE_URL.replace(/\/$/, '');
-  if (typeof window === 'undefined') return '';
+  if (import.meta.env.VITE_SITE_URL) {
+    const url = import.meta.env.VITE_SITE_URL.replace(/\/$/, '');
+    return url.startsWith('http://') ? 'https' + url.slice(4) : url;
+  }
+  if (typeof window === 'undefined') return CANONICAL_BASE;
+  const host = window.location.hostname;
+  if (host === 'actionnuisibles13.com' || host === 'www.actionnuisibles13.com') return CANONICAL_BASE;
   const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
-  return window.location.origin + (base ? base : '');
+  const origin = window.location.origin.startsWith('http://') ? 'https' + window.location.origin.slice(4) : window.location.origin;
+  return origin + (base ? base : '');
 }
 export const SITE_URL = getSiteUrl();
 export const SITE_NAME = 'Action Nuisibles 13';
