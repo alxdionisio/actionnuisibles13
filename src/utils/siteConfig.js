@@ -7,8 +7,11 @@ const CANONICAL_BASE = 'https://www.actionnuisibles13.com';
 
 function getSiteUrl() {
   if (import.meta.env.VITE_SITE_URL) {
-    const url = import.meta.env.VITE_SITE_URL.replace(/\/$/, '');
-    return url.startsWith('http://') ? 'https' + url.slice(4) : url;
+    let url = import.meta.env.VITE_SITE_URL.replace(/\/$/, '');
+    if (url.startsWith('http://')) url = 'https' + url.slice(4);
+    // Garantit la version canonique www pour ce domaine, même si l'env est mal renseignée.
+    if (url.includes('actionnuisibles13.com') && !url.includes('www.')) return CANONICAL_BASE;
+    return url;
   }
   if (typeof window === 'undefined') return CANONICAL_BASE;
   const host = window.location.hostname;

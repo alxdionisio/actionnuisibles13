@@ -16,8 +16,14 @@ function Seo({
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
   // URL canonique absolue (sans slash final) : recommandation Google pour l'indexation.
   const baseUrl = SITE_URL.replace(/\/$/, '');
-  const path = canonicalPath ? (canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`).replace(/\/$/, '') || '/' : '';
-  const canonicalUrl = baseUrl + (path === '/' ? '' : path);
+  const path = canonicalPath
+    ? (() => {
+      const withLeadingSlash = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
+      if (withLeadingSlash === '/') return '/';
+      return withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`;
+    })()
+    : '/';
+  const canonicalUrl = `${baseUrl}${path}`;
   const imageUrl = image && (image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`);
 
   useEffect(() => {
@@ -50,9 +56,8 @@ function Seo({
     }
     linkCanonical.setAttribute('href', canonicalUrl);
 
-    if (noindex) {
-      setMeta('name', 'robots', 'noindex,nofollow');
-    }
+    // Evite qu'un "noindex" reste présent après navigation SPA vers une page indexable.
+    setMeta('name', 'robots', noindex ? 'noindex,nofollow' : 'index,follow');
   }, [fullTitle, description, canonicalUrl, noindex, imageUrl, type]);
 
   useEffect(() => {

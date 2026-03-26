@@ -21,6 +21,11 @@ function normalizeSitemapBase(url) {
 
 const BASE_URL = normalizeSitemapBase(process.env.VITE_SITE_URL);
 const TODAY = new Date().toISOString().slice(0, 10);
+function toCanonicalLoc(pathname) {
+  if (!pathname || pathname === '/') return `${BASE_URL}/`;
+  const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return `${BASE_URL}${normalized.endsWith('/') ? normalized : `${normalized}/`}`;
+}
 
 function slugify(text) {
   return text
@@ -62,11 +67,11 @@ const thematiqueTitles = extractSlugsFromFile('src/data/thematiques.js', /titleT
 const thematiqueSlugs = thematiqueTitles.map((t) => slugify(t));
 
 const urls = [
-  ...staticPaths.map((p) => ({ loc: `${BASE_URL}${p}`, priority: p === '' ? '1.0' : '0.9', changefreq: 'weekly' })),
-  ...articleSlugs.map((slug) => ({ loc: `${BASE_URL}/articles/${slug}`, priority: '0.8', changefreq: 'monthly' })),
-  ...serviceSlugs.map((slug) => ({ loc: `${BASE_URL}/services/${slug}`, priority: '0.9', changefreq: 'monthly' })),
-  ...villeSlugs.map((slug) => ({ loc: `${BASE_URL}/intervention/${slug}`, priority: '0.7', changefreq: 'monthly' })),
-  ...thematiqueSlugs.map((slug) => ({ loc: `${BASE_URL}/thematique/${slug}`, priority: '0.8', changefreq: 'monthly' })),
+  ...staticPaths.map((p) => ({ loc: toCanonicalLoc(p), priority: p === '' ? '1.0' : '0.9', changefreq: 'weekly' })),
+  ...articleSlugs.map((slug) => ({ loc: toCanonicalLoc(`/articles/${slug}`), priority: '0.8', changefreq: 'monthly' })),
+  ...serviceSlugs.map((slug) => ({ loc: toCanonicalLoc(`/services/${slug}`), priority: '0.9', changefreq: 'monthly' })),
+  ...villeSlugs.map((slug) => ({ loc: toCanonicalLoc(`/intervention/${slug}`), priority: '0.7', changefreq: 'monthly' })),
+  ...thematiqueSlugs.map((slug) => ({ loc: toCanonicalLoc(`/thematique/${slug}`), priority: '0.8', changefreq: 'monthly' })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
