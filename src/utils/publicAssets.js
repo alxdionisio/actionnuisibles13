@@ -22,6 +22,7 @@ export const images = {
   invasionRat: `${BASE}/invasion-rat.webp`,
   punaisesDeLit: `${BASE}/punaises-de-lit.webp`,
   nettoyageMaison: `${BASE}/nettoyage-maison.webp`,
+  moustiqueTigre2026: `${BASE}/moustique-tigre-2026.webp`,
 };
 
 /** Images de la bande nuisibles (home, sous la hero). Dossier public/nuisibles/ */

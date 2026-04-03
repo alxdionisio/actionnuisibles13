@@ -95,13 +95,20 @@ function ArticleDetailPage() {
                 </div>
               )}
 
-              {(content.conclusionTitle || content.conclusionParagraph) && (
+              {(content.conclusionTitle || content.conclusionParagraph || content.contactButtonText) && (
                 <div className="article-content-block article-content-conclusion">
                   {content.conclusionTitle && (
                     <h3 className="article-content-subheading">{content.conclusionTitle}</h3>
                   )}
                   {content.conclusionParagraph && (
                     <p className="article-content-intro-p">{linkifyThematiques(content.conclusionParagraph)}</p>
+                  )}
+                  {content.contactButtonText && (
+                    <div style={{ marginTop: '2rem' }}>
+                      <Link to="/contact" className="btn btn-primary">
+                        {content.contactButtonText}
+                      </Link>
+                    </div>
                   )}
                 </div>
               )}

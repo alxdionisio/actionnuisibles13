@@ -275,9 +275,31 @@ export const articles = [
       conclusionParagraph: "Un traitement ciblé et une bonne prévention permettent de limiter les invasions. Contactez un professionnel.",
     },
   },
+  {
+    id: 10,
+    slug: 'moustique-tigre-prevention-printemps-2026',
+    title: 'Moustique tigre : prévention et nouveaux enjeux pour le printemps 2026',
+    date: '3 Avr. 2026',
+    category: 'Moustiques',
+    readMinutes: 5,
+    image: images.moustiqueTigre2026,
+    content: {
+      introHeading: 'Le moustique tigre : un envahisseur discret mais préoccupant',
+      introParagraph: "Originaire d'Asie du Sud-Est, le moustique tigre (Aedes albopictus) s'est désormais bien implanté en France. Plus petit que le moustique commun, il se distingue par ses rayures noires et blanches et son vol silencieux à basse altitude. Il est très sédentaire : cet insecte diurne ne se déplace que de moins de 200 mètres autour de son lieu de naissance. Autrement dit, si vous en avez chez vous, c'est qu'il est né chez vous ou chez vos voisins immédiats ! Voici comment limiter sa présence et s'en protéger dès le début du printemps.",
+      numberedItems: [
+        { title: 'Adopter la lutte préventive (suppression des gîtes larvaires)', text: "La femelle pond jusqu'à 200 œufs dans des eaux stagnantes. Même une infime quantité (bouchon en plastique, coupelle sous un pot de fleur) suffit. Videz régulièrement les soucoupes, seaux, pneus, et nettoyez vos gouttières. Couvrez hermétiquement les récupérateurs d'eau de pluie pour empêcher toute ponte." },
+        { title: 'Prudence avec la lutte chimique et les méthodes alternatives', text: "L'utilisation anarchique d'insecticides est néfaste pour la biodiversité, tuant également les prédateurs naturels du moustique. De même, les plantes dites 'anti-moustiques', les ultrasons ou certaines plantes carnivores se révèlent inefficaces à grande échelle. La prévention mécanique reste indispensable." },
+        { title: 'Favoriser les prédateurs naturels', text: "Les prédateurs comme les oiseaux insectivores (les hirondelles et martinets), les chauves-souris, ou encore certaines araignées consomment des moustiques. Bien que leur action réductrice soit limitée en période d'infestation urbaine, les accueillir aide à l'équilibre général du jardin." },
+        { title: 'Solutions matérielles ciblées de nouvelle génération', text: "L'année 2026 met en avant les pièges pondoirs écologiques de nouvelle génération qui ciblent les femelles en quête de ponte, et l'équipement classique (moustiquaires aux fenêtres), qui reste l'un des rares barrages individuels vraiment efficaces pour garantir des nuits sans nuisible." }
+      ],
+      conclusionParagraph: "La lutte contre le moustique tigre repose d'abord sur une action préventive collective à l'échelle du voisinage. Ce nuisible étant un vecteur avéré d'infections (Dengue, Zika, Chikungunya), une infestation installée peut néanmoins nécessiter le diagnostic ou le renfort professionnel, notamment pour diagnostiquer et assainir les gîtes larvaires complexes avec des traitements bio-contrôlés.",
+      contactButtonText: 'Contactez-nous pour un diagnostic de votre extérieur'
+    },
+  },
 ];
 
 export const ARTICLES_PER_PAGE = 6;
+
 
 /**
  * Retourne l’article dont le slug correspond, ou undefined.
