@@ -4,11 +4,12 @@ import Seo from '../components/Seo';
 import OptimizedImage from '../components/OptimizedImage';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import Contact from '../components/Contact';
-import { services } from '../data/services';
+import { useData } from '../context/DataContext';
 import { thematiques } from '../data/thematiques';
 import { track } from '../utils/tracking';
 
 function ServicesPage() {
+  const { services } = useData();
   return (
     <>
       <Seo

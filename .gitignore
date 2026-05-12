@@ -19,3 +19,10 @@ dist/
 
 # Vite
 *.local
+
+# Back-office CMS data (SQLite DB + sessions)
+.data/
+
+# Images importées via le back-office
+public/uploads/*
+!public/uploads/.gitkeep

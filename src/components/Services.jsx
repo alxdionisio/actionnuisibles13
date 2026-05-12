@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import OptimizedImage from './OptimizedImage';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { IconArrowRight } from './Icons';
-import { services } from '../data/services';
+import { useData } from '../context/DataContext';
 import { track } from '../utils/tracking';
 
 function Services() {
-
+  const { services } = useData();
   return (
     <section id="services" className="section services-section">
       <div className="container">

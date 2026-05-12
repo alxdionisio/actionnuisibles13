@@ -8,10 +8,17 @@
     "build": "node scripts/generate-sitemap.js && vite build",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "optimize-images": "node scripts/optimize-images.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "admin": "node server/index.js",
+    "admin:dev": "node --watch server/index.js"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.10.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "multer": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"

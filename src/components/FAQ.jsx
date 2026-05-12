@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { linkifyThematiques } from './LinkifyThematiques';
-import { faqItems } from '../data/faq';
+import { useData } from '../context/DataContext';
 
 function FAQ() {
+  const { faqItems } = useData();
   const [openIndices, setOpenIndices] = useState(new Set());
   const faqs = faqItems.slice(0, 5);
 

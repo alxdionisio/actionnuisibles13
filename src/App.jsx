@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { CookieConsentProvider, useCookieConsent } from './context/CookieConsent';
+import { DataProvider } from './context/DataContext';
 import { loadGoogleAnalytics } from './utils/tracking';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -53,6 +54,7 @@ function GoogleAnalyticsLoader() {
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <DataProvider>
       <CookieConsentProvider>
         <GoogleAnalyticsLoader />
         <ScrollToTop />
@@ -77,6 +79,7 @@ function App() {
         </div>
         <CookieBanner />
       </CookieConsentProvider>
+      </DataProvider>
     </BrowserRouter>
   );
 }

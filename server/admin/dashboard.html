@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back-office — Action Nuisibles 13</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">Action Nuisibles 13 <span>Back-office</span></div>
+  <div class="header-user">
+    <span id="headerUser"></span>
+    <button class="btn-logout" onclick="logout()">Déconnexion</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-section">Contenu</div>
+    <div class="sidebar-nav">
+      <a href="#" data-section="articles" onclick="navigate('articles',this)">
+        <span class="icon">📝</span><span>Articles</span>
+      </a>
+      <a href="#" data-section="services" onclick="navigate('services',this)">
+        <span class="icon">🛠️</span><span>Services</span>
+      </a>
+      <a href="#" data-section="faq" onclick="navigate('faq',this)">
+        <span class="icon">❓</span><span>FAQ</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main" id="main">
+    <div class="empty"><div class="icon">⏳</div><p>Chargement…</p></div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

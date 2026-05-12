@@ -6,6 +6,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import Database from 'better-sqlite3';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -60,8 +61,21 @@ const staticPaths = [
   '/politique-confidentialite',
 ];
 
-const articleSlugs = extractSlugsFromFile('src/data/articles.js', /slug:\s*['"]([^'"]+)['"]/);
-const serviceSlugs = extractSlugsFromFile('src/data/services.js', /slug:\s*['"]([^'"]+)['"]/);
+function loadSlugsFromDb(table) {
+  const dbPath = path.join(root, '.data', 'cms.db');
+  if (!fs.existsSync(dbPath)) return null;
+  try {
+    const db = new Database(dbPath, { readonly: true });
+    const rows = db.prepare(`SELECT slug FROM ${table} ORDER BY id ASC`).all();
+    db.close();
+    return rows.map((row) => row.slug);
+  } catch {
+    return null;
+  }
+}
+
+const articleSlugs = loadSlugsFromDb('articles') ?? extractSlugsFromFile('src/data/articles.js', /slug:\s*['"]([^'"]+)['"]/);
+const serviceSlugs = loadSlugsFromDb('services') ?? extractSlugsFromFile('src/data/services.js', /slug:\s*['"]([^'"]+)['"]/);
 const villeSlugs = extractSlugsFromFile('src/data/villes.js', /slug:\s*['"]([^'"]+)['"]/);
 const thematiqueTitles = extractSlugsFromFile('src/data/thematiques.js', /titleToSlug\s*\(\s*['"]([^'"]+)['"]\s*\)/);
 const thematiqueSlugs = thematiqueTitles.map((t) => slugify(t));

@@ -4,39 +4,58 @@ import Seo from '../components/Seo';
 import OptimizedImage from '../components/OptimizedImage';
 import { LinkifyThematiques, linkifyThematiques } from '../components/LinkifyThematiques';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
-import { articles, getArticleBySlug } from '../data/articles';
-import { SITE_URL } from '../utils/siteConfig';
+import { useData } from '../context/DataContext';
+import { SITE_URL, ORGANIZATION_ID, SITE_NAME } from '../utils/siteConfig';
+import { absoluteUrl, buildBreadcrumbList, parseFrenchDateToIso } from '../utils/structuredData';
 
 function ArticleDetailPage() {
   const { slug } = useParams();
-  const article = getArticleBySlug(slug);
+  const { articles } = useData();
+  const article = articles.find(a => a.slug === slug);
 
   if (!article) {
     return (
-      <main>
-        <section className="section">
-          <div className="container">
-            <p>Article introuvable.</p>
-            <Link to="/articles">Retour aux articles</Link>
-          </div>
-        </section>
-      </main>
+      <>
+        <Seo
+          title="Article introuvable"
+          description="Cet article n'existe pas ou n'est plus disponible."
+          canonicalPath="/articles"
+          noindex
+        />
+        <main>
+          <section className="section">
+            <div className="container">
+              <p>Article introuvable.</p>
+              <Link to="/articles">Retour aux articles</Link>
+            </div>
+          </section>
+        </main>
+      </>
     );
   }
 
   const { title, date, category, image, content } = article;
-  const articleUrl = `${SITE_URL.replace(/\/$/, '')}/articles/${slug}`;
+  const articleUrl = absoluteUrl(SITE_URL, `/articles/${slug}`);
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL.replace(/\/$/, '')}${image.startsWith('/') ? image : `/${image}`}`;
+  const datePublished = parseFrenchDateToIso(date);
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
-    datePublished: date,
+    ...(datePublished ? { datePublished } : { datePublished: date }),
     image: imageUrl,
-    author: { '@type': 'Organization', name: 'Action Nuisibles 13' },
-    publisher: { '@type': 'Organization', name: 'Action Nuisibles 13' },
+    author: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME },
+    publisher: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
   };
+  const breadcrumbSchema = buildBreadcrumbList(
+    [
+      { name: 'Accueil', path: '/' },
+      { name: 'Articles', path: '/articles' },
+      { name: title, path: `/articles/${slug}` },
+    ],
+    SITE_URL,
+  );
 
   return (
     <>
@@ -46,7 +65,8 @@ function ArticleDetailPage() {
         canonicalPath={`/articles/${slug}`}
         type="article"
         image={image}
-        structuredData={articleSchema}
+        publishedTime={datePublished}
+        structuredData={[articleSchema, breadcrumbSchema]}
       />
       <main>
         {/* Hero article : fond sombre, label, titre, méta, image */}

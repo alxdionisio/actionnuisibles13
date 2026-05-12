@@ -5,8 +5,9 @@ import Seo from '../components/Seo';
 import OptimizedImage from '../components/OptimizedImage';
 import { LinkifyThematiques } from '../components/LinkifyThematiques';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
-import { getServiceBySlug } from '../data/services';
-import { SITE_URL } from '../utils/siteConfig';
+import { useData } from '../context/DataContext';
+import { SITE_URL, ORGANIZATION_ID } from '../utils/siteConfig';
+import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
 import { track } from '../utils/tracking';
 
 const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || 'mvzbkezg';
@@ -92,23 +93,32 @@ function ServiceDetailFormFallback() {
 
 function ServiceDetailPage() {
   const { slug } = useParams();
-  const service = getServiceBySlug(slug);
+  const { services } = useData();
+  const service = services.find(s => s.slug === slug);
 
   if (!service) {
     return (
-      <main>
-        <section className="section">
-          <div className="container">
-            <p>Service introuvable.</p>
-            <Link to="/services">Retour aux services</Link>
-          </div>
-        </section>
-      </main>
+      <>
+        <Seo
+          title="Service introuvable"
+          description="Ce service n'existe pas ou n'est plus disponible."
+          canonicalPath="/services"
+          noindex
+        />
+        <main>
+          <section className="section">
+            <div className="container">
+              <p>Service introuvable.</p>
+              <Link to="/services">Retour aux services</Link>
+            </div>
+          </section>
+        </main>
+      </>
     );
   }
 
   const { title, heroSubtitle, heroImage, content } = service;
-  const serviceUrl = `${SITE_URL.replace(/\/$/, '')}/services/${slug}`;
+  const serviceUrl = absoluteUrl(SITE_URL, `/services/${slug}`);
   const imageUrl = heroImage.startsWith('http') ? heroImage : `${SITE_URL.replace(/\/$/, '')}${heroImage.startsWith('/') ? heroImage : `/${heroImage}`}`;
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -117,8 +127,20 @@ function ServiceDetailPage() {
     description: heroSubtitle,
     url: serviceUrl,
     image: imageUrl,
-    provider: { '@type': 'LocalBusiness', name: 'Action Nuisibles 13' },
+    provider: { '@id': ORGANIZATION_ID },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Bouches-du-Rhône',
+    },
   };
+  const breadcrumbSchema = buildBreadcrumbList(
+    [
+      { name: 'Accueil', path: '/' },
+      { name: 'Services', path: '/services' },
+      { name: title, path: `/services/${slug}` },
+    ],
+    SITE_URL,
+  );
 
   return (
     <>
@@ -127,7 +149,7 @@ function ServiceDetailPage() {
         description={heroSubtitle}
         canonicalPath={`/services/${slug}`}
         image={heroImage}
-        structuredData={serviceSchema}
+        structuredData={[serviceSchema, breadcrumbSchema]}
       />
       <main>
         {/* Hero détail service : fond sombre, titre + sous-titre + CTA à gauche, image à droite */}

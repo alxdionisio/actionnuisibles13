@@ -4,7 +4,8 @@ import Seo from '../components/Seo';
 import { LinkifyThematiques } from '../components/LinkifyThematiques';
 import { villes, getVilleBySlug } from '../data/villes';
 import { thematiques } from '../data/thematiques';
-import { SITE_URL, SITE_NAME } from '../utils/siteConfig';
+import { SITE_URL, SITE_NAME, ORGANIZATION_ID } from '../utils/siteConfig';
+import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 
 function VillePage() {
@@ -13,14 +14,22 @@ function VillePage() {
 
   if (!ville) {
     return (
-      <main>
-        <section className="section">
-          <div className="container">
-            <p>Ville introuvable.</p>
-            <Link to="/#lieux-intervention">Voir nos lieux d'intervention</Link>
-          </div>
-        </section>
-      </main>
+      <>
+        <Seo
+          title="Ville introuvable"
+          description="Cette page d'intervention n'existe pas ou n'est plus disponible."
+          canonicalPath="/"
+          noindex
+        />
+        <main>
+          <section className="section">
+            <div className="container">
+              <p>Ville introuvable.</p>
+              <Link to="/#lieux-intervention">Voir nos lieux d'intervention</Link>
+            </div>
+          </section>
+        </main>
+      </>
     );
   }
 
@@ -28,11 +37,12 @@ function VillePage() {
   const title = `Dératisation et désinsectisation à ${name}`;
   const description = `Action Nuisibles 13 intervient à ${name} et alentours : dératisation, désinsectisation, nids de guêpes et frelons, chenilles processionnaires. Lutte anti-nuisibles pour particuliers et professionnels. Devis gratuit, intervention rapide.`;
   const canonicalPath = `/intervention/${slug}`;
+  const pageUrl = absoluteUrl(SITE_URL, canonicalPath);
 
   const placeSchema = {
     '@context': 'https://schema.org',
     '@type': 'Place',
-    name: name,
+    name,
     address: {
       '@type': 'PostalAddress',
       addressLocality: name,
@@ -43,19 +53,28 @@ function VillePage() {
 
   const serviceAreaSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `${SITE_NAME} - ${name}`,
-    description: description,
-    url: `${SITE_URL.replace(/\/$/, '')}${canonicalPath}`,
+    '@type': 'Service',
+    name: title,
+    description,
+    url: pageUrl,
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: {
       '@type': 'City',
-      name: name,
+      name,
       containedInPlace: {
         '@type': 'AdministrativeArea',
         name: 'Bouches-du-Rhône',
       },
     },
   };
+  const breadcrumbSchema = buildBreadcrumbList(
+    [
+      { name: 'Accueil', path: '/' },
+      { name: 'Lieux d\'intervention', path: '/#lieux-intervention' },
+      { name: name, path: canonicalPath },
+    ],
+    SITE_URL,
+  );
 
   return (
     <>
@@ -63,7 +82,7 @@ function VillePage() {
         title={title}
         description={description}
         canonicalPath={canonicalPath}
-        structuredData={[placeSchema, serviceAreaSchema]}
+        structuredData={[placeSchema, serviceAreaSchema, breadcrumbSchema]}
       />
       <main>
         <section className="page-hero page-hero--dark">

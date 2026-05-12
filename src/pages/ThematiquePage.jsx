@@ -4,7 +4,8 @@ import Seo from '../components/Seo';
 import { linkifyThematiques } from '../components/LinkifyThematiques';
 import { thematiques, getThematiqueBySlug } from '../data/thematiques';
 import { villes } from '../data/villes';
-import { SITE_URL, SITE_NAME } from '../utils/siteConfig';
+import { SITE_URL, SITE_NAME, ORGANIZATION_ID, WEBSITE_ID } from '../utils/siteConfig';
+import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import Contact from '../components/Contact';
 
@@ -14,32 +15,38 @@ function ThematiquePage() {
 
   if (!thematique) {
     return (
-      <main>
-        <section className="section">
-          <div className="container">
-            <p>Thématique introuvable.</p>
-            <Link to="/services">Voir nos services</Link>
-            {' · '}
-            <Link to="/#lieux-intervention">Lieux d'intervention</Link>
-          </div>
-        </section>
-      </main>
+      <>
+        <Seo
+          title="Thématique introuvable"
+          description="Cette page thématique n'existe pas ou n'est plus disponible."
+          canonicalPath="/services"
+          noindex
+        />
+        <main>
+          <section className="section">
+            <div className="container">
+              <p>Thématique introuvable.</p>
+              <Link to="/services">Voir nos services</Link>
+              {' · '}
+              <Link to="/#lieux-intervention">Lieux d'intervention</Link>
+            </div>
+          </section>
+        </main>
+      </>
     );
   }
 
   const { name, title, description, content } = thematique;
   const canonicalPath = `/thematique/${slug}`;
+  const pageUrl = absoluteUrl(SITE_URL, canonicalPath);
 
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: title,
-    description: description,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    description,
+    url: pageUrl,
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: {
       '@type': 'AdministrativeArea',
       name: 'Bouches-du-Rhône',
@@ -50,9 +57,19 @@ function ThematiquePage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `${title} | ${SITE_NAME}`,
-    description: description,
-    url: `${SITE_URL.replace(/\/$/, '')}${canonicalPath}`,
+    description,
+    url: pageUrl,
+    isPartOf: { '@id': WEBSITE_ID },
+    about: title,
   };
+  const breadcrumbSchema = buildBreadcrumbList(
+    [
+      { name: 'Accueil', path: '/' },
+      { name: 'Services', path: '/services' },
+      { name: title, path: canonicalPath },
+    ],
+    SITE_URL,
+  );
 
   return (
     <>
@@ -60,7 +77,7 @@ function ThematiquePage() {
         title={title}
         description={description}
         canonicalPath={canonicalPath}
-        structuredData={[serviceSchema, webPageSchema]}
+        structuredData={[serviceSchema, webPageSchema, breadcrumbSchema]}
       />
       <main>
         <section className="page-hero page-hero--dark">

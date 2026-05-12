@@ -1,8 +1,16 @@
 import React, { useEffect } from 'react';
-import { SITE_URL, SITE_NAME, DEFAULT_TITLE, DEFAULT_DESCRIPTION, ORGANIZATION } from '../utils/siteConfig';
+import {
+  SITE_URL,
+  SITE_NAME,
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  ORGANIZATION,
+  WEBSITE,
+} from '../utils/siteConfig';
 
 /**
- * Gère titre, meta description, canonical, Open Graph et données structurées (JSON-LD).
+ * Gère titre, meta description, canonical, Open Graph, Twitter Cards et JSON-LD.
  */
 function Seo({
   title,
@@ -11,10 +19,11 @@ function Seo({
   noindex = false,
   image,
   type = 'website',
+  publishedTime,
+  modifiedTime,
   structuredData,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
-  // URL canonique absolue (sans slash final) : recommandation Google pour l'indexation.
   const baseUrl = SITE_URL.replace(/\/$/, '');
   const path = canonicalPath
     ? (() => {
@@ -24,7 +33,9 @@ function Seo({
     })()
     : '/';
   const canonicalUrl = `${baseUrl}${path}`;
-  const imageUrl = image && (image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`);
+  const imageUrl = image
+    ? (image.startsWith('http') ? image : `${SITE_URL.replace(/\/$/, '')}${image.startsWith('/') ? image : `/${image}`}`)
+    : DEFAULT_OG_IMAGE;
 
   useEffect(() => {
     document.title = fullTitle;
@@ -46,7 +57,19 @@ function Seo({
     setMeta('property', 'og:url', canonicalUrl);
     setMeta('property', 'og:type', type);
     setMeta('property', 'og:locale', 'fr_FR');
-    if (imageUrl) setMeta('property', 'og:image', imageUrl);
+    setMeta('property', 'og:site_name', SITE_NAME);
+    setMeta('property', 'og:image', imageUrl);
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', fullTitle);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', imageUrl);
+
+    if (type === 'article' && publishedTime) {
+      setMeta('property', 'article:published_time', publishedTime);
+    }
+    if (type === 'article' && modifiedTime) {
+      setMeta('property', 'article:modified_time', modifiedTime);
+    }
 
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
@@ -56,15 +79,14 @@ function Seo({
     }
     linkCanonical.setAttribute('href', canonicalUrl);
 
-    // Evite qu'un "noindex" reste présent après navigation SPA vers une page indexable.
     setMeta('name', 'robots', noindex ? 'noindex,nofollow' : 'index,follow');
-  }, [fullTitle, description, canonicalUrl, noindex, imageUrl, type]);
+  }, [fullTitle, description, canonicalUrl, noindex, imageUrl, type, publishedTime, modifiedTime]);
 
   useEffect(() => {
     const scripts = document.querySelectorAll('script[data-seo-jsonld]');
     scripts.forEach((s) => s.remove());
 
-    const dataToEmit = [ORGANIZATION];
+    const dataToEmit = [WEBSITE, ORGANIZATION];
 
     if (structuredData) {
       const list = Array.isArray(structuredData) ? structuredData : [structuredData];

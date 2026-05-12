@@ -24,23 +24,44 @@ export const SITE_URL = getSiteUrl();
 export const SITE_NAME = 'Action Nuisibles 13';
 export const DEFAULT_DESCRIPTION = 'Dératisation, désinsectisation et lutte anti-nuisibles dans les Bouches-du-Rhône. Solutions efficaces et écologiques pour particuliers et professionnels.';
 export const DEFAULT_TITLE = 'Action Nuisibles 13 - Dératisation & désinsectisation Bouches-du-Rhône';
+export const DEFAULT_OG_IMAGE = `${CANONICAL_BASE}/action-nuisibles-13-noir.png`;
+export const ORGANIZATION_ID = `${CANONICAL_BASE}/#organization`;
+export const WEBSITE_ID = `${CANONICAL_BASE}/#website`;
 
 export const ORGANIZATION = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': ORGANIZATION_ID,
   name: SITE_NAME,
   description: DEFAULT_DESCRIPTION,
-  url: SITE_URL,
+  url: `${CANONICAL_BASE}/`,
   telephone: '+33 7 59 69 73 55',
   email: 'contact@actionnuisibles13.com',
+  image: DEFAULT_OG_IMAGE,
+  logo: DEFAULT_OG_IMAGE,
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'Bouches-du-Rhône',
     addressCountry: 'FR',
   },
-  areaServed: {
-    '@type': 'GeoCircle',
-    geoMidpoint: { '@type': 'GeoCoordinates', latitude: 43.3, longitude: 5.2 },
-    geoRadius: '50000',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 43.3,
+    longitude: 5.2,
   },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Bouches-du-Rhône',
+  },
+};
+
+export const WEBSITE = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  url: `${CANONICAL_BASE}/`,
+  name: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
+  inLanguage: 'fr-FR',
+  publisher: { '@id': ORGANIZATION_ID },
 };

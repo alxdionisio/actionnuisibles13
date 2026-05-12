@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import { linkifyThematiques } from '../components/LinkifyThematiques';
-import { faqItems } from '../data/faq';
+import { useData } from '../context/DataContext';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
+import { SITE_URL } from '../utils/siteConfig';
+import { buildBreadcrumbList, toPlainText } from '../utils/structuredData';
 
 function FAQPage() {
+  const { faqItems } = useData();
   const [openIndices, setOpenIndices] = useState(new Set());
 
   const toggleFAQ = (index) => {
@@ -27,7 +30,7 @@ function FAQPage() {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: toPlainText(item.answer),
       },
     })),
   };
@@ -36,13 +39,21 @@ function FAQPage() {
   const description =
     "Toutes vos questions sur la dératisation, la désinsectisation, les nuisibles (guêpes, frelons, punaises de lit, chenilles processionnaires), les tarifs, garanties et interventions dans les Bouches-du-Rhône. Réponses d'experts Action Nuisibles 13.";
 
+  const breadcrumbSchema = buildBreadcrumbList(
+    [
+      { name: 'Accueil', path: '/' },
+      { name: 'FAQ', path: '/faq' },
+    ],
+    SITE_URL,
+  );
+
   return (
     <>
       <Seo
         title={title}
         description={description}
         canonicalPath="/faq"
-        structuredData={faqSchema}
+        structuredData={[faqSchema, breadcrumbSchema]}
       />
       <main>
         <section className="page-hero page-hero--dark">

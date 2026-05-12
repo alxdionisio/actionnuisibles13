@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from './OptimizedImage';
 import { CtaArrowIcon } from './CtaArrowIcon';
-import { articles } from '../data/articles';
+import { useData } from '../context/DataContext';
 import { track } from '../utils/tracking';
 
 function Blog() {
-
+  const { articles } = useData();
   return (
     <section id="blog" className="section blog-section">
       <div className="container">

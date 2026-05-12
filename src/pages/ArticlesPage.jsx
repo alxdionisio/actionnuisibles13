@@ -4,10 +4,11 @@ import Seo from '../components/Seo';
 import OptimizedImage from '../components/OptimizedImage';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { IconBullet } from '../components/Icons';
-import { articles } from '../data/articles';
+import { useData } from '../context/DataContext';
 import { track } from '../utils/tracking';
 
 function ArticlesPage() {
+  const { articles } = useData();
   return (
     <>
       <Seo

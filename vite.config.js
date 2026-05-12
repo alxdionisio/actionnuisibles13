@@ -10,4 +10,12 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: `http://localhost:${process.env.ADMIN_PORT || 3001}`,
+        changeOrigin: true,
+      },
+    },
+  },
 })
