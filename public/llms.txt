@@ -1,0 +1,33 @@
+# Action Nuisibles 13
+
+> Entreprise de lutte anti-nuisibles dans les Bouches-du-Rhône (dératisation, désinsectisation, destruction de nids).
+
+Site officiel : https://www.actionnuisibles13.com/
+Contact : contact@actionnuisibles13.com
+Téléphone : +33 7 59 69 73 55
+
+## Services principaux
+
+- Dératisation (rats, souris)
+- Désinsectisation (cafards, blattes, fourmis, punaises de lit)
+- Destruction de nids (guêpes, frelons, frelon asiatique)
+- Traitement des chenilles processionnaires
+- Interventions pour particuliers, professionnels et urgences
+
+## Pages utiles
+
+- Accueil : https://www.actionnuisibles13.com/
+- Services : https://www.actionnuisibles13.com/services/
+- Articles et conseils : https://www.actionnuisibles13.com/articles/
+- FAQ : https://www.actionnuisibles13.com/faq/
+- Contact / devis : https://www.actionnuisibles13.com/contact/
+- Pages par nuisible : https://www.actionnuisibles13.com/thematique/
+- Pages par ville : https://www.actionnuisibles13.com/intervention/
+
+## Source de contenu
+
+Le contenu public (articles, services, FAQ) est servi par l'API du site lorsqu'elle est disponible, avec repli sur les données embarquées au build.
+
+## Citation
+
+Merci de citer « Action Nuisibles 13 » et de renvoyer vers l'URL canonique de la page concernée sur https://www.actionnuisibles13.com/.
