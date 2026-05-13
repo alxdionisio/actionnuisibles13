@@ -24,6 +24,16 @@ if (IS_PROD && (!process.env.SESSION_SECRET || process.env.SESSION_SECRET === 'a
 }
 
 const app = express();
+app.set('trust proxy', 1);
+
+// Redirection HTTP → HTTPS en production (Railway passe X-Forwarded-Proto)
+app.use((req, res, next) => {
+  if (IS_PROD && req.headers['x-forwarded-proto'] === 'http') {
+    return res.redirect(301, `https://${req.headers.host}${req.url}`);
+  }
+  next();
+});
+
 app.use(express.json({ limit: '10mb' }));
 
 // CORS pour permettre au front-office (GitHub Pages) d'appeler /api
@@ -40,7 +50,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.set('trust proxy', 1);
 app.use(session({
   secret: process.env.SESSION_SECRET || 'an13-admin-secret-change-me-in-prod',
   resave: false,
