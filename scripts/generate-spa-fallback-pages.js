@@ -454,7 +454,7 @@ function injectHead(indexHtml, headContent) {
   const headStart = indexHtml.indexOf('<head>') + '<head>'.length;
   const beforeHead = indexHtml.slice(0, headStart);
   const afterHead = indexHtml.slice(headEnd);
-  // Conserve les preconnect, preload, fonts, viewport, charset, icon, html lang du <head> d'origine
+  // Conserve les preconnect, preload, fonts, viewport, charset, icon, scripts module Vite du <head> d'origine
   const originalHead = indexHtml.slice(headStart, headEnd);
   const preservedTags = originalHead
     .split('\n')
@@ -467,7 +467,9 @@ function injectHead(indexHtml, headContent) {
         l.startsWith('<link href="https://fonts.googleapis.com') ||
         l.startsWith('<noscript>') ||
         l.startsWith('<link rel="icon"') ||
-        l.startsWith('<meta name="viewport"')
+        l.startsWith('<meta name="viewport"') ||
+        // Bundle Vite : obligatoire sinon écran blanc (React ne se charge jamais)
+        l.startsWith('<script')
       );
     })
     .join('\n    ');
