@@ -72,14 +72,18 @@ CREATE TABLE IF NOT EXISTS faq (
 
 function migrateAdminUsers() {
   const cols = db.prepare("PRAGMA table_info(admin_users)").all().map((c) => c.name);
+  // SQLite ALTER TABLE ADD COLUMN n'accepte que des DEFAULT constants (pas CURRENT_TIMESTAMP).
+  // On ajoute sans DEFAULT puis on backfill avec datetime('now').
   if (!cols.includes('email')) {
     db.exec("ALTER TABLE admin_users ADD COLUMN email TEXT");
   }
   if (!cols.includes('created_at')) {
-    db.exec("ALTER TABLE admin_users ADD COLUMN created_at TEXT DEFAULT CURRENT_TIMESTAMP");
+    db.exec("ALTER TABLE admin_users ADD COLUMN created_at TEXT");
+    db.exec("UPDATE admin_users SET created_at = datetime('now') WHERE created_at IS NULL");
   }
   if (!cols.includes('updated_at')) {
-    db.exec("ALTER TABLE admin_users ADD COLUMN updated_at TEXT DEFAULT CURRENT_TIMESTAMP");
+    db.exec("ALTER TABLE admin_users ADD COLUMN updated_at TEXT");
+    db.exec("UPDATE admin_users SET updated_at = datetime('now') WHERE updated_at IS NULL");
   }
 }
 
