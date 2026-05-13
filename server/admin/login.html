@@ -103,7 +103,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Erreur');
-    window.location.href = '/admin/dashboard.html';
+    window.location.href = '/';
   } catch (ex) {
     err.textContent = ex.message;
     err.style.display = 'block';

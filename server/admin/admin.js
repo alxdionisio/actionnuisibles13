@@ -674,7 +674,7 @@ window.deleteFaq = async function(id) {
 // ─── Déconnexion ──────────────────────────────────────────────────────────────
 window.logout = async function() {
   await fetch('/auth/logout', { method: 'POST' });
-  window.location.href = '/admin/login.html';
+  window.location.href = '/';
 };
 
 // ─── Expose slugify ───────────────────────────────────────────────────────────
@@ -686,7 +686,7 @@ window.slugify = slugify;
     const me = await api('GET', '/auth/me');
     document.getElementById('headerUser').textContent = me.username;
   } catch {
-    window.location.href = '/admin/login.html';
+    window.location.href = '/';
     return;
   }
   await loadImageLibrary();

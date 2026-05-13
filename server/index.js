@@ -53,13 +53,23 @@ app.use(session({
   },
 }));
 
-app.use('/admin', express.static(path.join(__dirname, 'admin')));
-app.use(express.static(PUBLIC_DIR));
+const ADMIN_DIR = path.join(__dirname, 'admin');
 
-app.get('/admin', (req, res) => {
-  if (req.session.userId) return res.redirect('/admin/dashboard.html');
-  res.redirect('/admin/login.html');
+// Sert les assets de l'admin à la racine ET sous /admin (compatibilité)
+app.use(express.static(ADMIN_DIR));
+app.use('/admin', express.static(ADMIN_DIR));
+// Sert les uploads (images du back-office)
+app.use('/uploads', express.static(path.join(PUBLIC_DIR, 'uploads')));
+
+// Route racine : sert directement login ou dashboard selon l'état de session
+// (URL reste / dans la barre du navigateur, pas de redirect)
+app.get('/', (req, res) => {
+  const file = req.session.userId ? 'dashboard.html' : 'login.html';
+  res.sendFile(path.join(ADMIN_DIR, file));
 });
+
+// Compatibilité ancienne URL /admin → redirige vers /
+app.get('/admin', (req, res) => res.redirect('/'));
 
 // Healthcheck en premier, AVANT initDb, pour qu'il réponde même si la DB est lente à initialiser
 app.get('/api/health', (_, res) => res.json({ ok: true }));
