@@ -2,7 +2,7 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "npm ci --omit=dev=false"
+    "buildCommand": "echo 'Back-office: no build step required'"
   },
   "deploy": {
     "startCommand": "node server/index.js",
