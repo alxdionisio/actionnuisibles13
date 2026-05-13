@@ -28,11 +28,86 @@
   --bg-light: var(--token-bg-light);
   --bg-white: var(--token-white);
   --border-color: var(--token-gray-light);
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* Ombres en deux couches (key + ambient) — plus de profondeur que des single-cast plats */
+  --shadow-sm:
+    0 1px 1px rgb(0 0 0 / 0.04),
+    0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-md:
+    0 2px 4px rgb(0 0 0 / 0.05),
+    0 4px 8px rgb(0 0 0 / 0.08);
+  --shadow-lg:
+    0 4px 8px rgb(0 0 0 / 0.06),
+    0 12px 24px rgb(0 0 0 / 0.10);
+  --shadow-xl:
+    0 8px 16px rgb(0 0 0 / 0.08),
+    0 24px 48px rgb(0 0 0 / 0.12);
+
   --radius-section: 1.25rem;
+
+  /* Easing exponentiel (Material 3 / Apple-like) — plus naturel que les ease cubiques classiques */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Durées cohérentes */
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+
+  /* Anneau de focus visible (jaune marque) */
+  --focus-ring:
+    0 0 0 2px var(--token-white),
+    0 0 0 4px var(--token-yellow);
+  --focus-ring-dark:
+    0 0 0 2px var(--token-black),
+    0 0 0 4px var(--token-yellow);
+}
+
+/* Bases a11y / UX — sélection, focus, motion, font-features */
+
+/* Anneau de focus visible sur tout contrôle interactif accédé au clavier.
+   Reste invisible à la souris (focus-visible), donc ne perturbe pas les ouvriers du quotidien. */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+.hero :focus-visible,
+.contact-section :focus-visible,
+.cta-card :focus-visible,
+[class*="dark"] :focus-visible {
+  box-shadow: var(--focus-ring-dark);
+}
+
+/* Sélection texte aux couleurs de la marque */
+::selection {
+  background: var(--token-yellow);
+  color: var(--token-black);
+}
+::-moz-selection {
+  background: var(--token-yellow);
+  color: var(--token-black);
+}
+
+/* Activation des fonctionnalités OpenType modernes : ligatures contextuelles + chiffres tabulaires
+   pour les chiffres en colonnes (numéros de téléphone, prix, stats). */
+body {
+  font-feature-settings: "kern", "liga", "clig", "calt", "tnum";
+  text-rendering: optimizeLegibility;
+}
+
+/* Respect du choix utilisateur "réduire les animations" (iOS, macOS, Windows) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 * {
@@ -322,44 +397,60 @@ p {
   height: 40px;
   padding: 0 1.75rem;
   border-radius: 50px;
-  font-weight: 400;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition:
+    transform var(--duration-fast) var(--ease-out-quart),
+    box-shadow var(--duration-base) var(--ease-out-quart),
+    background-color var(--duration-base) var(--ease-out-quart),
+    border-color var(--duration-base) var(--ease-out-quart),
+    color var(--duration-base) var(--ease-out-quart);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  will-change: transform;
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn-primary {
   background: var(--accent-yellow);
   border: 2px solid var(--token-yellow);
   color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background: var(--token-white);
-  border: 2px solid var(--token-yellow);
-  box-shadow: var(--shadow-lg);
+  background: var(--token-yellow);
+  border-color: var(--token-yellow);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   background: transparent;
   color: white;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: white;
+  transform: translateY(-1px);
 }
 
 .btn-white {
   background: white;
   color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-white:hover {
-  background: var(--bg-light);
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Hero Section - même rendu graphique que le bloc Contact : border-radius, marges, fond noir */
@@ -460,16 +551,30 @@ p {
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition:
+    transform var(--duration-fast) var(--ease-out-quart),
+    box-shadow var(--duration-base) var(--ease-out-quart),
+    background-color var(--duration-base) var(--ease-out-quart),
+    border-color var(--duration-base) var(--ease-out-quart);
+  will-change: transform;
 }
 
 .hero-btn:hover {
-  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
 }
 
 .hero-btn-main {
   background-color: var(--accent-yellow);
   color: var(--token-black);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+.hero-btn-main:hover {
+  box-shadow: 0 6px 16px rgb(238 232 44 / 0.35), 0 2px 4px rgb(0 0 0 / 0.2);
 }
 
 .hero-btn-arrow-circle {
@@ -500,7 +605,8 @@ p {
 .hero-btn-secondary:hover {
   background: var(--token-dark-2);
   color: var(--token-white);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
 }
 
 .hero-btn-secondary .icon-svg {
@@ -968,6 +1074,7 @@ p {
 .service-detail-form-textarea:focus {
   outline: none;
   border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgb(238 232 44 / 0.25);
 }
 
 .service-detail-form-textarea {
@@ -1233,11 +1340,6 @@ p {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.3s ease;
-}
-
-.article-other-card:hover {
-  box-shadow: var(--shadow-md);
 }
 
 .article-other-image {
@@ -1627,11 +1729,14 @@ p {
   background: white;
   border-radius: 1rem;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
+  transition:
+    transform var(--duration-base) var(--ease-out-quart),
+    box-shadow var(--duration-base) var(--ease-out-quart);
+  will-change: transform;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
 }
 
@@ -1819,18 +1924,23 @@ p {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition:
+    transform var(--duration-base) var(--ease-out-quart),
+    box-shadow var(--duration-base) var(--ease-out-quart),
+    border-color var(--duration-base) var(--ease-out-quart);
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
   height: 100%;
   padding: 1rem;
+  will-change: transform;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .service-image {
@@ -1845,12 +1955,12 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform var(--duration-slow) var(--ease-out-quart);
   display: block;
 }
 
 .service-card:hover .service-image img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .service-content {
@@ -3003,7 +3113,8 @@ p {
 .contact-dark-container .contact-form-wrapper .contact-form-input:focus,
 .contact-dark-container .contact-form-wrapper .contact-form-textarea:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgb(238 232 44 / 0.25);
 }
 
 .contact-dark-container .contact-form-wrapper .contact-form-textarea {
@@ -3201,7 +3312,8 @@ p {
 .contact-form-input:focus,
 .contact-form-textarea:focus {
   outline: none;
-  border-color: rgba(136, 136, 136, 0.25);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgb(238 232 44 / 0.25);
 }
 
 .contact-form-textarea {
@@ -3370,6 +3482,7 @@ p {
 .form-textarea:focus {
   outline: none;
   border-color: var(--accent-yellow);
+  box-shadow: 0 0 0 3px rgb(238 232 44 / 0.25);
 }
 
 .form-textarea {
