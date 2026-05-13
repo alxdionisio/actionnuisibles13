@@ -9,6 +9,12 @@ dist/
 .env.local
 .env.*.local
 
+# Claude / agents (local, pas en déploiement)
+.claude/
+.claude-flow/
+CLAUDE.md
+GEO-AUDIT-REPORT.md
+
 # IDE / OS
 .DS_Store
 *.log

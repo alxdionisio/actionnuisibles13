@@ -1,32 +1,64 @@
 # Action Nuisibles 13
 
-> Entreprise de lutte anti-nuisibles dans les Bouches-du-Rhône (dératisation, désinsectisation, destruction de nids).
+> Entreprise professionnelle de lutte anti-nuisibles dans les Bouches-du-Rhône (département 13), PACA, France. Dératisation, désinsectisation, destruction de nids de guêpes et frelons, traitement des chenilles processionnaires. Interventions pour particuliers, professionnels et urgences. Devis gratuit. Téléphone : +33 7 59 69 73 55.
 
-Site officiel : https://www.actionnuisibles13.com/
-Contact : contact@actionnuisibles13.com
-Téléphone : +33 7 59 69 73 55
+## À propos
 
-## Services principaux
+Action Nuisibles 13 est une entreprise spécialisée dans la lutte anti-nuisibles dans les Bouches-du-Rhône. Nous intervenons sous 2h pour les urgences (nids de guêpes, frelons, infestations graves). Nos techniciens sont formés aux normes de sécurité et utilisent des produits certifiés, sans danger pour les enfants et les animaux. Nous proposons des contrats d'entretien pour les professionnels soumis aux normes HACCP.
 
-- Dératisation (rats, souris)
-- Désinsectisation (cafards, blattes, fourmis, punaises de lit)
-- Destruction de nids (guêpes, frelons, frelon asiatique)
-- Traitement des chenilles processionnaires
-- Interventions pour particuliers, professionnels et urgences
+## Services
 
-## Pages utiles
+- [Dératisation rats et souris](https://www.actionnuisibles13.com/thematique/deratisation-rats-et-souris/) : Élimination des rongeurs par diagnostic, appâts sécurisés, colmatage des accès et suivi.
+- [Destruction nid de guêpes](https://www.actionnuisibles13.com/thematique/destruction-nid-de-guepes/) : Neutralisation des nids de guêpes en toute sécurité, matériel de protection adapté.
+- [Destruction nid de frelons et frelon asiatique](https://www.actionnuisibles13.com/thematique/destruction-nid-de-frelons-et-frelon-asiatique/) : Intervention sur frelons communs et frelons asiatiques, protocoles adaptés.
+- [Traitement chenilles processionnaires](https://www.actionnuisibles13.com/thematique/traitement-chenilles-processionnaires/) : Destruction des nids de chenilles processionnaires du pin et du chêne, traitement préventif.
+- [Élimination punaises de lit](https://www.actionnuisibles13.com/thematique/elimination-punaises-de-lit/) : Protocole multi-passages, traitement des zones de repos et conseils post-traitement.
+- [Désinsectisation cafards et blattes](https://www.actionnuisibles13.com/thematique/desinsectisation-cafards-et-blattes/) : Gel, appâts et mesures d'hygiène pour élimination durable.
+- [Traitement contre les fourmis](https://www.actionnuisibles13.com/thematique/traitement-contre-les-fourmis/) : Traitement ciblé des colonies et des pistes.
+- [Solutions anti-nuisibles entreprises](https://www.actionnuisibles13.com/services/solutions-anti-nuisibles-entreprises/) : Restauration, commerce, santé — rapports HACCP, contrats d'entretien.
+- [Intervention d'urgence](https://www.actionnuisibles13.com/services/intervention-rapide-urgences/) : Délai d'intervention sous 2h selon gravité.
 
-- Accueil : https://www.actionnuisibles13.com/
-- Services : https://www.actionnuisibles13.com/services/
-- Articles et conseils : https://www.actionnuisibles13.com/articles/
-- FAQ : https://www.actionnuisibles13.com/faq/
-- Contact / devis : https://www.actionnuisibles13.com/contact/
-- Pages par nuisible : https://www.actionnuisibles13.com/thematique/
-- Pages par ville : https://www.actionnuisibles13.com/intervention/
+## Foire aux questions
 
-## Source de contenu
+- Q : Quel est le délai d'intervention pour une urgence nuisibles ? — R : Sous 2h ou dans la journée selon la gravité, dans les Bouches-du-Rhône.
+- Q : Vos traitements sont-ils sans danger pour les enfants et les animaux ? — R : Oui, produits certifiés et respectueux de l'environnement. Nos techniciens informent des précautions (aération, délai de réintégration).
+- Q : Quels nuisibles traitez-vous ? — R : Rats, souris, cafards, blattes, fourmis, punaises de lit, puces, guêpes, frelons (dont frelon asiatique), chenilles processionnaires du pin et du chêne.
+- Q : Proposez-vous une garantie ? — R : Oui, réintervention en cas de réinfestation dans le délai convenu. Contrats d'entretien disponibles pour professionnels.
+- Q : Dans quelles villes intervenez-vous ? — R : Marseille, Martigues, Vitrolles, Marignane, Aix-en-Provence, Fos-sur-Mer, Salon-de-Provence et 20+ communes des Bouches-du-Rhône.
+- Q : Une seule intervention suffit-elle pour les punaises de lit ? — R : Souvent non. Les punaises de lit nécessitent généralement plusieurs passages et des conseils sur la literie.
+- Q : Combien coûte une intervention ? — R : Devis gratuit après diagnostic. Tarifs transparents pour particuliers et professionnels dans les Bouches-du-Rhône.
+- Q : Comment reconnaître une infestation de rongeurs ? — R : Crottes, traces de passage, bruits dans les cloisons ou combles, câbles rongés, odeurs. Diagnostic professionnel recommandé dès les premiers signes.
 
-Le contenu public (articles, services, FAQ) est servi par l'API du site lorsqu'elle est disponible, avec repli sur les données embarquées au build.
+## Articles et conseils
+
+- [Moustique tigre : prévention printemps 2026](https://www.actionnuisibles13.com/articles/moustique-tigre-prevention-printemps-2026/) : Le moustique tigre (Aedes albopictus) ne se déplace que de moins de 200 mètres. La femelle pond jusqu'à 200 œufs dans des eaux stagnantes. Prévention par suppression des gîtes larvaires.
+- [Signes d'une infestation à ne pas ignorer](https://www.actionnuisibles13.com/articles/signes-dune-infestation-de-nuisibles-a-ne-pas-ignorer/) : Bruits nocturnes, déjections, dégâts matériels, odeurs musquées — guide de détection précoce.
+- [Punaises de lit : protocole de traitement](https://www.actionnuisibles13.com/articles/punaises-de-lit-protocole-traitement/) : Diagnostic des foyers, traitement multi-passages, conseils post-traitement.
+- [Dératisation : particuliers et professionnels](https://www.actionnuisibles13.com/articles/deratisation-particuliers-professionnels/) : Méthode, suivi et prévention pour rongeurs.
+- [Destruction de nid de guêpes : quand intervenir](https://www.actionnuisibles13.com/articles/destruction-nid-guepes-frelons-quand-intervenir/) : Identifier le type de nid, ne pas intervenir seul, intervenir tôt.
+- [Solutions anti-nuisibles pour entreprises](https://www.actionnuisibles13.com/articles/les-meilleures-solutions-anti-nuisibles-pour-votre-entreprise/) : Risques sanitaires, conformité HACCP, plans personnalisés.
+- [Cafards et blattes : élimination et prévention](https://www.actionnuisibles13.com/articles/cafards-blattes-elimination-prevention/) : Identification, traitement par gel ou pulvérisation, mesures d'hygiène.
+- [Fourmis : invasion et prévention](https://www.actionnuisibles13.com/articles/fourmis-invasion-prevention/) : Types de fourmis, traitement des colonies, prévention des entrées.
+- [Chenilles processionnaires : danger et traitement](https://www.actionnuisibles13.com/articles/chenilles-processionnaires-danger-traitement/) : Poils urticants dangereux pour l'homme et les animaux, destruction des nids.
+- [Comment garder votre maison sans nuisible toute l'année](https://www.actionnuisibles13.com/articles/comment-garder-votre-maison-sans-nuisible-toute-lannee/) : Colmatage, nettoyage, gestion des déchets, prévention annuelle.
+
+## Zone d'intervention
+
+Bouches-du-Rhône (13) — PACA, France : Marseille, Martigues, Vitrolles, Marignane, Aix-en-Provence, Aubagne, Fos-sur-Mer, Port-de-Bouc, Salon-de-Provence, La Ciotat, Cassis, Carry-le-Rouet, Sausset-les-Pins, Châteauneuf-les-Martigues, Gignac-la-Nerthe, Les Pennes-Mirabeau, Septèmes-les-Vallons, Plan-de-Cuques, Bouc-Bel-Air, Cabriès, Mimet, Simiane-Collongue, Miramas, Carro et communes environnantes.
+
+## Contact
+
+- Site officiel : https://www.actionnuisibles13.com/
+- Formulaire de contact / devis gratuit : https://www.actionnuisibles13.com/contact/
+- Téléphone : +33 7 59 69 73 55
+- Email : contact@actionnuisibles13.com
+
+## Optional
+
+- [Politique de confidentialité](https://www.actionnuisibles13.com/politique-confidentialite/)
+- [Mentions légales](https://www.actionnuisibles13.com/mentions-legales/)
+- [À propos](https://www.actionnuisibles13.com/a-propos/)
+- [FAQ complète](https://www.actionnuisibles13.com/faq/)
 
 ## Citation
 

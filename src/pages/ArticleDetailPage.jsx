@@ -42,11 +42,24 @@ function ArticleDetailPage() {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
+    description: content.introParagraph?.slice(0, 160) || content.introHeading,
     ...(datePublished ? { datePublished } : { datePublished: date }),
-    image: imageUrl,
-    author: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME },
-    publisher: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME },
+    dateModified: datePublished || date,
+    image: { '@type': 'ImageObject', url: imageUrl, width: 800, height: 420 },
+    author: { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME, url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      '@id': ORGANIZATION_ID,
+      name: SITE_NAME,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/action-nuisibles-13-noir.png` },
+    },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+    articleSection: category,
+    inLanguage: 'fr-FR',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.article-content-intro-heading', '.article-content-intro-p'],
+    },
   };
   const breadcrumbSchema = buildBreadcrumbList(
     [

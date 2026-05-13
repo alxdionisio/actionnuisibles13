@@ -49,6 +49,15 @@ function VillePage() {
       addressRegion: 'Bouches-du-Rhône',
       addressCountry: 'FR',
     },
+    ...(ville.lat && ville.lng
+      ? {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: ville.lat,
+            longitude: ville.lng,
+          },
+        }
+      : {}),
   };
 
   const serviceAreaSchema = {
@@ -117,6 +126,10 @@ function VillePage() {
               processionnaires</strong>, <strong>punaises de lit</strong>, cafards et fourmis. Nos techniciens
               certifiés se déplacent à {name} pour des traitements efficaces et respectueux de l'environnement.
             </p>
+
+            {ville.context && (
+              <p className="ville-context-local">{ville.context}</p>
+            )}
 
             <h2>Dératisation à {name}</h2>
             <p>

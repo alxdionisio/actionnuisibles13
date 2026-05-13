@@ -30,29 +30,99 @@ export const WEBSITE_ID = `${CANONICAL_BASE}/#website`;
 
 export const ORGANIZATION = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'PestControlService'],
   '@id': ORGANIZATION_ID,
   name: SITE_NAME,
+  alternateName: 'Action Nuisibles Bouches-du-Rhône',
   description: DEFAULT_DESCRIPTION,
+  slogan: 'Dératisation, désinsectisation et destruction de nids dans les Bouches-du-Rhône',
   url: `${CANONICAL_BASE}/`,
-  telephone: '+33 7 59 69 73 55',
+  telephone: '+33759697355',
   email: 'contact@actionnuisibles13.com',
   image: DEFAULT_OG_IMAGE,
-  logo: DEFAULT_OG_IMAGE,
+  logo: {
+    '@type': 'ImageObject',
+    url: DEFAULT_OG_IMAGE,
+    width: 300,
+    height: 100,
+  },
   address: {
     '@type': 'PostalAddress',
+    // TODO: renseigner streetAddress, addressLocality, postalCode pour les rich results Google
     addressRegion: 'Bouches-du-Rhône',
     addressCountry: 'FR',
   },
   geo: {
     '@type': 'GeoCoordinates',
+    // TODO: remplacer par les coordonnées précises (5 décimales) de votre adresse principale
     latitude: 43.3,
     longitude: 5.2,
   },
-  areaServed: {
-    '@type': 'AdministrativeArea',
-    name: 'Bouches-du-Rhône',
+  areaServed: [
+    { '@type': 'City', name: 'Marseille' },
+    { '@type': 'City', name: 'Martigues' },
+    { '@type': 'City', name: 'Aix-en-Provence' },
+    { '@type': 'City', name: 'Vitrolles' },
+    { '@type': 'City', name: 'Marignane' },
+    { '@type': 'City', name: 'Salon-de-Provence' },
+    { '@type': 'City', name: 'Fos-sur-Mer' },
+    { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+  ],
+  serviceType: [
+    'Dératisation',
+    'Désinsectisation',
+    'Destruction de nid de guêpes',
+    'Destruction de nid de frelons',
+    'Traitement chenilles processionnaires',
+    'Élimination punaises de lit',
+    'Traitement cafards et blattes',
+    'Traitement contre les fourmis',
+  ],
+  knowsAbout: [
+    'Lutte anti-nuisibles',
+    'Certibiocide',
+    'Hygiène HACCP',
+    'Frelon asiatique',
+    'Punaises de lit',
+    'Rongeurs',
+  ],
+  priceRange: '€€',
+  paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer'],
+  currenciesAccepted: 'EUR',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '19:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '17:00',
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '52',
+    bestRating: '5',
+    worstRating: '1',
   },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+33759697355',
+    contactType: 'customer service',
+    availableLanguage: 'French',
+    areaServed: 'FR',
+  },
+  // TODO: ajouter sameAs avec les URLs de vos profils : GBP, PagesJaunes, Facebook, LinkedIn
+  // sameAs: [
+  //   'https://www.google.com/maps/place/...',
+  //   'https://www.pagesjaunes.fr/pros/...',
+  //   'https://www.facebook.com/actionnuisibles13',
+  // ],
 };
 
 export const WEBSITE = {

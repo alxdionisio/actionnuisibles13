@@ -10,17 +10,47 @@ import faqRoutes from './routes/faq.js';
 import uploadsRoutes from './routes/uploads.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = parseInt(process.env.ADMIN_PORT || '3001', 10);
+// Railway injecte PORT automatiquement, sinon ADMIN_PORT, sinon 3001 en local
+const PORT = parseInt(process.env.PORT || process.env.ADMIN_PORT || '3001', 10);
 const PUBLIC_DIR = path.join(__dirname, '../public');
+const IS_PROD = process.env.NODE_ENV === 'production';
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'https://www.actionnuisibles13.com,https://actionnuisibles13.com')
+  .split(',')
+  .map((s) => s.trim());
+
+if (IS_PROD && (!process.env.SESSION_SECRET || process.env.SESSION_SECRET === 'an13-admin-secret-change-me-in-prod')) {
+  console.error('FATAL : SESSION_SECRET doit être défini en production.');
+  process.exit(1);
+}
 
 const app = express();
 app.use(express.json({ limit: '10mb' }));
 
+// CORS pour permettre au front-office (GitHub Pages) d'appeler /api
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.setHeader('Vary', 'Origin');
+  }
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
+app.set('trust proxy', 1);
 app.use(session({
   secret: process.env.SESSION_SECRET || 'an13-admin-secret-change-me-in-prod',
   resave: false,
   saveUninitialized: false,
-  cookie: { httpOnly: true, sameSite: 'lax', maxAge: 8 * 60 * 60 * 1000 },
+  cookie: {
+    httpOnly: true,
+    sameSite: IS_PROD ? 'none' : 'lax',
+    secure: IS_PROD,
+    maxAge: 8 * 60 * 60 * 1000,
+  },
 }));
 
 app.use('/admin', express.static(path.join(__dirname, 'admin')));

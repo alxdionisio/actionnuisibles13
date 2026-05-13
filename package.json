@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && vite build",
+    "build": "node scripts/generate-sitemap.js && vite build && node scripts/generate-spa-fallback-pages.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "prerender": "node scripts/generate-spa-fallback-pages.js",
     "optimize-images": "node scripts/optimize-images.js",
     "preview": "vite preview",
     "admin": "node server/index.js",
-    "admin:dev": "node --watch server/index.js"
+    "admin:dev": "node --watch server/index.js",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

@@ -33,19 +33,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build (sitemap + vite + prerender)
         run: npm run build
         env:
           # Si la variable de dépôt VITE_BASE_URL est définie (ex. / pour domaine personnalisé), elle est utilisée.
           # Sinon : base path GitHub Pages par défaut https://<user>.github.io/<repo>/
           VITE_BASE_PATH: ${{ vars.VITE_BASE_URL != '' && vars.VITE_BASE_URL || format('/{0}/', github.event.repository.name) }}
 
-
-      - name: SPA fallback for GitHub Pages
+      - name: SPA 404 fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
-
-      - name: Generate SPA routes (200 instead of 404 for direct URLs)
-        run: node scripts/generate-spa-fallback-pages.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
