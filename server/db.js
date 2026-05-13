@@ -1,12 +1,13 @@
 import Database from 'better-sqlite3';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // DATA_DIR configurable via env : sur Railway, monter un volume sur /data
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '../.data');
+export const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '../.data');
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
 export const db = new Database(path.join(DATA_DIR, 'cms.db'));
@@ -16,8 +17,24 @@ const SCHEMA = `
 CREATE TABLE IF NOT EXISTS admin_users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT UNIQUE NOT NULL,
-  password_hash TEXT NOT NULL
+  password_hash TEXT NOT NULL,
+  email TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS password_reset_tokens (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  token_hash TEXT UNIQUE NOT NULL,
+  expires_at TEXT NOT NULL,
+  used_at TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES admin_users(id) ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_reset_tokens_hash ON password_reset_tokens(token_hash);
+CREATE INDEX IF NOT EXISTS idx_reset_tokens_user ON password_reset_tokens(user_id);
 
 CREATE TABLE IF NOT EXISTS articles (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -53,14 +70,55 @@ CREATE TABLE IF NOT EXISTS faq (
 );
 `;
 
+function migrateAdminUsers() {
+  const cols = db.prepare("PRAGMA table_info(admin_users)").all().map((c) => c.name);
+  if (!cols.includes('email')) {
+    db.exec("ALTER TABLE admin_users ADD COLUMN email TEXT");
+  }
+  if (!cols.includes('created_at')) {
+    db.exec("ALTER TABLE admin_users ADD COLUMN created_at TEXT DEFAULT CURRENT_TIMESTAMP");
+  }
+  if (!cols.includes('updated_at')) {
+    db.exec("ALTER TABLE admin_users ADD COLUMN updated_at TEXT DEFAULT CURRENT_TIMESTAMP");
+  }
+}
+
+function seedAdminUser() {
+  if (db.prepare('SELECT 1 FROM admin_users LIMIT 1').get()) return;
+
+  const username = process.env.ADMIN_USERNAME?.trim();
+  const password = process.env.ADMIN_PASSWORD;
+  const email = process.env.ADMIN_EMAIL?.trim() || null;
+
+  if (username && password) {
+    const hash = bcrypt.hashSync(password, 12);
+    db.prepare('INSERT INTO admin_users (username, password_hash, email) VALUES (?,?,?)')
+      .run(username, hash, email);
+    console.log(`✓ Compte admin créé depuis ADMIN_USERNAME/ADMIN_PASSWORD : ${username}`);
+    return;
+  }
+
+  // Pas d'admin, pas d'env : générer un mot de passe aléatoire et logguer une fois.
+  const fallbackUsername = 'admin';
+  const generated = crypto.randomBytes(18).toString('base64url');
+  const hash = bcrypt.hashSync(generated, 12);
+  db.prepare('INSERT INTO admin_users (username, password_hash, email) VALUES (?,?,?)')
+    .run(fallbackUsername, hash, email);
+
+  const banner = '='.repeat(72);
+  console.warn(`\n${banner}`);
+  console.warn('  COMPTE ADMIN INITIAL GÉNÉRÉ — À NOTER MAINTENANT (non rejoué) :');
+  console.warn(`    username : ${fallbackUsername}`);
+  console.warn(`    password : ${generated}`);
+  console.warn('  Définissez ADMIN_USERNAME/ADMIN_PASSWORD pour fixer ce compte,');
+  console.warn('  ou changez-le après login via /auth/forgot-password.');
+  console.warn(`${banner}\n`);
+}
+
 export function initDb() {
   db.exec(SCHEMA);
-
-  if (!db.prepare('SELECT 1 FROM admin_users LIMIT 1').get()) {
-    const hash = bcrypt.hashSync('admin123', 10);
-    db.prepare('INSERT INTO admin_users (username, password_hash) VALUES (?,?)').run('admin', hash);
-    console.log('Compte admin créé : admin / admin123');
-  }
+  migrateAdminUsers();
+  seedAdminUser();
 
   const needArticles = !db.prepare('SELECT 1 FROM articles LIMIT 1').get();
   const needServices = !db.prepare('SELECT 1 FROM services LIMIT 1').get();

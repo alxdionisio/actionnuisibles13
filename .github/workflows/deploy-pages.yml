@@ -33,12 +33,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Vite doit utiliser la même base que l’URL publique : avec domaine perso (fichier public/CNAME),
+      # le site est à la racine « / ». Sans CNAME, GitHub Pages sert souvent https://<user>.github.io/<repo>/.
+      - name: Résoudre VITE_BASE_PATH
+        id: vite_base
+        run: |
+          VAR_PATH="${{ vars.VITE_BASE_PATH }}"
+          VAR_URL="${{ vars.VITE_BASE_URL }}"
+          if [ -n "$VAR_PATH" ]; then
+            echo "value=$VAR_PATH" >> "$GITHUB_OUTPUT"
+          elif [ -n "$VAR_URL" ]; then
+            echo "value=$VAR_URL" >> "$GITHUB_OUTPUT"
+          elif [ -f public/CNAME ]; then
+            echo "value=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=/${{ github.event.repository.name }}/" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build (sitemap + vite + prerender)
         run: npm run build
         env:
-          # Si la variable de dépôt VITE_BASE_URL est définie (ex. / pour domaine personnalisé), elle est utilisée.
-          # Sinon : base path GitHub Pages par défaut https://<user>.github.io/<repo>/
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_URL != '' && vars.VITE_BASE_URL || format('/{0}/', github.event.repository.name) }}
+          VITE_BASE_PATH: ${{ steps.vite_base.outputs.value }}
 
       - name: SPA 404 fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
