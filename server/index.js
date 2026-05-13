@@ -61,16 +61,34 @@ app.get('/admin', (req, res) => {
   res.redirect('/admin/login.html');
 });
 
+// Healthcheck en premier, AVANT initDb, pour qu'il réponde même si la DB est lente à initialiser
+app.get('/api/health', (_, res) => res.json({ ok: true }));
+
 app.use('/auth', authRoutes);
 app.use('/api/articles', articlesRoutes);
 app.use('/api/services', servicesRoutes);
 app.use('/api/faq', faqRoutes);
 app.use('/api/uploads', uploadsRoutes);
-app.get('/api/health', (_, res) => res.json({ ok: true }));
 
-initDb();
+try {
+  initDb();
+} catch (err) {
+  console.error('Erreur init DB :', err);
+  process.exit(1);
+}
 
-app.listen(PORT, () => {
-  console.log(`\n✅  Back-office : http://localhost:${PORT}/admin`);
-  console.log(`    Identifiants : admin / admin123\n`);
+// Important : binder explicitement sur 0.0.0.0 pour Railway/Docker
+// (sinon Node bind sur ::1 IPv6 localhost et le healthcheck externe échoue).
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Back-office Express en écoute sur 0.0.0.0:${PORT}`);
+  console.log(`   NODE_ENV=${process.env.NODE_ENV || 'development'}`);
+  console.log(`   DATA_DIR=${process.env.DATA_DIR || '<default .data>'}`);
+});
+
+process.on('unhandledRejection', (err) => {
+  console.error('UnhandledRejection :', err);
+});
+process.on('uncaughtException', (err) => {
+  console.error('UncaughtException :', err);
+  process.exit(1);
 });
