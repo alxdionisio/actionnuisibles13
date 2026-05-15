@@ -68,9 +68,12 @@ function escapeHtml(s) {
 }
 
 function jsonLdInline(obj) {
-  // Échappe </script> dans la valeur JSON pour éviter de casser le HTML
+  // Échappe </script> dans la valeur JSON pour éviter de casser le HTML.
+  // Marqueur data-seo-jsonld="1" : Seo.jsx supprime ces scripts à l'hydratation
+  // pour éviter les doublons d'entités (sinon Google fusionne par @id et lève
+  // "L'avis contient plusieurs notes cumulées" sur l'AggregateRating).
   const json = JSON.stringify(obj).replace(/<\/script/gi, '<\\/script');
-  return `<script type="application/ld+json">${json}</script>`;
+  return `<script type="application/ld+json" data-seo-jsonld="1">${json}</script>`;
 }
 
 function absoluteUrl(pathname) {
@@ -225,9 +228,8 @@ const ORGANIZATION_SCHEMA = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '19:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '17:00' },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '52', bestRating: '5', worstRating: '1',
-  },
+  // aggregateRating retiré : Google n'accepte plus les notes self-serving sur
+  // LocalBusiness depuis 2019. Voir src/utils/siteConfig.js pour le détail.
 };
 
 const WEBSITE_SCHEMA = {

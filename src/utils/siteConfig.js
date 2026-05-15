@@ -103,13 +103,10 @@ export const ORGANIZATION = {
       closes: '17:00',
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '52',
-    bestRating: '5',
-    worstRating: '1',
-  },
+  // aggregateRating retiré : Google n'accepte plus les notes self-serving sur
+  // LocalBusiness depuis 2019. À réintroduire seulement quand des objets Review
+  // individuels (avec author + datePublished) seront visibles sur la page,
+  // ou via sameAs vers Google Business Profile.
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+33759697355',
