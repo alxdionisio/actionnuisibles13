@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './AppLink';
 import { useForm } from '@formspree/react';
 import { IconPin, IconMail, IconPhone } from './Icons';
 import { track } from '../utils/tracking';

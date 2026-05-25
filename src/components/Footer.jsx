@@ -1,6 +1,6 @@
 import React from 'react';
 import OptimizedImage from './OptimizedImage';
-import { Link } from 'react-router-dom';
+import { Link } from './AppLink';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { track } from '../utils/tracking';
 import { logos } from '../utils/publicAssets';

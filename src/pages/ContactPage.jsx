@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../components/AppLink';
 import Seo from '../components/Seo';
 import Contact from '../components/Contact';
 import { villes } from '../data/villes';

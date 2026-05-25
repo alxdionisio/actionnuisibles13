@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './AppLink';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { IconStars, IconArrowRight, IconPhone } from './Icons';
 import { track } from '../utils/tracking';

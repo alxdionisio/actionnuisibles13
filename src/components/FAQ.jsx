@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './AppLink';
 import { CtaArrowIcon } from './CtaArrowIcon';
 import { linkifyThematiques } from './LinkifyThematiques';
 import { useData } from '../context/DataContext';

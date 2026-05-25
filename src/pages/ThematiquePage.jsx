@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from '../components/AppLink';
 import Seo from '../components/Seo';
 import { linkifyThematiques } from '../components/LinkifyThematiques';
 import { thematiques, getThematiqueBySlug } from '../data/thematiques';

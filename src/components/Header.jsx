@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from './AppLink';
 import { IconPhone } from './Icons';
 import OptimizedImage from './OptimizedImage';
 import { logos } from '../utils/publicAssets';
@@ -10,8 +11,11 @@ function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  const isHome = location.pathname === '/';
-  const thematiqueMatch = location.pathname.match(/^\/thematique\/([^/]+)$/);
+  // Normalise le slash final : l'URL canonique est `/x/` (servie par GitHub Pages),
+  // mais on compare sans slash pour rester robuste quelle que soit la forme chargée.
+  const path = location.pathname.replace(/\/+$/, '') || '/';
+  const isHome = path === '/';
+  const thematiqueMatch = path.match(/^\/thematique\/([^/]+)$/);
   const thematique = thematiqueMatch ? getThematiqueBySlug(thematiqueMatch[1]) : null;
 
   return (
@@ -54,11 +58,11 @@ function Header() {
               <span className="header-logo-text">Action Nuisibles 13</span>
             </Link>
             <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
-              <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Accueil</Link></li>
-              <li><Link to="/a-propos" className={`nav-link ${location.pathname === '/a-propos' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>À propos</Link></li>
-              <li><Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Services</Link></li>
-              <li><Link to="/articles" className={`nav-link ${location.pathname === '/articles' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Articles</Link></li>
-              <li><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+              <li><Link to="/" className={`nav-link ${path === '/' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Accueil</Link></li>
+              <li><Link to="/a-propos" className={`nav-link ${path === '/a-propos' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>À propos</Link></li>
+              <li><Link to="/services" className={`nav-link ${path === '/services' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Services</Link></li>
+              <li><Link to="/articles" className={`nav-link ${path === '/articles' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Articles</Link></li>
+              <li><Link to="/contact" className={`nav-link ${path === '/contact' ? 'nav-link--active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
               <li>
                 <Link to="/contact" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>
                   Devis gratuit
