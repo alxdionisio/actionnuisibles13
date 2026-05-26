@@ -15,6 +15,22 @@ export default defineConfig({
       '/api': {
         target: `http://localhost:${process.env.ADMIN_PORT || 3001}`,
         changeOrigin: true,
+        // Le serveur admin est optionnel en dev : le front retombe sur les
+        // données statiques. On évite de spammer la console avec la stack
+        // ECONNREFUSED et on renvoie un 503 propre.
+        configure: (proxy) => {
+          let warned = false
+          proxy.on('error', (_err, _req, res) => {
+            if (!warned) {
+              console.warn('[vite] serveur admin (/api) non démarré — fallback données statiques. Lancer `npm run admin:dev` pour les données dynamiques.')
+              warned = true
+            }
+            if (res && !res.headersSent && typeof res.writeHead === 'function') {
+              res.writeHead(503, { 'Content-Type': 'application/json' })
+              res.end(JSON.stringify({ error: 'admin server offline' }))
+            }
+          })
+        },
       },
     },
   },

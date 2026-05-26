@@ -114,7 +114,7 @@ function Footer() {
             </nav>
             <p className="footer-credits">
               Créé par{' '}
-              <a href="https://www.bymodule.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.bymodule.io/" target="_blank" rel="noopener noreferrer">
                 Module
               </a>
             </p>
