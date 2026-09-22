@@ -106,6 +106,7 @@ const articleSlugs = extractSlugsFromFile('src/data/articles.js', /slug:\s*['"](
 const articleDates = extractArticleDates('src/data/articles.js');
 const serviceSlugs = extractSlugsFromFile('src/data/services.js', /slug:\s*['"]([^'"]+)['"]/);
 const villeSlugs = extractSlugsFromFile('src/data/villes.js', /slug:\s*['"]([^'"]+)['"]/);
+const croiseSlugs = extractSlugsFromFile('src/data/croises.js', /slug:\s*['"]([^'"]+)['"]/);
 const thematiqueTitles = extractSlugsFromFile('src/data/thematiques.js', /titleToSlug\s*\(\s*['"]([^'"]+)['"]\s*\)/);
 const thematiqueSlugs = thematiqueTitles.map((t) => slugify(t));
 
@@ -120,6 +121,7 @@ const urls = [
   ...serviceSlugs.map((slug) => ({ loc: toCanonicalLoc(`/services/${slug}`), priority: '0.9', changefreq: 'monthly', lastmod: TODAY })),
   ...villeSlugs.map((slug) => ({ loc: toCanonicalLoc(`/intervention/${slug}`), priority: '0.7', changefreq: 'monthly', lastmod: TODAY })),
   ...thematiqueSlugs.map((slug) => ({ loc: toCanonicalLoc(`/thematique/${slug}`), priority: '0.8', changefreq: 'monthly', lastmod: TODAY })),
+  ...croiseSlugs.map((slug) => ({ loc: toCanonicalLoc(`/${slug}`), priority: '0.7', changefreq: 'monthly', lastmod: TODAY })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

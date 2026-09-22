@@ -4,6 +4,7 @@ import { Link } from '../components/AppLink';
 import Seo from '../components/Seo';
 import { LinkifyThematiques } from '../components/LinkifyThematiques';
 import { villes, getVilleBySlug } from '../data/villes';
+import { croises } from '../data/croises';
 import { thematiques } from '../data/thematiques';
 import { SITE_URL, SITE_NAME, ORGANIZATION_ID } from '../utils/siteConfig';
 import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
@@ -35,6 +36,7 @@ function VillePage() {
   }
 
   const { name } = ville;
+  const croisesDeLaVille = croises.filter((c) => c.villeSlug === slug);
   const title = `Dératisation et désinsectisation à ${name}`;
   const description = `Action Nuisibles 13 intervient à ${name} et alentours : dératisation, désinsectisation, nids de guêpes et frelons, chenilles processionnaires. Lutte anti-nuisibles pour particuliers et professionnels. Devis gratuit, intervention rapide.`;
   const canonicalPath = `/intervention/${slug}`;
@@ -130,6 +132,21 @@ function VillePage() {
 
             {ville.context && (
               <p className="ville-context-local">{ville.context}</p>
+            )}
+
+            {/* Sans lien entrant, les pages croisées ne seraient atteignables que
+                par le sitemap : Google explore mal, et évalue mal, une page orpheline. */}
+            {croisesDeLaVille.length > 0 && (
+              <p className="ville-croises-liens">
+                Sujets traités en détail sur {name} :{' '}
+                {croisesDeLaVille.map((c, i) => (
+                  <React.Fragment key={c.slug}>
+                    {i > 0 && ', '}
+                    <Link to={`/${c.slug}`}>{c.nuisible.toLowerCase()}</Link>
+                  </React.Fragment>
+                ))}
+                .
+              </p>
             )}
 
             {/* Contenu propre à la commune, sur les villes réellement tenues.

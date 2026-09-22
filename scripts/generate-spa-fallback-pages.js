@@ -25,6 +25,7 @@ import {
   ADRESSE_LIGNE,
 } from '../src/data/entreprise.js';
 import { villes as villesData } from '../src/data/villes.js';
+import { croises } from '../src/data/croises.js';
 import {
   absoluteUrl as urlAbsolue,
   buildBreadcrumbList,
@@ -330,6 +331,14 @@ function renderVilleBody(v) {
       <h1>Dératisation et désinsectisation à ${escapeHtml(v.name)}</h1>
       <p>Action Nuisibles 13 intervient à ${escapeHtml(v.name)} et dans les Bouches-du-Rhône : dératisation, désinsectisation, destruction de nids de guêpes et frelons, traitement des chenilles processionnaires, élimination des punaises de lit.</p>
       ${v.context ? `<p>${escapeHtml(v.context)}</p>` : ''}
+      ${(() => {
+        const liens = croises.filter((c) => c.villeSlug === v.slug);
+        return liens.length
+          ? `<p>Sujets traités en détail sur ${escapeHtml(v.name)} : ${liens
+              .map((c) => `<a href="/${escapeHtml(c.slug)}/">${escapeHtml(c.nuisible.toLowerCase())}</a>`)
+              .join(', ')}.</p>`
+          : '';
+      })()}
       ${(v.sections || [])
         .map((s) => `<section><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.body)}</p></section>`)
         .join('\n      ')}
@@ -393,6 +402,20 @@ function renderMentionsLegalesBody() {
       ${lignes}
       <h2>Hébergement</h2>
       <p>GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis). Nom de domaine géré par OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p>
+    </article>`;
+}
+
+function renderCroiseBody(c) {
+  const sections = (c.sections || [])
+    .map((s) => `<section><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.body)}</p></section>`)
+    .join('\n      ');
+  return `<article>
+      <h1>${escapeHtml(c.title)}</h1>
+      <p>${escapeHtml(c.description)}</p>
+      ${sections}
+      <p>Voir aussi <a href="/thematique/${escapeHtml(c.thematiqueSlug)}/">${escapeHtml(c.nuisible)}</a>
+      et <a href="/intervention/${escapeHtml(c.villeSlug)}/">dératisation et désinsectisation à ${escapeHtml(c.ville)}</a>.</p>
+      <p>${escapeHtml(SITE_NAME)} — ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
 
@@ -598,6 +621,37 @@ for (const t of thematiques) {
         { name: 'Accueil', path: '/' },
         { name: 'Thématiques', path: '/' },
         { name: t.name, path: `/thematique/${t.slug}` },
+      ]),
+    ],
+  });
+}
+
+// Croisés nuisible × ville
+for (const c of croises) {
+  pages.push({
+    pathname: c.slug,
+    title: c.title,
+    description: c.description,
+    body: renderCroiseBody(c),
+    schemas: [
+      ORGANIZATION_SCHEMA,
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: c.title,
+        description: c.description,
+        serviceType: c.nuisible,
+        provider: { '@id': ORGANIZATION_ID },
+        areaServed: {
+          '@type': 'City',
+          name: c.ville,
+          containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+        },
+      },
+      breadcrumbSchema([
+        { name: 'Accueil', path: '/' },
+        { name: c.ville, path: `/intervention/${c.villeSlug}` },
+        { name: c.nuisible, path: `/${c.slug}` },
       ]),
     ],
   });
