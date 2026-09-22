@@ -10,37 +10,31 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+// Source unique de l'identité : le même objet que celui servi par le runtime React.
+// siteConfig.js n'est PAS importable ici (il utilise import.meta.env, undefined sous Node).
+import {
+  CANONICAL_BASE,
+  SITE_NAME,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  ORGANIZATION_ID,
+  ORGANIZATION as ORGANIZATION_SCHEMA,
+  WEBSITE as WEBSITE_SCHEMA,
+  ENTREPRISE,
+  ADRESSE_LIGNE,
+} from '../src/data/entreprise.js';
+import { villes as villesData } from '../src/data/villes.js';
+import {
+  absoluteUrl as urlAbsolue,
+  buildBreadcrumbList,
+  parseFrenchDateToIso,
+} from '../src/utils/structuredData.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const distDir = path.join(root, 'dist');
 
-const CANONICAL_BASE = 'https://www.actionnuisibles13.com';
-const SITE_NAME = 'Action Nuisibles 13';
-const DEFAULT_DESCRIPTION =
-  "Dératisation, désinsectisation et lutte anti-nuisibles dans les Bouches-du-Rhône. Solutions efficaces et écologiques pour particuliers et professionnels.";
-const ORG_LOGO = `${CANONICAL_BASE}/action-nuisibles-13-noir.png`;
-const ORGANIZATION_ID = `${CANONICAL_BASE}/#organization`;
-const WEBSITE_ID = `${CANONICAL_BASE}/#website`;
-
-const FRENCH_MONTHS = {
-  janv: '01', jan: '01', fevr: '02', fev: '02', 'févr': '02', mars: '03',
-  avr: '04', mai: '05', juin: '06', juil: '07', aout: '08', 'août': '08',
-  sept: '09', oct: '10', nov: '11', dec: '12', 'déc': '12',
-};
-
-function parseFrenchDateToIso(dateLabel) {
-  if (!dateLabel) return undefined;
-  const trimmed = String(dateLabel).trim();
-  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return trimmed;
-  const match = trimmed.match(/^(\d{1,2})\s+([A-Za-zÀ-ÿ.]+)\s+(\d{4})$/);
-  if (!match) return undefined;
-  const day = match[1].padStart(2, '0');
-  const monthKey = match[2].toLowerCase().replace(/\./g, '');
-  const month = FRENCH_MONTHS[monthKey] || FRENCH_MONTHS[monthKey.slice(0, 4)];
-  if (!month) return undefined;
-  return `${match[3]}-${month}-${day}`;
-}
+const ORG_LOGO = DEFAULT_OG_IMAGE;
 
 function slugify(text) {
   return text
@@ -77,9 +71,7 @@ function jsonLdInline(obj) {
 }
 
 function absoluteUrl(pathname) {
-  if (!pathname || pathname === '/') return `${CANONICAL_BASE}/`;
-  const normalized = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  return `${CANONICAL_BASE}${normalized.endsWith('/') ? normalized : `${normalized}/`}`;
+  return urlAbsolue(CANONICAL_BASE, pathname);
 }
 
 // ============================================================
@@ -131,21 +123,11 @@ function parseArticles() {
   return articles;
 }
 
+// villes.js est un module ESM pur : Node l'importe directement. L'ancienne regex
+// exigeait une accolade fermante juste après `context` et devenait imprévisible
+// dès qu'une ville portait un champ supplémentaire (sections).
 function parseVilles() {
-  const src = readFile('src/data/villes.js');
-  const villes = [];
-  const re = /\{\s*name:\s*['"]([^'"]+)['"],\s*slug:\s*['"]([^'"]+)['"],(?:\s*lat:\s*([\d.]+),\s*lng:\s*([\d.]+),)?(?:\s*context:\s*['"`]([\s\S]*?)['"`],)?\s*\}/g;
-  let m;
-  while ((m = re.exec(src)) !== null) {
-    villes.push({
-      name: m[1],
-      slug: m[2],
-      lat: m[3] ? Number(m[3]) : null,
-      lng: m[4] ? Number(m[4]) : null,
-      context: m[5] || '',
-    });
-  }
-  return villes;
+  return villesData;
 }
 
 function parseServices() {
@@ -193,67 +175,13 @@ function parseFaqItems() {
 // Schemas Schema.org
 // ============================================================
 
-const ORGANIZATION_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': ['LocalBusiness', 'PestControlService'],
-  '@id': ORGANIZATION_ID,
-  name: SITE_NAME,
-  alternateName: 'Action Nuisibles Bouches-du-Rhône',
-  description: DEFAULT_DESCRIPTION,
-  url: `${CANONICAL_BASE}/`,
-  telephone: '+33759697355',
-  email: 'contact@actionnuisibles13.com',
-  image: ORG_LOGO,
-  logo: { '@type': 'ImageObject', url: ORG_LOGO, width: 300, height: 100 },
-  address: {
-    '@type': 'PostalAddress',
-    addressRegion: 'Bouches-du-Rhône',
-    addressCountry: 'FR',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 43.3, longitude: 5.2 },
-  areaServed: [
-    { '@type': 'City', name: 'Marseille' },
-    { '@type': 'City', name: 'Martigues' },
-    { '@type': 'City', name: 'Vitrolles' },
-    { '@type': 'City', name: 'Aix-en-Provence' },
-    { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
-  ],
-  serviceType: [
-    'Dératisation', 'Désinsectisation', 'Destruction nid de guêpes',
-    'Destruction nid de frelons', 'Traitement chenilles processionnaires',
-    'Élimination punaises de lit', 'Traitement cafards', 'Traitement fourmis',
-  ],
-  priceRange: '€€',
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '19:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '17:00' },
-  ],
-  // aggregateRating retiré : Google n'accepte plus les notes self-serving sur
-  // LocalBusiness depuis 2019. Voir src/utils/siteConfig.js pour le détail.
-};
-
-const WEBSITE_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': WEBSITE_ID,
-  url: `${CANONICAL_BASE}/`,
-  name: SITE_NAME,
-  description: DEFAULT_DESCRIPTION,
-  inLanguage: 'fr-FR',
-  publisher: { '@id': ORGANIZATION_ID },
-};
+// ORGANIZATION_SCHEMA et WEBSITE_SCHEMA sont importés depuis src/data/entreprise.js :
+// le HTML statique et le JSON-LD réinjecté par Seo.jsx décrivent ainsi le même @id
+// avec exactement le même objet. Toute divergence future signifierait qu'une copie
+// a été recréée quelque part.
 
 function breadcrumbSchema(items) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((it, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: it.name,
-      item: absoluteUrl(it.path),
-    })),
-  };
+  return buildBreadcrumbList(items, CANONICAL_BASE);
 }
 
 function articleSchema({ title, slug, date, category, introParagraph }) {
@@ -401,7 +329,10 @@ function renderVilleBody(v) {
       <h1>Dératisation et désinsectisation à ${escapeHtml(v.name)}</h1>
       <p>Action Nuisibles 13 intervient à ${escapeHtml(v.name)} et dans les Bouches-du-Rhône : dératisation, désinsectisation, destruction de nids de guêpes et frelons, traitement des chenilles processionnaires, élimination des punaises de lit.</p>
       ${v.context ? `<p>${escapeHtml(v.context)}</p>` : ''}
-      <p>Téléphone : +33 7 59 69 73 55 — Email : contact@actionnuisibles13.com — Devis gratuit.</p>
+      ${(v.sections || [])
+        .map((s) => `<section><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.body)}</p></section>`)
+        .join('\n      ')}
+      <p>${escapeHtml(SITE_NAME)} — ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)} — Email : ${escapeHtml(ENTREPRISE.email)} — Devis gratuit.</p>
     </article>`;
 }
 
@@ -419,7 +350,7 @@ function renderThematiqueBody(t) {
   return `<article>
       <h1>${escapeHtml(t.title)}</h1>
       <p>${escapeHtml(t.description)}</p>
-      <p>Action Nuisibles 13 intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. Téléphone : +33 7 59 69 73 55.</p>
+      <p>${escapeHtml(SITE_NAME)} intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. ${escapeHtml(ADRESSE_LIGNE)} — Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
 
@@ -427,21 +358,56 @@ function renderServiceBody(s) {
   return `<article>
       <h1>${escapeHtml(s.title)}</h1>
       <p>${escapeHtml(s.description)}</p>
-      <p>Service proposé par Action Nuisibles 13 dans les Bouches-du-Rhône. Contact : +33 7 59 69 73 55 — contact@actionnuisibles13.com.</p>
+      <p>Service proposé par ${escapeHtml(SITE_NAME)} dans les Bouches-du-Rhône. ${escapeHtml(ADRESSE_LIGNE)} — Contact : ${escapeHtml(ENTREPRISE.telephoneAffiche)} — ${escapeHtml(ENTREPRISE.email)}.</p>
+    </article>`;
+}
+
+/**
+ * Corps statique des mentions légales. C'est la page qu'un moteur consulte pour
+ * rattacher le site à une entreprise réelle : sans JS elle était entièrement vide.
+ * Même discipline qu'ailleurs — un champ non renseigné ne produit aucune ligne.
+ */
+function renderMentionsLegalesBody() {
+  const e = ENTREPRISE;
+  const lignes = [
+    ["Nom de l'éditeur", e.raisonSociale || SITE_NAME],
+    ['Nom commercial', e.raisonSociale && e.raisonSociale !== SITE_NAME ? SITE_NAME : ''],
+    ['Forme juridique', [e.formeJuridique, e.capitalSocial && `au capital de ${e.capitalSocial}`].filter(Boolean).join(' ')],
+    ['Siège social', `${ADRESSE_LIGNE}, France`],
+    ['SIRET', e.siret],
+    ['RCS', e.rcsVille ? `RCS ${e.rcsVille}` : ''],
+    ['TVA', e.tvaIntracom || (e.tvaFranchiseEnBase ? 'TVA non applicable, article 293 B du CGI' : '')],
+    ['Directeur de la publication', e.directeurPublication],
+    ['Agrément Certibiocide', e.certibiocide],
+    ['Téléphone', e.telephoneAffiche],
+    ['Email', e.email],
+  ]
+    .filter(([, valeur]) => valeur)
+    .map(([label, valeur]) => `<p><strong>${escapeHtml(label)} :</strong> ${escapeHtml(valeur)}</p>`)
+    .join('\n      ');
+
+  return `<article>
+      <h1>Mentions légales</h1>
+      <h2>Éditeur du site</h2>
+      ${lignes}
+      <h2>Hébergement</h2>
+      <p>GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis). Nom de domaine géré par OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.</p>
     </article>`;
 }
 
 function injectBody(html, bodyContent) {
   // Injecte le contenu dans le <body>, AVANT <div id="root"></div>.
-  // Le contenu est dans un <div> avec aria-hidden et display:none pour ne pas perturber l'hydratation React,
-  // mais reste lisible par les crawlers IA qui n'exécutent pas JS.
+  // Le contenu est dans un <noscript> : présent dans les octets servis aux crawlers IA
+  // qui n'exécutent pas JS, réellement affiché aux visiteurs sans JS, et neutre pour
+  // l'hydratation React. L'ancienne forme (div aria-hidden + display:none) portait la
+  // signature d'un texte caché aux moteurs, sur du contenu pourtant légitime.
   if (!bodyContent) return html;
   const marker = '<div id="root">';
   const idx = html.indexOf(marker);
   if (idx === -1) return html;
   const before = html.slice(0, idx);
   const after = html.slice(idx);
-  return `${before}<div id="prerender-content" aria-hidden="true" style="display:none">${bodyContent}</div>\n    ${after}`;
+  return `${before}<noscript>${bodyContent}</noscript>\n    ${after}`;
 }
 
 function injectHead(indexHtml, headContent) {
@@ -507,7 +473,10 @@ const pages = [];
 // Pages statiques
 pages.push({
   pathname: '',
-  title: 'Action Nuisibles 13 - Dératisation & désinsectisation Bouches-du-Rhône',
+  // Doit rester identique au title passé par src/pages/HomePage.jsx : renderHead
+  // ajoute « | SITE_NAME », ce qui dédoublait la marque quand on reprenait
+  // DEFAULT_TITLE (qui la contient déjà) ici.
+  title: 'Dératiseur & désinsectisation Bouches-du-Rhône (13)',
   description: DEFAULT_DESCRIPTION,
   schemas: [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA],
 });
@@ -544,8 +513,9 @@ pages.push({
 pages.push({
   pathname: 'mentions-legales',
   title: 'Mentions légales',
-  description: "Mentions légales du site Action Nuisibles 13 : éditeur, hébergeur, propriété intellectuelle.",
+  description: "Mentions légales d'Action Nuisibles 13 : éditeur, siège social à Istres, identifiants d'entreprise, hébergeur.",
   schemas: [ORGANIZATION_SCHEMA, breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'Mentions légales', path: '/mentions-legales' }])],
+  body: renderMentionsLegalesBody(),
 });
 pages.push({
   pathname: 'politique-confidentialite',

@@ -5,6 +5,7 @@ import { CtaArrowIcon } from './CtaArrowIcon';
 import { track } from '../utils/tracking';
 import { logos } from '../utils/publicAssets';
 import { thematiques } from '../data/thematiques';
+import { ENTREPRISE, ADRESSE_LIGNE, MAPS_URL, HORAIRES } from '../data/entreprise';
 
 function Footer() {
   return (
@@ -75,30 +76,34 @@ function Footer() {
                   <div className="footer-contact-item">
                     <ContactIcon type="pin" />
                     <a
-                      href="https://maps.google.com"
+                      href={MAPS_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => track('map_click', { from: 'footer' })}
                     >
-                      Bouches-du-Rhône
+                      {ADRESSE_LIGNE}
                     </a>
+                  </div>
+                  <div className="footer-contact-item">
+                    <ContactIcon type="clock" />
+                    <span>{HORAIRES.map((h) => h.label).join(' · ')}</span>
                   </div>
                   <div className="footer-contact-item">
                     <ContactIcon type="mail" />
                     <a
-                      href="mailto:contact@actionnuisibles13.com"
+                      href={`mailto:${ENTREPRISE.email}`}
                       onClick={() => track('email_click', { from: 'footer' })}
                     >
-                      contact@actionnuisibles13.com
+                      {ENTREPRISE.email}
                     </a>
                   </div>
                   <div className="footer-contact-item">
                     <ContactIcon type="phone" />
                     <a
-                      href="tel:+33759697355"
+                      href={`tel:${ENTREPRISE.telephone}`}
                       onClick={() => track('phone_click', { from: 'footer' })}
                     >
-                      +33 7 59 69 73 55
+                      {ENTREPRISE.telephoneAffiche}
                     </a>
                   </div>
                 </nav>

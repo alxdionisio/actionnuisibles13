@@ -87,8 +87,8 @@ function ThematiquePage() {
               <div className="page-hero-content">
                 <h1 className="page-hero-title">{title}</h1>
                 <p className="page-hero-paragraph">
-                  Intervention contre les {name.toLowerCase()} dans les Bouches-du-Rhône. Particuliers et
-                  professionnels. Devis gratuit, intervention rapide.
+                  Intervention contre les {name.toLowerCase()} depuis Istres, sur tout le département.
+                  Particuliers et professionnels. Devis gratuit, intervention rapide.
                 </p>
               </div>
               <Link to="/contact" className="page-hero-btn page-hero-btn--yellow cta-yellow-arrow-btn">
