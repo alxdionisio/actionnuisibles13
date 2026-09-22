@@ -1,6 +1,8 @@
 import React from 'react';
 import Seo from '../components/Seo';
 import { ENTREPRISE, ADRESSE_LIGNE, SITE_NAME } from '../data/entreprise';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 export default function PolitiqueConfidentialitePage() {
   return (
@@ -9,6 +11,7 @@ export default function PolitiqueConfidentialitePage() {
         title="Politique de confidentialité"
         description="Politique de confidentialité et utilisation des cookies d'Action Nuisibles 13 - Protection des données personnelles."
         canonicalPath="/politique-confidentialite"
+        structuredData={pageBreadcrumb('Politique de confidentialité', '/politique-confidentialite', SITE_URL)}
       />
       <main>
         <section className="section legal-page-section">

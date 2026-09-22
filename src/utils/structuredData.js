@@ -31,6 +31,17 @@ export function absoluteUrl(siteUrl, pathname = '/') {
   return `${base}${chemin.endsWith('/') ? chemin : `${chemin}/`}${suffixe}`;
 }
 
+/**
+ * Fil d'Ariane à deux niveaux (Accueil → page), pour les pages statiques.
+ * Seo.jsx supprime le JSON-LD prérendu à l'hydratation : une page qui ne
+ * réémet pas son BreadcrumbList le perd définitivement pour Googlebot, qui
+ * exécute le JS. Les libellés doivent rester identiques à ceux déclarés dans
+ * scripts/generate-spa-fallback-pages.js.
+ */
+export function pageBreadcrumb(name, path, siteUrl) {
+  return buildBreadcrumbList([{ name: 'Accueil', path: '/' }, { name, path }], siteUrl);
+}
+
 export function buildBreadcrumbList(items, siteUrl) {
   return {
     '@context': 'https://schema.org',

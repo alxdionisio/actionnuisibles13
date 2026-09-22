@@ -6,6 +6,8 @@ import { villes } from '../data/villes';
 import { ADRESSE_LIGNE, MAPS_URL, SITE_NAME } from '../data/entreprise';
 import { useCookieConsent } from '../context/CookieConsent';
 import { track } from '../utils/tracking';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 function ContactPage() {
   const { consent } = useCookieConsent();
@@ -16,6 +18,7 @@ function ContactPage() {
         title="Contact"
         description="Contactez Action Nuisibles 13 pour une intervention anti-nuisibles dans les Bouches-du-Rhône. Devis gratuit."
         canonicalPath="/contact"
+        structuredData={pageBreadcrumb('Contact', '/contact', SITE_URL)}
       />
       <main>
         <section className="page-hero page-hero--dark page-hero--minimal">

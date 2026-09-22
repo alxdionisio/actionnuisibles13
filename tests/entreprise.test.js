@@ -65,4 +65,19 @@ if (ENTREPRISE.tvaFranchiseEnBase && !ENTREPRISE.tvaIntracom) {
   ENTREPRISE.geo = original;
 }
 
+// Seo.jsx supprime le JSON-LD prérendu à l'hydratation : le fil d'Ariane réémis
+// par chaque page statique doit reproduire exactement celui du prerender, sinon
+// Googlebot — qui exécute le JS — ne voit plus rien.
+{
+  const { pageBreadcrumb } = await import('../src/utils/structuredData.js');
+  const { CANONICAL_BASE } = await import('../src/data/entreprise.js');
+  const fil = pageBreadcrumb('Contact', '/contact', CANONICAL_BASE);
+
+  assert.equal(fil['@type'], 'BreadcrumbList');
+  assert.equal(fil.itemListElement.length, 2);
+  assert.equal(fil.itemListElement[0].item, `${CANONICAL_BASE}/`);
+  // Le slash final s'applique au chemin, jamais après un fragment.
+  assert.equal(fil.itemListElement[1].item, `${CANONICAL_BASE}/contact/`);
+}
+
 console.log('entreprise.test.js : OK');

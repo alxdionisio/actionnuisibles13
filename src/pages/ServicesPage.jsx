@@ -6,6 +6,8 @@ import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import Contact from '../components/Contact';
 import { useData } from '../context/DataContext';
 import { thematiques } from '../data/thematiques';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 import { track } from '../utils/tracking';
 
 function ServicesPage() {
@@ -16,6 +18,7 @@ function ServicesPage() {
         title="Services"
         description="Services de lutte anti-nuisibles : particuliers, entreprises et urgences dans les Bouches-du-Rhône. Dératisation, désinsectisation, guêpes, frelons, chenilles processionnaires."
         canonicalPath="/services"
+        structuredData={pageBreadcrumb('Services', '/services', SITE_URL)}
       />
       <main>
         {/* Hero */}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Seo from '../components/Seo';
 import { ENTREPRISE, ADRESSE_LIGNE, SITE_NAME } from '../data/entreprise';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 /**
  * Une ligne de mention légale. Un champ non renseigné dans src/data/entreprise.js
@@ -31,6 +33,7 @@ export default function MentionsLegalesPage() {
         title="Mentions légales"
         description="Mentions légales du site Action Nuisibles 13 - Éditeur, siège social, hébergement et informations juridiques."
         canonicalPath="/mentions-legales"
+        structuredData={pageBreadcrumb('Mentions légales', '/mentions-legales', SITE_URL)}
       />
       <main>
         <section className="section legal-page-section">
