@@ -144,4 +144,111 @@ export const villesSections = {
         "L'extension résidentielle s'est faite par tranches successives sur d'anciennes terres agricoles, en limite des coussouls de la Crau. Les chantiers y jouent un rôle sous-estimé : terrassements, création de voirie et raccordement des réseaux chassent les rongeurs déjà présents dans les parcelles voisines, qui se reportent sur les maisons livrées les premières. Une construction récente et bien isolée n'est donc pas à l'abri dès sa première année d'occupation. Les fourmis, de leur côté, profitent des remblais encore meubles et des joints de terrasse fraîchement réalisés pour s'établir sous les aménagements extérieurs.",
     },
   ],
+  'carro': [
+    {
+      title: 'La vente de poisson à quai et ses rebuts',
+      body:
+        "Les bateaux de Carro rentrent le matin et écoulent leur pêche depuis le quai, devant des étals montés pour quelques heures. L'activité laisse derrière elle un volume modeste mais parfaitement régulier de déchets : écailles raclées, glace fondue, caisses rincées à grande eau. Cette régularité suffit à fixer une population de rongeurs dans les enrochements du môle et sous les dalles du terre-plein, où ils vivent à demeure sans dépendre du bâti. Ils n'entrent dans les locaux qu'à la nuit, ou lorsque les arrivages s'espacent. Les commerces alimentaires installés autour du bassin sont donc les premiers à constater des passages, alors même que leur propre tenue est sans reproche : le foyer se situe dehors, sur des emprises dont ils ne disposent pas. Traiter un seul local n'y change rien tant que le point de nourrissage extérieur subsiste.",
+    },
+    {
+      title: 'Les remises à matériel de pêche',
+      body:
+        "Le pourtour du port compte quantité de constructions basses où sont entreposés filets, casiers, moteurs et bidons, et qui ne s'ouvrent que quelques jours par mois. Les filets roulés, les cordages et les textiles usagés y fournissent un matériau de nidification très recherché par les souris ; les résidus organiques restés sur les engins entretiennent de leur côté une odeur qui guide les rongeurs vers l'intérieur. L'encombrement propre à ces locaux rend le constat difficile, crottes et traces de rongement se confondant avec les débris de matériel. Une inspection qui ait du sens suppose donc d'en sortir une partie du contenu, plutôt que d'examiner l'endroit tel qu'il se présente.",
+    },
+    {
+      title: "Le vent comme paramètre d'intervention",
+      body:
+        "Le plan d'eau de Carro est exposé plein ouest et reçoit le mistral sans obstacle, ce qui en fait un site de planche à voile fréquenté toute l'année. Cette exposition pèse directement sur les opérations menées dehors : au-delà d'une certaine force, une pulvérisation perd toute précision et dérive hors de la zone visée, et approcher un nid en hauteur depuis une échelle exposée devient déraisonnable. Sur cette portion de côte, le créneau se choisit en fonction de la météo autant que de la disponibilité des lieux, et un report pour cause de vent n'a rien d'exceptionnel.",
+    },
+  ],
+  'la-couronne': [
+    {
+      title: 'Un hébergement de plein air qui se remplit puis se vide',
+      body:
+        "La Couronne dispose d'une capacité d'accueil touristique sans rapport avec sa population permanente, terrain de camping compris. Un tel ensemble se comporte comme un village dont l'occupation bascule deux fois par an. En pleine saison, sanitaires, laveries et points de collecte fonctionnent sans interruption et dispersent la ressource alimentaire sur toute la surface du terrain, ce qui prive un appâtage périphérique d'une bonne part de son intérêt tant que la fréquentation se maintient. À la fermeture, le mouvement s'inverse : hébergements légers et bungalows demeurent clos plusieurs mois, avec leurs coffrages, leurs vides techniques et leur literie remisée, conditions dans lesquelles souris et fourmis s'établissent sans être dérangées. C'est à la remise en service, et non en cours d'exploitation, que l'état réel du parc se découvre.",
+    },
+    {
+      title: 'Les criques, les goélands et ce qu\'ils laissent',
+      body:
+        "Le littoral communal enchaîne les anses, entre dalles rocheuses et pelouses sèches, avec une fréquentation concentrée sur quelques heures d'après-midi. Le goéland leucophée y tient un rôle qu'on lui attribue rarement : il éventre les sacs déposés à côté des conteneurs et en répand le contenu sur plusieurs mètres. Ce qu'il abandonne alimente ensuite, la nuit venue, les rongeurs logés dans la végétation basse et les murets qui bordent les accès. Agir sur le rongeur sans remédier au dépôt des sacs revient à s'occuper du second maillon en laissant le premier intact.",
+    },
+    {
+      title: 'Le plateau du Cap et les anciennes carrières',
+      body:
+        "Le plateau qui porte le phare est creusé de carrières de pierre dont l'exploitation remonte à l'Antiquité. Fronts de taille, blocs délaissés et murets montés à sec y multiplient les cavités sèches et abritées, que les guêpes colonisent en nombre. Un nid logé dans une fissure de roche ne se repère qu'au trajet répété des ouvrières vers un point fixe, et sa profondeur demeure inconnue tant que l'entrée n'a pas été approchée. Les propriétés bâties en lisière de ces terrains subissent le même phénomène dans leurs clôtures de pierre.",
+    },
+  ],
+  'sausset-les-pins': [
+    {
+      title: "Une bande étroite entre la route et l'eau",
+      body:
+        "L'essentiel de l'activité de Sausset tient sur une seule bande : commerces, terrasses et port de plaisance s'alignent entre la voie littorale et le rivage. Cette compression produit des effets concrets. Les réserves des établissements sont reléguées en arrière-boutique aveugle ou en sous-sol, fréquemment chauffées et peu ventilées, et le local à déchets se partage entre plusieurs enseignes. Une arrivée de blattes germaniques par un lot de cartons devient alors, en quelques semaines, l'affaire de tout le groupe de commerces. L'été, la difficulté se double du public : les terrasses restent occupées de la mi-journée jusque tard le soir, et une opération ne peut se caler qu'en dehors de ces plages horaires.",
+    },
+    {
+      title: 'Des pins mûrs au milieu des parcelles habitées',
+      body:
+        "Les sujets qui ont donné son nom à la commune sont pour beaucoup des arbres anciens et hauts, plantés à l'intérieur de terrains bâtis depuis. Quand la processionnaire s'y installe, la question posée n'est pas d'abord technique : l'arbre porteur du nid n'appartient presque jamais à celui qui en subit les retombées, les branches surplombant la propriété voisine, un accès commun ou une aire de stationnement. L'accord du propriétaire de l'arbre conditionne toute opération, et l'hiver s'y prête mieux que le printemps : les cocons se voient et se comptent encore, alors qu'après la descente des chenilles il ne reste plus rien à montrer.",
+    },
+    {
+      title: 'Restanques, murs de soutènement et remblais',
+      body:
+        "Les quartiers situés au-dessus de la route s'étagent sur des pentes retenues par des ouvrages de soutènement et d'anciennes restanques. Derrière ces murs, le remblai n'est jamais compact : barbacanes, joints ouverts et vides de construction offrent aux rats un réseau de galeries protégé, invisible depuis la surface, dont les sorties débouchent au ras des terrasses. On y observe également des colonies de fourmis dans les joints de dallage exposés au sud. L'accès à ces parcelles emprunte souvent un escalier privé depuis la voie publique, ce qui écarte tout matériel roulant et détermine la façon dont la venue se prépare.",
+    },
+  ],
+  'carry-le-rouet': [
+    {
+      title: "Un port dont l'activité s'arrête puis redémarre",
+      body:
+        "Les établissements qui bordent le bassin connaissent un écart d'activité considérable entre les mois creux et la haute saison. Une réserve laissée close après le dernier service de l'automne conserve des denrées sèches, des emballages et une chaleur résiduelle suffisante : la population de blattes ou de souris qui s'y développe pendant l'arrêt ne rencontre plus personne pour la constater. Elle se manifeste à la réouverture, au plus mauvais moment, quand la remise en route laisse peu de marge. La reprise des livraisons ajoute son propre risque, chaque palette de cartons constituant un vecteur d'introduction classique. Une manifestation hivernale consacrée à l'oursin ramène par ailleurs une forte affluence en février, au cœur de la période réputée calme.",
+    },
+    {
+      title: 'Des villas bâties au-dessus des calanques',
+      body:
+        "Les constructions qui dominent les criques sont fréquemment adossées à la pente, avec terrasse en encorbellement, sous-face de balcon accessible seulement par l'intérieur et jardin réduit à quelques paliers. Les guêpes exploitent ces sous-faces et les caissons techniques, où le nid grossit loin des regards. La difficulté tient au recul : on opère depuis un balcon qui n'en offre aucun, au-dessus du vide, et l'emplacement commande le mode opératoire bien davantage que l'espèce en cause. La desserte de ces quartiers par des voies en lacets, sans possibilité de s'arrêter devant la plupart des portails, s'ajoute à la contrainte.",
+    },
+    {
+      title: 'Les logements ouverts quelques semaines par an',
+      body:
+        "Une part notable du parc n'est occupée que par intermittence, volets clos le reste du temps. Deux conséquences reviennent constamment. Les siphons s'assèchent faute d'usage et laissent un passage direct depuis le réseau d'évacuation vers la pièce, ce qui explique des apparitions d'insectes dans des habitations pourtant vides et propres. Quant aux coffres de volets roulants maintenus baissés, ils forment un volume clos et tiède que les guêpes colonisent au printemps : la colonie se découvre des mois plus tard, à la première remontée du tablier. Un contrôle avant l'arrivée des occupants vaut mieux qu'un appel dans l'urgence le jour de leur installation.",
+    },
+    {
+      title: 'À quelques mètres du milieu marin',
+      body:
+        "Certaines parcelles se trouvent à moins de dix mètres du rivage, sur une côte placée en zone de protection marine. Cette proximité contraint la pose de tout dispositif extérieur : un poste doit être fixé, fermé, tenu à l'écart des cheminements de ruissellement, et ne peut rester sur un replat rocheux que balaie le premier coup de mer. La réponse penche donc vers l'exclusion — grilles, bas de portes, obturation des fourreaux — plus que vers un équipement laissé dehors.",
+    },
+  ],
+  'ensues-la-redonne': [
+    {
+      title: 'Des hameaux au fond des calanques',
+      body:
+        "La commune ne se résume pas à son village : une partie des habitations se répartit dans les calanques de La Redonne et de Méjean, desservies par des routes en lacets où deux véhicules se croisent difficilement. En bas, les places sont comptées et le dernier tronçon se parcourt couramment à pied, par des escaliers et des sentiers. Tout le reste en découle : l'équipement se limite à ce qui se porte, un échafaudage ou une nacelle sont hors de question, et enchaîner plusieurs adresses dans la même demi-journée relève de l'illusion. Le trajet se prépare, le point de rencontre se convient à l'avance, et l'afflux estival sur ces accès peut imposer une attente que rien ne permet d'anticiper.",
+    },
+    {
+      title: 'La garrigue, le débroussaillement et les nids au sol',
+      body:
+        "Le bourg et les quartiers du plateau sont cernés de garrigue, ce qui place la plupart des propriétés sous obligation de débroussailler leurs abords. L'opération crée chaque année une situation dangereuse et sous-estimée : guêpes et frelons nichant en cavité au sol ou sous un tas de branches restent invisibles jusqu'au moment où la débroussailleuse atteint le nid, et la colonie sort d'un coup sur quelqu'un qui ne peut ni reculer ni se protéger. Parcourir le terrain au préalable, en observant le va-et-vient des insectes autour des points bas avant d'engager la machine, réduit sensiblement ce risque.",
+    },
+    {
+      title: 'Bâti isolé, équipements autonomes et fin de journée',
+      body:
+        "Les constructions éloignées du bourg fonctionnent souvent avec leurs propres installations : assainissement non collectif, citerne, local de filtration de piscine, groupe de pompage. Ces ouvrages enterrés ou semi-enterrés sont tièdes, humides et rarement ouverts, donc favorables aux rongeurs, qui s'en servent de base avant de gagner la maison par les fourreaux de canalisation. Une contrainte d'horaire s'y ajoute : neutraliser un nid vaut mieux une fois les ouvrières rentrées, en fin de journée, mais ces voies d'accès ne sont pas éclairées et deviennent franchement mauvaises la nuit tombée. La fenêtre utile est donc courte.",
+    },
+  ],
+  'sainte-croix-saint-pierre-les-martigues': [
+    {
+      title: 'Un hameau qui a gardé ses dépendances',
+      body:
+        "Saint-Pierre-les-Martigues aligne quelques dizaines de maisons basses autour de son église, au milieu de terres restées cultivées ou pâturées. Ce sont les annexes, davantage que les habitations, qui commandent la situation : remises, hangars ouverts, réserves de grain, et surtout les poulaillers familiaux. Un poulailler fournit à lui seul une nourriture disponible en permanence, de l'eau et un abri, ce qui suffit à installer durablement une colonie de rats à quelques mètres de la maison. C'est pourtant rarement l'élément signalé au moment de l'appel, alors qu'aucune action portant sur le logement ne tiendra dans la durée tant qu'il n'est pas repris : grillage enterré, mangeoire relevée, granulés en contenant rigide.",
+    },
+    {
+      title: 'De grandes parcelles et un voisinage déterminant',
+      body:
+        "Les terrains sont vastes, séparés par des haies et des murets plutôt que par des clôtures étanches, et comportent presque toujours un tas de bois, un composteur ou un véhicule remisé. Sur ce genre de propriété, le rat n'a aucune raison d'entrer : il vit dehors toute l'année et n'utilise les bâtiments qu'en appoint, ce qui modifie la logique même du traitement. L'efficacité se joue alors à l'échelle de plusieurs parcelles contiguës, non d'une seule. Un terrain correctement assaini face à un voisin laissé en l'état voit sa population se reconstituer en une saison, et le sujet se règle plus facilement entre riverains avant que quiconque ne se sente mis en cause.",
+    },
+    {
+      title: 'Une adresse qui se trouve mal',
+      body:
+        "Sainte-Croix et Saint-Pierre relèvent administrativement de Martigues, dont le centre se situe à plusieurs kilomètres. Les points d'adresse de ces écarts sont mal restitués par les applications de navigation : chemins privés dépourvus de nom, numérotation discontinue, lieux-dits que l'on retrouve ailleurs dans le département. Un rendez-vous convenu sur la seule adresse postale se solde régulièrement par un détour de vingt minutes. Mieux vaut s'entendre sur un repère visible depuis la voie — un portail, un croisement, un bâtiment identifiable — et préciser d'emblée si la fin du parcours emprunte une piste que tout véhicule ne peut pas prendre.",
+    },
+  ],
 };
