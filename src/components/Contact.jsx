@@ -4,6 +4,7 @@ import { useForm } from '@formspree/react';
 import { IconPin, IconMail, IconPhone } from './Icons';
 import { track } from '../utils/tracking';
 import { villes } from '../data/villes';
+import { ENTREPRISE, ADRESSE_LIGNE } from '../data/entreprise';
 
 const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID || 'mvzbkezg';
 
@@ -66,7 +67,7 @@ function ContactFormLayout({ state, handleSubmit }) {
                     <IconPin size={20} />
                   </span>
                   <div className="contact-link-text">
-                    <p className="contact-location-label">Bouches-du-Rhône</p>
+                    <p className="contact-location-label">{ADRESSE_LIGNE}</p>
                     <nav className="contact-villes-list" aria-label="Villes d'intervention">
                       {villes.map((ville) => (
                         <Link
@@ -86,10 +87,10 @@ function ContactFormLayout({ state, handleSubmit }) {
                   </span>
                   <p className="contact-link-text">
                     <a
-                      href="mailto:contact@actionnuisibles13.com"
+                      href={`mailto:${ENTREPRISE.email}`}
                       onClick={() => track('email_click', { from: 'contact' })}
                     >
-                      contact@actionnuisibles13.com
+                      {ENTREPRISE.email}
                     </a>
                   </p>
                 </div>
@@ -99,10 +100,10 @@ function ContactFormLayout({ state, handleSubmit }) {
                   </span>
                   <p className="contact-link-text">
                     <a
-                      href="tel:+33759697355"
+                      href={`tel:${ENTREPRISE.telephone}`}
                       onClick={() => track('phone_click', { from: 'contact' })}
                     >
-                      +33 7 59 69 73 55
+                      {ENTREPRISE.telephoneAffiche}
                     </a>
                   </p>
                 </div>

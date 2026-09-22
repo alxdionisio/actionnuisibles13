@@ -17,7 +17,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Dératisation rats et souris'),
     name: 'Rats et souris',
-    title: 'Dératisation rats et souris',
+    title: 'Dératisation rats et souris - Bouches-du-Rhône',
     description:
       'Dératisation professionnelle contre les rats et souris dans les Bouches-du-Rhône. Intervention, prévention et suivi. Devis gratuit. Action Nuisibles 13.',
     keywords: 'dératisation, rats, souris, rongeurs, infestation, Bouches-du-Rhône',
@@ -35,7 +35,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Destruction nid de guêpes'),
     name: 'Guêpes',
-    title: 'Destruction nid de guêpes',
+    title: 'Destruction nid de guêpes en urgence - Bouches-du-Rhône',
     description:
       'Destruction et neutralisation des nids de guêpes dans les Bouches-du-Rhône. Intervention sécurisée, particuliers et professionnels. Devis gratuit.',
     keywords: 'guêpes, nid de guêpes, destruction nid, piqûres, Bouches-du-Rhône',
@@ -53,7 +53,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Destruction nid de frelons et frelon asiatique'),
     name: 'Frelons',
-    title: 'Destruction nid de frelons et frelon asiatique',
+    title: 'Destruction nid de frelons et frelon asiatique dans le 13',
     description:
       'Destruction des nids de frelons et frelon asiatique dans les Bouches-du-Rhône. Intervention rapide et sécurisée. Devis gratuit. Action Nuisibles 13.',
     keywords: 'frelons, frelon asiatique, nid de frelons, destruction nid, Bouches-du-Rhône',
@@ -71,7 +71,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Traitement chenilles processionnaires'),
     name: 'Chenilles processionnaires',
-    title: 'Traitement chenilles processionnaires',
+    title: 'Traitement chenilles processionnaires - Bouches-du-Rhône',
     description:
       'Destruction des nids et traitement des chenilles processionnaires du pin et du chêne dans les Bouches-du-Rhône. Risque urticant. Devis gratuit.',
     keywords: 'chenilles processionnaires, pin, chêne, urticant, nid, Bouches-du-Rhône',
@@ -89,7 +89,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Élimination punaises de lit'),
     name: 'Punaises de lit',
-    title: 'Élimination punaises de lit',
+    title: 'Élimination punaises de lit - Bouches-du-Rhône',
     description:
       'Traitement professionnel contre les punaises de lit dans les Bouches-du-Rhône. Désinsectisation et protocole adapté. Devis gratuit. Action Nuisibles 13.',
     keywords: 'punaises de lit, désinsectisation, traitement, literie, Bouches-du-Rhône',
@@ -107,7 +107,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Désinsectisation cafards et blattes'),
     name: 'Cafards et blattes',
-    title: 'Désinsectisation cafards et blattes',
+    title: 'Désinsectisation cafards et blattes - Bouches-du-Rhône',
     description:
       'Élimination des cafards et blattes dans les Bouches-du-Rhône. Désinsectisation professionnelle pour particuliers et professionnels. Devis gratuit.',
     keywords: 'cafards, blattes, désinsectisation, insectes, Bouches-du-Rhône',
@@ -125,7 +125,7 @@ export const thematiques = [
   {
     slug: titleToSlug('Traitement contre les fourmis'),
     name: 'Fourmis',
-    title: 'Traitement contre les fourmis',
+    title: 'Traitement contre les fourmis - Bouches-du-Rhône',
     description:
       'Lutte contre les fourmis et désinsectisation dans les Bouches-du-Rhône. Traitement ciblé pour particuliers et professionnels. Devis gratuit.',
     keywords: 'fourmis, désinsectisation, invasion, traitement, Bouches-du-Rhône',

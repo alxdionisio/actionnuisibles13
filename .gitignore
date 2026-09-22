@@ -12,6 +12,8 @@ dist/
 # Claude / agents (local, pas en déploiement)
 .claude/
 .claude-flow/
+.swarm/
+ruvector.db
 CLAUDE.md
 GEO-AUDIT-REPORT.md
 

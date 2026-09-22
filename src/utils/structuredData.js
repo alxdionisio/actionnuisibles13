@@ -22,7 +22,24 @@ export function absoluteUrl(siteUrl, pathname = '/') {
   const base = siteUrl.replace(/\/$/, '');
   if (!pathname || pathname === '/') return `${base}/`;
   const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  return `${base}${path.endsWith('/') ? path : `${path}/`}`;
+  // Le slash final ne s'ajoute qu'au chemin : le coller après un fragment ou une
+  // query produisait des URL invalides du type ".../#lieux-intervention/".
+  const coupe = path.search(/[#?]/);
+  const chemin = coupe === -1 ? path : path.slice(0, coupe);
+  const suffixe = coupe === -1 ? '' : path.slice(coupe);
+  if (!chemin || chemin === '/') return `${base}/${suffixe}`;
+  return `${base}${chemin.endsWith('/') ? chemin : `${chemin}/`}${suffixe}`;
+}
+
+/**
+ * Fil d'Ariane à deux niveaux (Accueil → page), pour les pages statiques.
+ * Seo.jsx supprime le JSON-LD prérendu à l'hydratation : une page qui ne
+ * réémet pas son BreadcrumbList le perd définitivement pour Googlebot, qui
+ * exécute le JS. Les libellés doivent rester identiques à ceux déclarés dans
+ * scripts/generate-spa-fallback-pages.js.
+ */
+export function pageBreadcrumb(name, path, siteUrl) {
+  return buildBreadcrumbList([{ name: 'Accueil', path: '/' }, { name, path }], siteUrl);
 }
 
 export function buildBreadcrumbList(items, siteUrl) {

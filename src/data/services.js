@@ -170,9 +170,9 @@ export const services = [
   {
     id: 3,
     slug: 'intervention-rapide-urgences',
-    title: 'Intervention anti nuisibles rapide pour les situations urgentes',
+    title: 'Dératisation et nid de guêpes en urgence - Bouches-du-Rhône',
     description:
-      "Obtenez une intervention immédiate en cas d'infestation avec notre service d'urgence, pour assurer la sécurisation rapide de votre habitation ou de vos locaux.",
+      "Dératiseur et désinsectiseur en urgence dans les Bouches-du-Rhône : nid de guêpes ou de frelons, invasion de rats, de cafards ou de punaises de lit. Intervention rapide depuis Istres sur tout le département.",
     image: images.invasionCafards,
     heroImage: images.invasionCafards,
     heroSubtitle:

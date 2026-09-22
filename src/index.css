@@ -3408,6 +3408,29 @@ p {
   margin-top: 0;
 }
 
+/* Remplace la carte tant que les cookies tiers ne sont pas acceptés.
+   Même encombrement que l'iframe pour éviter un saut de mise en page. */
+.map-consent-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 400px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--border-light, #d8dde3);
+  border-radius: 0.75rem;
+  background: var(--bg-light, #f6f8fa);
+}
+
+.map-consent-text {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--text-muted, #5b6672);
+  line-height: 1.6;
+}
+
 .contact-map-section .map-wrapper iframe {
   display: block;
   width: 100%;

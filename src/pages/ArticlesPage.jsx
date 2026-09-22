@@ -6,6 +6,8 @@ import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { IconBullet } from '../components/Icons';
 import { useData } from '../context/DataContext';
 import { track } from '../utils/tracking';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 function ArticlesPage() {
   const { articles } = useData();
@@ -15,6 +17,7 @@ function ArticlesPage() {
         title="Articles et conseils"
         description="Articles ludiques et pédagogiques sur les nuisibles : apprendre à les reconnaître, comprendre leurs comportements et adopter les bons réflexes. Conseils et astuces pour toute la famille dans les Bouches-du-Rhône."
         canonicalPath="/articles"
+        structuredData={pageBreadcrumb('Articles', '/articles', SITE_URL)}
       />
       <main>
         {/* Hero */}

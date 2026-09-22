@@ -132,6 +132,16 @@ function VillePage() {
               <p className="ville-context-local">{ville.context}</p>
             )}
 
+            {/* Contenu propre à la commune, sur les villes réellement tenues.
+                Le reste de la page est un gabarit commun : ces sections sont la
+                seule chose qui distingue vraiment une page ville d'une autre. */}
+            {ville.sections?.map((section) => (
+              <section key={section.title} className="ville-section-locale">
+                <h2>{section.title}</h2>
+                <p>{section.body}</p>
+              </section>
+            ))}
+
             <h2>Dératisation à {name}</h2>
             <p>
               En cas de présence de <strong>rongeurs</strong> (souris, rats) à {name}, notre équipe réalise un

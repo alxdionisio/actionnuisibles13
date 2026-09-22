@@ -37,4 +37,13 @@ Allow: /
 User-agent: Cohere-ai
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://www.actionnuisibles13.com/sitemap.xml

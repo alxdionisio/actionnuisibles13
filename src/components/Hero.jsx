@@ -33,7 +33,7 @@ function Hero() {
                 </span>
               </a>
               <div className="hero-title-block">
-                <h1 className="hero-title">Éradication de nuisibles dans les Bouches du Rhône</h1>
+                <h1 className="hero-title">Dératiseur et éradication de nuisibles dans les Bouches-du-Rhône</h1>
                 <p className="hero-paragraph">
                   Nous proposons des solutions efficaces et respectueuses
                   de l'environnement pour protéger votre maison et votre entreprise des nuisibles

@@ -1,0 +1,56 @@
+# Fichier de désaveu de liens — actionnuisibles13.com
+#
+# Contexte : l'audit SEONCLIC du 22/09/2026 relève 211 liens entrants depuis
+# 140 domaines, 32,2 % sans catégorie identifiable, verdict « dangereux ».
+# Aucun de ces liens n'a été commandé. Le dernier dépôt datait de 4 jours avant
+# le relevé : le flux est ACTIF, l'objectif premier est de l'arrêter.
+#
+# ──────────────────────────────────────────────────────────────────────────
+# CE FICHIER NE FAIT RIEN TANT QU'IL N'EST PAS DÉPOSÉ À LA MAIN.
+# Rien dans ce dépôt de code ne peut le soumettre à Google.
+# ──────────────────────────────────────────────────────────────────────────
+#
+# MARCHE À SUIVRE
+#
+# 1. Search Console > Liens > Sites qui pointent le plus vers vous > Exporter.
+#    Prendre la liste complète des domaines référents, pas le top 1000 tronqué.
+#
+# 2. Trier. Ne désavouer QUE ce qui est manifestement artificiel :
+#      - pages au titre racoleur en anglais (« Boost your Google rankings »,
+#        « SEO backlink checker », « website worth calculator »)
+#      - annuaires automatiques et fermes de liens, des milliers de liens sortants
+#      - domaines sans rapport avec la lutte anti-nuisibles ni avec la région
+#      - domaines expirés ou spammés, contenu généré
+#    NE PAS désavouer : annuaires professionnels légitimes, presse locale,
+#    partenaires, mairies, fournisseurs, réseaux sociaux. Un désaveu est
+#    irréversible à court terme — en cas de doute, ne pas désavouer.
+#
+# 3. Préférer `domain:` à l'URL seule : ces fermes génèrent des URLs nouvelles
+#    en continu, désavouer une URL unique ne sert à rien.
+#
+# 4. Déposer sur https://search.google.com/search-console/disavow-links
+#    ⚠️ Le dépôt REMPLACE intégralement le fichier précédent. Toujours téléverser
+#    la liste complète, jamais un delta.
+#
+# 5. Traiter la cause, pas seulement le symptôme : tant que les dépôts continuent,
+#    la liste se repeuplera. Chercher l'origine (ancien prestataire, scraping de
+#    la fiche, campagne de negative SEO) — c'est le point que l'audit souligne.
+#
+# 6. Réexaminer tous les 3 mois. Consigner ici la date de chaque dépôt.
+#
+# Journal des dépôts :
+#   (aucun à ce jour)
+#
+# ──────────────────────────────────────────────────────────────────────────
+# SYNTAXE
+#   domain:exemple.com              → tout le domaine et ses sous-domaines
+#   https://exemple.com/page.html   → cette URL seule
+#   # commentaire
+# Un élément par ligne. UTF-8. Max 100 000 lignes / 2 Mo.
+# ──────────────────────────────────────────────────────────────────────────
+#
+# ── Domaines à désavouer (à compléter depuis l'export Search Console) ──
+#
+# Forme attendue, à remplacer par les vrais domaines :
+# domain:exemple-ferme-de-liens.com
+# domain:autre-annuaire-automatique.net

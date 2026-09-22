@@ -16,7 +16,7 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Dératisation & désinsectisation Bouches-du-Rhône"
+        title="Dératiseur & désinsectisation Bouches-du-Rhône (13)"
         description="Action Nuisibles 13 : lutte anti-nuisibles pour particuliers et professionnels dans les Bouches-du-Rhône. Dératisation, désinsectisation, guêpes, frelons, chenilles processionnaires. Interventions rapides."
         canonicalPath="/"
       />

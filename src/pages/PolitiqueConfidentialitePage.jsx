@@ -1,7 +1,8 @@
 import React from 'react';
 import Seo from '../components/Seo';
-
-const SITE_NAME = 'Action Nuisibles 13';
+import { ENTREPRISE, ADRESSE_LIGNE, SITE_NAME } from '../data/entreprise';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 export default function PolitiqueConfidentialitePage() {
   return (
@@ -10,6 +11,7 @@ export default function PolitiqueConfidentialitePage() {
         title="Politique de confidentialité"
         description="Politique de confidentialité et utilisation des cookies d'Action Nuisibles 13 - Protection des données personnelles."
         canonicalPath="/politique-confidentialite"
+        structuredData={pageBreadcrumb('Politique de confidentialité', '/politique-confidentialite', SITE_URL)}
       />
       <main>
         <section className="section legal-page-section">
@@ -20,7 +22,7 @@ export default function PolitiqueConfidentialitePage() {
             <div className="legal-page-content">
               <h2>1. Responsable du traitement</h2>
               <p>
-                Le responsable du traitement des données personnelles collectées via le site <strong>{SITE_NAME}</strong> est Action Nuisibles 13 (Bouches-du-Rhône). Contact : contact@actionnuisibles13.com.
+                Le responsable du traitement des données personnelles collectées via le site <strong>{SITE_NAME}</strong> est {ENTREPRISE.raisonSociale || SITE_NAME}, {ADRESSE_LIGNE}, France. Contact : <a href={`mailto:${ENTREPRISE.email}`}>{ENTREPRISE.email}</a>.
               </p>
 
               <h2>2. Données collectées</h2>

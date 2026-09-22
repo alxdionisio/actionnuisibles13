@@ -5,6 +5,8 @@ import { images } from '../utils/publicAssets';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { IconArrowRight, IconPlus, IconLeaf, IconClock, IconFileText } from '../components/Icons';
 import { LinkifyThematiques } from '../components/LinkifyThematiques';
+import { SITE_URL } from '../utils/siteConfig';
+import { pageBreadcrumb } from '../utils/structuredData';
 
 function AboutPage() {
   const whyUsCards = [
@@ -40,6 +42,7 @@ function AboutPage() {
         title="À propos"
         description="Découvrez Action Nuisibles 13 : équipe d'experts en lutte anti-nuisibles, solutions écologiques et interventions rapides dans les Bouches-du-Rhône pour particuliers et professionnels."
         canonicalPath="/a-propos"
+        structuredData={pageBreadcrumb('À propos', '/a-propos', SITE_URL)}
       />
       <main>
         {/* Hero : fond sombre, titre + description à gauche, bouton à droite (sans image) */}
