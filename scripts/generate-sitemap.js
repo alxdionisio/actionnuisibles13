@@ -6,7 +6,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import Database from 'better-sqlite3';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -95,22 +94,17 @@ const staticPaths = [
   '/politique-confidentialite',
 ];
 
-function loadSlugsFromDb(table) {
-  const dbPath = path.join(root, '.data', 'cms.db');
-  if (!fs.existsSync(dbPath)) return null;
-  try {
-    const db = new Database(dbPath, { readonly: true });
-    const rows = db.prepare(`SELECT slug FROM ${table} ORDER BY id ASC`).all();
-    db.close();
-    return rows.map((row) => row.slug);
-  } catch {
-    return null;
-  }
-}
-
-const articleSlugs = loadSlugsFromDb('articles') ?? extractSlugsFromFile('src/data/articles.js', /slug:\s*['"]([^'"]+)['"]/);
+// Le sitemap ne liste QUE ce qui est réellement déployé, donc la même source que
+// scripts/generate-spa-fallback-pages.js : src/data/*.js.
+//
+// Il lisait auparavant .data/cms.db en priorité. Or le site public est servi par
+// GitHub Pages, qui n'expose aucune route /api : le fetch de DataContext y échoue
+// et retombe systématiquement sur les fichiers source. Un contenu créé depuis le
+// back-office entrait donc au sitemap sans page prérendue ni données au runtime,
+// c'est-à-dire une URL annoncée aux moteurs qui répond 404.
+const articleSlugs = extractSlugsFromFile('src/data/articles.js', /slug:\s*['"]([^'"]+)['"]/);
 const articleDates = extractArticleDates('src/data/articles.js');
-const serviceSlugs = loadSlugsFromDb('services') ?? extractSlugsFromFile('src/data/services.js', /slug:\s*['"]([^'"]+)['"]/);
+const serviceSlugs = extractSlugsFromFile('src/data/services.js', /slug:\s*['"]([^'"]+)['"]/);
 const villeSlugs = extractSlugsFromFile('src/data/villes.js', /slug:\s*['"]([^'"]+)['"]/);
 const thematiqueTitles = extractSlugsFromFile('src/data/thematiques.js', /titleToSlug\s*\(\s*['"]([^'"]+)['"]\s*\)/);
 const thematiqueSlugs = thematiqueTitles.map((t) => slugify(t));
