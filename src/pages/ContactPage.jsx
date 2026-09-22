@@ -3,8 +3,13 @@ import { Link } from '../components/AppLink';
 import Seo from '../components/Seo';
 import Contact from '../components/Contact';
 import { villes } from '../data/villes';
+import { ADRESSE_LIGNE, MAPS_URL, SITE_NAME } from '../data/entreprise';
+import { useCookieConsent } from '../context/CookieConsent';
+import { track } from '../utils/tracking';
 
 function ContactPage() {
+  const { consent } = useCookieConsent();
+
   return (
     <>
       <Seo
@@ -28,18 +33,43 @@ function ContactPage() {
           <div className="container">
             <p className="contact-section-label contact-section-label--light">Localisation</p>
             <h2 className="contact-map-title">Où nous trouver ?</h2>
-            <div className="map-wrapper">
-              <iframe
-                title="Carte Bouches-du-Rhône"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463126.218!2d5.2!3d43.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b9b6b6b6b6b6%3A0x0!2sBouches-du-Rh%C3%B4ne!5e0!3m2!1sfr!2sfr!4v1234567890"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            <p className="contact-map-address">{`${ADRESSE_LIGNE}, France`}</p>
+            {/* La carte Google dépose des traceurs tiers : elle n'est chargée
+                qu'avec le consentement complet. Sans choix exprimé ou avec le
+                strict nécessaire, on sert un lien — aucune requête vers Google. */}
+            {consent === 'full' ? (
+              <div className="map-wrapper">
+                {/* L'ancienne URL d'embed était forgée (coordonnées 5.2/43.3,
+                    4v1234567890) : elle ne désignait aucun lieu. La forme
+                    ?q=…&output=embed résout l'adresse sans clé API. */}
+                <iframe
+                  title={`Carte — ${SITE_NAME}, ${ADRESSE_LIGNE}`}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${ADRESSE_LIGNE}, France`)}&output=embed&hl=fr`}
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            ) : (
+              <div className="map-consent-fallback">
+                <p className="map-consent-text">
+                  L’affichage de la carte nécessite des cookies Google. Vous pouvez ouvrir
+                  l’itinéraire directement sur Google Maps.
+                </p>
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  onClick={() => track('map_click', { from: 'contact_page' })}
+                >
+                  Voir sur Google Maps
+                </a>
+              </div>
+            )}
             <div className="contact-villes-block">
               <h3 className="contact-villes-title">Villes et communes desservies</h3>
               <nav className="contact-villes-list" aria-label="Villes d'intervention">
