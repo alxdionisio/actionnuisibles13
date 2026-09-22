@@ -20,6 +20,24 @@ export const villes = [
     lat: 43.40650,
     lng: 5.05100,
     context: "Ville portuaire et industrielle traversée par des canaux, Martigues présente un risque élevé d'infestation de rongeurs dans les zones riveraines, les entrepôts portuaires et les copropriétés anciennes du centre-ville.",
+    sections: [
+      {
+        title: "L'Île, ses canaux et le Miroir aux oiseaux",
+        body: "Le quartier de L'Île occupe un îlot entre le canal Saint-Sébastien et le canal Galliffet, là où les façades plongent directement dans l'eau. Cette configuration a une conséquence pratique : murs de quai, ouvrages maçonnés et anciens exutoires débouchant sur les canaux offrent au rat surmulot un abri permanent, depuis lequel il rejoint sans difficulté les rez-de-chaussée et les locaux commerciaux. Tout dispositif posé en extérieur doit y être lesté et fixé, pour qu'aucun appât ne finisse dans l'eau. Le stationnement, quasi impossible autour du Miroir aux oiseaux, impose par ailleurs d'acheminer le matériel à pied depuis les quais voisins.",
+      },
+      {
+        title: 'Jonquières, Ferrières et le franchissement du chenal',
+        body: "Séparés de L'Île par le chenal, Jonquières et Ferrières rassemblent les commerces, le marché et les immeubles de rapport élevés aux XIXe et XXe siècles. Cafés, boulangeries et restaurants y alignent réserves et locaux à déchets sur des arrière-cours étroites, point de départ le plus fréquent des signalements de blattes. La traversée du chenal pèse enfin sur l'organisation : selon l'heure et les manœuvres du pont levant, rejoindre une adresse de l'autre rive peut imposer un détour notable, ce dont il faut tenir compte lorsque plusieurs bâtiments d'un même syndic doivent être traités dans la journée.",
+      },
+      {
+        title: 'Lavéra, Ponteau et les sites industriels',
+        body: "Au sud-ouest, Lavéra réunit raffinerie, unités pétrochimiques et terminal maritime, que prolongent vers le nord les installations de Ponteau et les zones d'activité voisines. Ces emprises appliquent leurs propres règles d'accès et de sécurité, distinctes de celles d'un site tertiaire. Le rongeur y chemine par les racks, les caniveaux techniques et les voies ferrées de desserte plutôt que par le bâti. Restauration du personnel et bases-vie des entreprises sous-traitantes concentrent, de leur côté, l'essentiel des signalements d'insectes rampants.",
+      },
+      {
+        title: "Les rives de l'étang de Berre et le chenal de Caronte",
+        body: "Au nord-est, les rives de l'étang de Berre alternent plages aménagées, roselières et terrains en friche, jusqu'aux zones humides qui bordent le chenal de Caronte. Sur ce littoral intérieur, la principale difficulté n'est pas technique mais foncière : entre parcelle privée, domaine communal et emprises portuaires, les limites se lisent mal sur le terrain, et un dispositif ne peut être posé que là où le demandeur a qualité pour l'autoriser ; le reste relève d'un signalement au gestionnaire concerné. S'y ajoute une particularité locale : coques, remorques et tas de bois hivernés le long des rives servent d'abri temporaire et méritent d'être inspectés avant toute conclusion sur l'origine d'une infestation.",
+      },
+    ],
   },
   {
     name: 'Sausset-les-Pins',
@@ -146,6 +164,24 @@ export const villes = [
     lat: 43.40590,
     lng: 4.98980,
     context: "Ville industrielle et portuaire à l'entrée du golfe de Fos, Port-de-Bouc est confrontée à un fort risque de dératisation dans ses zones portuaires, ses entrepôts et ses logements collectifs anciens.",
+    sections: [
+      {
+        title: 'Les cités et les immeubles collectifs',
+        body: "Une large part du parc de logements relève de collectifs élevés entre les années cinquante et soixante-dix, dans les secteurs des Aigues-Douces, de La Lèque ou des Comtes. Leur organisation verticale modifie la nature du problème : colonnes de vide-ordures, gaines de plomberie et conduits techniques relient tous les niveaux d'une même cage d'escalier, si bien qu'une population de blattes germaniques se répartit sur plusieurs étages avant le premier signalement. Le résultat dépend alors moins du produit employé que du taux de logements réellement ouverts le jour prévu, ce qui suppose une information des occupants préparée en amont avec le bailleur.",
+      },
+      {
+        title: 'Le port de commerce et la réparation navale',
+        body: "Le port associe trafic commercial, activités de réparation navale et ateliers hérités des anciens chantiers. Les navires à quai constituent une voie d'introduction spécifique : amarres, passerelles et tuyauteries de liaison permettent le passage de rongeurs entre le bord et le terre-plein, dans les deux sens. Les protections d'aussière et l'éclairage des postes d'accostage réduisent ce risque sans le supprimer. À terre, hangars de stockage, aires de décapage et locaux sociaux des entreprises intervenantes relèvent d'une logique différente de celle des quais.",
+      },
+      {
+        title: 'Le canal, le fort de Bouc et les terrains non bâtis',
+        body: "Le canal venu d'Arles aboutit ici, au pied du fort qui garde l'entrée du chenal. Ses berges, les darses secondaires et les terrains vagues qui les bordent abritent des rats vivant dehors toute l'année, indépendants des immeubles voisins mais qui les alimentent en continu. Jardins familiaux, locaux associatifs et points de dépôt d'encombrants proches sont les premiers exposés. Sur ce type de secteur, une campagne isolée reste sans effet durable : la réduction de population s'obtient par des passages rapprochés sur quelques semaines, relayés ensuite par un contrôle plus espacé.",
+      },
+      {
+        title: 'Le front de mer et la saison estivale',
+        body: "La façade maritime, ses plages aménagées et ses espaces verts littoraux concentrent la fréquentation pendant toute la saison balnéaire. Corbeilles, points de restauration temporaires et sanitaires publics y créent une ressource alimentaire saisonnière qui attire guêpes et rongeurs sur une bande étroite. Les résidences bordant la promenade signalent des nids sous les balcons et dans les coffres techniques, découverts tardivement lorsque les logements ne sont occupés que par intermittence. Le traitement est d'autant plus contraint que les abords restent fréquentés : il se programme tôt le matin ou après la fermeture des équipements. Les gestionnaires d'établissements ouverts au public gagnent à faire contrôler balcons, auvents et locaux de rangement avant la montée en charge, tant que les nids restent accessibles et de faible volume.",
+      },
+    ],
   },
   {
     name: 'Saint-Mitre-les-Remparts',
@@ -235,6 +271,24 @@ export const villes = [
     lat: 43.58320,
     lng: 5.00220,
     context: "Commune industrielle et résidentielle de la plaine de la Crau, Miramas est touchée par les rongeurs dans ses zones agricoles et ses entrepôts logistiques, et par les fourmis dans ses lotissements récents.",
+    sections: [
+      {
+        title: 'Le triage ferroviaire et les emprises des voies',
+        body: "Miramas accueille l'un des plus vastes faisceaux de triage du sud de la France, doublé d'installations de maintenance et de voies de garage. Ces emprises forment un couloir continu de ballast, de talus enherbés et de locaux techniques dans lequel les rongeurs se déplacent à couvert, hors d'atteinte des traitements menés parcelle par parcelle. Les riverains des voies constatent des intrusions groupées au moment des fauchages et des travaux d'entretien, qui déplacent brutalement les populations. Pour ces adresses, l'action porte sur les clôtures, les regards et les points bas du terrain, faute de pouvoir intervenir sur l'emprise elle-même.",
+      },
+      {
+        title: 'Les réserves des commerces et des plateformes de distribution',
+        body: "Entre la zone commerciale, le village de marques et les entrepôts de Clésud, la commune reçoit chaque jour un volume considérable de palettes et de cartons. C'est le premier mode d'arrivée des blattes dans les locaux professionnels : un lot de cageots, un carton de reprise ou un appareil livré suffit à introduire quelques individus dans une réserve chauffée. Les enseignes de restauration de ces ensembles cumulent chaleur, humidité et déchets organiques, trois conditions qui transforment une arrivée isolée en foyer établi. L'inspection débute donc par les quais de réception et les stocks tampons, avant les surfaces ouvertes au public.",
+      },
+      {
+        title: 'Miramas-le-Vieux et les collines de Sulauze',
+        body: "Perché sur son éperon à quelques kilomètres de la ville basse, Miramas-le-Vieux a gardé un bâti de pierre, des toitures basses et des venelles fermées à la circulation. Combles et remises y logent régulièrement des guêpes, dont l'enlèvement suppose du matériel porté à la main et un passage en dehors des heures de fréquentation touristique. Alentour, les pinèdes de Sulauze et les boisements qui dominent la commune sont colonisés en hiver par la processionnaire du pin. Les propriétés en lisière sont exposées les premières, les chenilles gagnant ensuite les jardins et les chemins de promenade.",
+      },
+      {
+        title: 'Les lotissements neufs et la bordure de la Crau',
+        body: "L'extension résidentielle s'est faite par tranches successives sur d'anciennes terres agricoles, en limite des coussouls de la Crau. Les chantiers y jouent un rôle sous-estimé : terrassements, création de voirie et raccordement des réseaux chassent les rongeurs déjà présents dans les parcelles voisines, qui se reportent sur les maisons livrées les premières. Une construction récente et bien isolée n'est donc pas à l'abri dès sa première année d'occupation. Les fourmis, de leur côté, profitent des remblais encore meubles et des joints de terrasse fraîchement réalisés pour s'établir sous les aménagements extérieurs.",
+      },
+    ],
   },
   {
     name: 'Salon-de-Provence',
