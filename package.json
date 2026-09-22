@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-sitemap.js && vite build && node scripts/generate-spa-fallback-pages.js",
-    "test": "node tests/entreprise.test.js",
+    "test": "node tests/entreprise.test.js && node tests/llms-txt.test.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "prerender": "node scripts/generate-spa-fallback-pages.js",
     "optimize-images": "node scripts/optimize-images.js",
