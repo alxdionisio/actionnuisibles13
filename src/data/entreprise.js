@@ -14,7 +14,10 @@ export const CANONICAL_BASE = 'https://www.actionnuisibles13.com';
 export const SITE_NAME = 'Action Nuisibles 13';
 export const DEFAULT_DESCRIPTION = 'Dératisation, désinsectisation et lutte anti-nuisibles dans les Bouches-du-Rhône. Solutions efficaces et écologiques pour particuliers et professionnels.';
 export const DEFAULT_TITLE = 'Action Nuisibles 13 - Dératisation & désinsectisation Bouches-du-Rhône';
-export const DEFAULT_OG_IMAGE = `${CANONICAL_BASE}/action-nuisibles-13-noir.png`;
+/** Image de partage social : 1200×630, générée par npm run optimize-images. */
+export const DEFAULT_OG_IMAGE = `${CANONICAL_BASE}/og-image.png`;
+/** Logo carré pour le schema. Les dimensions déclarées doivent être les vraies. */
+export const LOGO_IMAGE = { url: `${CANONICAL_BASE}/action-nuisibles-13-noir.png`, width: 280, height: 280 };
 export const ORGANIZATION_ID = `${CANONICAL_BASE}/#organization`;
 export const WEBSITE_ID = `${CANONICAL_BASE}/#website`;
 
@@ -181,9 +184,9 @@ export const ORGANIZATION = omitEmpty({
   image: DEFAULT_OG_IMAGE,
   logo: {
     '@type': 'ImageObject',
-    url: DEFAULT_OG_IMAGE,
-    width: 300,
-    height: 100,
+    url: LOGO_IMAGE.url,
+    width: LOGO_IMAGE.width,
+    height: LOGO_IMAGE.height,
   },
   // Identité légale et NAP. Les champs non renseignés dans ENTREPRISE sont omis.
   ...buildIdentitySchema(),

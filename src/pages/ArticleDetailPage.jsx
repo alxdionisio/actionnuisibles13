@@ -6,7 +6,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import { LinkifyThematiques, linkifyThematiques } from '../components/LinkifyThematiques';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import { useData } from '../context/DataContext';
-import { SITE_URL, ORGANIZATION_ID, SITE_NAME } from '../utils/siteConfig';
+import { SITE_URL, ORGANIZATION_ID, SITE_NAME, LOGO_IMAGE } from '../utils/siteConfig';
 import { absoluteUrl, buildBreadcrumbList, parseFrenchDateToIso } from '../utils/structuredData';
 
 function ArticleDetailPage() {
@@ -52,7 +52,7 @@ function ArticleDetailPage() {
       '@type': 'Organization',
       '@id': ORGANIZATION_ID,
       name: SITE_NAME,
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/action-nuisibles-13-noir.png` },
+      logo: { '@type': 'ImageObject', url: LOGO_IMAGE.url, width: LOGO_IMAGE.width, height: LOGO_IMAGE.height },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
     articleSection: category,
