@@ -4738,6 +4738,24 @@ p {
   color: var(--accent-yellow);
 }
 
+/* Déclencheur de la bannière cookies. C'est un <button> parce qu'il ouvre un
+   dialogue et ne navigue pas ; il est seulement habillé comme ses voisins. */
+.footer-cookies-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.footer-cookies-btn:hover,
+.footer-cookies-btn:focus-visible {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+}
+
 .footer-credits {
   text-align: right;
 }

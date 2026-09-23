@@ -3,9 +3,13 @@ import { Link } from './AppLink';
 import { useCookieConsent } from '../context/CookieConsent';
 
 export default function CookieBanner() {
-  const { consent, setConsent, bannerVisible } = useCookieConsent();
+  const { setConsent, bannerVisible } = useCookieConsent();
 
-  if (!bannerVisible || consent) return null;
+  // `bannerVisible` suffit : le fournisseur ne le met à true que si aucun choix
+  // n'est enregistré, et setConsent le repasse à false. Le test `|| consent`
+  // qui figurait ici était redondant, et empêchait de rouvrir la bannière
+  // depuis le pied de page pour revenir sur un choix déjà fait.
+  if (!bannerVisible) return null;
 
   return (
     <div className="cookie-banner" role="dialog" aria-label="Choix des cookies">

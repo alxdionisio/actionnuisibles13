@@ -6,8 +6,11 @@ import { track } from '../utils/tracking';
 import { logos } from '../utils/publicAssets';
 import { thematiques } from '../data/thematiques';
 import { ENTREPRISE, ADRESSE_LIGNE, MAPS_URL, HORAIRES } from '../data/entreprise';
+import { useCookieConsent } from '../context/CookieConsent';
 
 function Footer() {
+  const { setBannerVisible } = useCookieConsent();
+
   return (
     <footer className="footer">
       <div className="footer-dark-container">
@@ -116,6 +119,16 @@ function Footer() {
             <nav className="footer-about-legal" aria-label="Mentions légales et confidentialité">
               <Link to="/mentions-legales">Mentions légales</Link>
               <Link to="/politique-confidentialite">Politique de confidentialité</Link>
+              {/* Un bouton, et non un lien : il ouvre un dialogue, il ne navigue
+                  pas. Placé ici parce que c'est là qu'on cherche à revenir sur
+                  un choix de cookies. */}
+              <button
+                type="button"
+                className="footer-cookies-btn"
+                onClick={() => setBannerVisible(true)}
+              >
+                Gérer les cookies
+              </button>
             </nav>
             <p className="footer-credits">
               Créé par{' '}
