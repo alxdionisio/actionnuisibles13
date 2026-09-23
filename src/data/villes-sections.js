@@ -6,6 +6,11 @@
  * Clé = slug de la commune. Une commune sans entrée ici affiche le seul
  * gabarit de VillePage : cest le cas par défaut, pas un oubli.
  *
+ * ÉCART ASSUMÉ À LA LIMITE DE 500 LIGNES : avec les 27 communes rédigées, ce
+ * fichier la dépasse. Il ne contient aucune logique, seulement de la prose
+ * indexée par slug. Le scinder par zone obligerait à savoir dans quel fichier
+ * vit une commune avant de la modifier — plus coûteux que l'écart lui-même.
+ *
  * RÈGLE : ces sections nexistent que si elles disent quelque chose de vrai et
  * de propre à la commune. Mieux vaut 250 mots exacts que 420 mots étirés ;
  * du remplissage indistinguable dune page à lautre est précisément ce que
@@ -478,6 +483,57 @@ export const villesSections = {
       title: "Le golf, l'arrosage nocturne et ce qui longe les limites",
       body:
         "Le parcours occupe une vaste surface irriguée au milieu de collines sèches, avec ses pièces d'eau, ses herbes hautes et ses bâtiments d'exploitation. Deux aspects intéressent ceux qui le bordent. L'arrosage de nuit maintient en pleine saison une humidité qui n'existe nulle part alentour, et cette humidité rassemble les insectes puis, derrière eux, ce qui s'en nourrit, sur une frange de quelques dizaines de mètres de part et d'autre des clôtures. Par ailleurs, les locaux d'exploitation — remise à tondeuses, stockage de produits et d'engrais, atelier, cuisine du club — ne s'examinent pas comme les zones de jeu : ce sont des espaces de stockage et de préparation, avec leurs propres exigences de contrôle et leurs propres horaires d'accès.",
+    },
+  ],
+  'bouc-bel-air': [
+    {
+      title: 'Serres, tunnels et végétaux en conteneur',
+      body:
+        "La production horticole occupe de longue date une part du territoire, et une exploitation de ce type ne se raisonne pas comme un jardin d'agrément. Sous une serre ou un tunnel tenu hors gel, chaleur et arrosage reconduisent des conditions de belle saison alors qu'il gèle dehors : une population de rongeurs établie là ignore la pause hivernale et se multiplie quand celle des parcelles voisines ralentit. Les dommages ne se limitent pas aux plants, puisque lignes de goutte-à-goutte, gaines des automatismes et isolants d'armoire sont rongés au passage. Les aires où conteneurs et substrat demeurent serrés pendant des mois se regardent avant les planches de culture elles-mêmes.",
+    },
+    {
+      title: 'Les véhicules et les engins qui ne bougent plus',
+      body:
+        "Le long de la départementale, concessions, loueurs de matériel, garages et jardineries entreposent sur leurs terre-pleins des voitures d'occasion, des remorques et des machines de tonte parfois immobiles plusieurs semaines. Un compartiment moteur refroidi garde sa tiédeur une partie de la nuit, se trouve couvert, et renferme tout le nécessaire pour bâtir : mousses d'insonorisation, filtres, faisceaux gainés. Le rongeur s'y loge, et le dégât se découvre à la remise en route sous la forme d'une panne électrique dont nul ne cherche l'origine à cet endroit. Déplacé, l'engin emmène en outre ses occupants vers le site suivant. Lever les capots pendant les contrôles périodiques apprend davantage qu'un tour de bâtiment.",
+    },
+    {
+      title: 'Un parc que personne ne parcourt en entier',
+      body:
+        "Les propriétés closes de la commune ménagent volontiers un hectare ou plus entre le portail et la maison : allée plantée, bosquets, ancienne serre, remise, pièce d'eau d'agrément. Celui qui habite se tient au centre et n'approche des limites qu'exceptionnellement, tandis que l'entretien revient à une entreprise d'espaces verts passant à dates fixes. Il en résulte un retard de constat : terrier sous un muret, nid dans un tas de tailles, remise restée ouverte depuis des mois, rien de tout cela n'est vu de la saison. Lorsqu'un désordre remonte de l'intérieur, il a déjà son histoire au-dehors. Questionner celui qui tond et qui taille rapporte alors plus que l'examen du logement.",
+    },
+  ],
+  'mimet': [
+    {
+      title: "L'altitude, et le décalage qu'elle impose au calendrier",
+      body:
+        "Perché sur le versant sud de la chaîne de l'Étoile, Mimet compte parmi les communes les plus élevées des Bouches-du-Rhône, et cette hauteur décale l'année de quelques semaines par rapport au littoral. Les nuits froides s'installent plus tôt : le repli des rongeurs vers les maisons, les garages et les bûchers se constate dès le début de l'automne, quand il attend parfois la fin novembre au bord de l'eau. Le mouvement inverse vaut au printemps, une fondatrice de guêpes lançant sa colonie plus tard, pour un nid dont le volume maximal survient d'autant plus tard. Les pins suivent la même règle, et la descente des processionnaires ne tombe pas à la date observée en plaine. Se régler sur un calendrier établi pour la côte, ici, c'est regarder au mauvais moment.",
+    },
+    {
+      title: 'Un sous-sol exploité, un bâti qui a travaillé',
+      body:
+        "Le charbon a été extrait sous ce secteur du bassin, et les mouvements de terrain consécutifs à la fermeture ont marqué les constructions : fissures traversantes, seuils désaffleurés, dallages désolidarisés des maçonneries. Ces défauts ne relèvent pas que de l'esthétique. Quelques millimètres d'ouverture en pied de mur, un joint de dallage disjoint ou un creux apparu sous un seuil forment des entrées permanentes, basses, et dissimulées derrière une plinthe ou un revêtement. Les occupants y voient de la vétusté et les mentionnent rarement. Plutôt que d'incriminer d'emblée les canalisations, on gagne à longer la base des murs, dedans comme dehors, en soulevant le revêtement partout où c'est possible.",
+    },
+    {
+      title: 'Les restanques plantées et ce qui reste au sol',
+      body:
+        "Les terrasses qui étagent les pentes du village ont été montées pour cultiver, et beaucoup portent encore oliviers et fruitiers dont nul ne fait plus la récolte. En octobre et novembre, ces parcelles laissent au sol une masse de fruits tombés qui achève d'y pourrir. Voilà une ressource abondante et datée, dont le moment coïncide exactement avec la recherche d'un abri pour la mauvaise saison, et les murs de pierre sèche qui retiennent les terrasses en offrent un à portée immédiate. Ramasser sous les arbres voisins des bâtiments, avant les premiers froids, supprime l'un des deux termes. Le mur, lui, ne se rebouche pas : c'est l'ouvrage qui tient la pente.",
+    },
+  ],
+  'simiane-collongue': [
+    {
+      title: 'Une terre à tuiles, et des terriers qui tiennent',
+      body:
+        "L'argile tirée d'ici a fait vivre des tuileries, et c'est toujours elle qui compose une bonne part des sols communaux. Cette matière possède une propriété qui pèse sur la lutte contre les rongeurs : creusée en galerie, elle se tient. Là où un terrain sableux s'affaisse et contraint l'animal à recommencer ailleurs, l'argile garde un terrier ramifié, stable d'une année sur l'autre, dont les entrées se rouvrent en une nuit. Boucher un orifice avec la terre du tas d'à côté ne mène donc nulle part, le conduit demeurant intact en dessous. L'obturation ne prend son sens qu'avec un matériau impossible à reprendre — grillage à maille fine enterré, mortier, pierre calée — appliqué à l'entrée principale comme aux issues de secours, qui vont rarement par une seule.",
+    },
+    {
+      title: 'Une limite communale qui ne se voit pas sur le terrain',
+      body:
+        "Au nord, les quartiers bâtis se poursuivent vers Gardanne sans rupture apparente : une seule rue, les mêmes haies, des fonds de jardin semblables, et pourtant deux communes. L'animal ignore cette frontière ; celui qui veut faire cesser une nuisance, lui, en dépend entièrement. Une friche, un dépôt sauvage ou un fossé délaissé situé à quelques mètres d'une maison peut ressortir d'un autre service technique, d'un autre gestionnaire de voirie, à l'occasion d'un autre bailleur. Adressée du mauvais côté, la demande se perd. Mieux vaut donc établir au cadastre, avant d'écrire, de quel côté tombe précisément la parcelle en cause et à qui elle appartient.",
+    },
+    {
+      title: "Après la pluie, un terrain qu'on ne parcourt pas",
+      body:
+        "Ce même sol argileux ferme certains accès pendant plusieurs jours à la suite d'un épisode pluvieux : chemins de desserte, fonds de parcelle et abords de hangar tournent au gras et au collant, où un véhicule chargé s'enlise. Deux effets concrets en découlent. Le repérage au-dehors — suivre une coulée, relever des gueules de terrier, placer un dispositif au bon endroit — réclame un sol portant et se mène mal dans ces conditions ; reporter de quelques jours vaut mieux que de trancher sur un terrain où plus rien ne se lit. Quant à l'échelle, la perche ou le matériel lourd, ils exigent une assise ferme, absente tant que le sol n'a pas ressuyé. Autant l'annoncer en convenant de la date.",
     },
   ],
 };
