@@ -26,6 +26,7 @@ import {
 } from '../src/data/entreprise.js';
 import { villes as villesData } from '../src/data/villes.js';
 import { croises } from '../src/data/croises.js';
+import { thematiques as thematiquesData } from '../src/data/thematiques.js';
 import {
   absoluteUrl as urlAbsolue,
   buildBreadcrumbList,
@@ -143,20 +144,12 @@ function parseServices() {
   return services;
 }
 
+// thematiques.js est un module ESM pur : Node l'importe directement. La regex
+// précédente n'extrayait que slug, name, title et description — le champ
+// `content` restait invisible, si bien que le corps prérendu des pages
+// thématiques ne portait que ~50 mots au lieu des ~170 disponibles.
 function parseThematiques() {
-  const src = readFile('src/data/thematiques.js');
-  const themes = [];
-  const re = /slug:\s*titleToSlug\s*\(\s*['"]([^'"]+)['"]\s*\),\s*name:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*description:\s*\n?\s*['"]([^'"]+)['"]/g;
-  let m;
-  while ((m = re.exec(src)) !== null) {
-    themes.push({
-      slug: slugify(m[1]),
-      name: m[2],
-      title: m[3],
-      description: m[4],
-    });
-  }
-  return themes;
+  return thematiquesData;
 }
 
 function parseFaqItems() {
@@ -357,9 +350,25 @@ function renderFaqBody(items) {
 }
 
 function renderThematiqueBody(t) {
+  // Le corps n'exposait que le titre et la description : ~50 mots servis à un
+  // crawler sans JS, alors que thematiques.js en porte environ 170. Ces pages
+  // ressortent « explorées, actuellement non indexées » dans Search Console ;
+  // leur donner au moins le contenu qui existe déjà est le minimum.
+  const c = t.content || {};
+  const blocs = [
+    [`Lutte contre les ${t.name.toLowerCase()} dans les Bouches-du-Rhône`, c.intro],
+    ['Pourquoi faire appel à un professionnel', c.pourquoi],
+    ['Comment se déroule le traitement', c.comment],
+    ["Quel réflexe adopter en cas d'invasion", c.reflexe],
+  ]
+    .filter(([, texte]) => typeof texte === 'string' && texte.trim())
+    .map(([titre, texte]) => `<section><h2>${escapeHtml(titre)}</h2><p>${escapeHtml(texte)}</p></section>`)
+    .join('\n      ');
+
   return `<article>
       <h1>${escapeHtml(t.title)}</h1>
       <p>${escapeHtml(t.description)}</p>
+      ${blocs}
       <p>${escapeHtml(SITE_NAME)} intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. ${escapeHtml(ADRESSE_LIGNE)} — Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
