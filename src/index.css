@@ -4643,6 +4643,12 @@ p {
 }
 
 .cookie-banner-text {
+  /* La règle globale `p { color: var(--text-gray) }` écrase le blanc hérité de
+     la bannière : l'héritage perd toujours contre une règle directe. Le texte
+     tombait à 1,82:1 sur le fond sombre, alors qu'un blanc explicite donne
+     13,58:1. Défaut invisible aux audits précédents, la bannière n'apparaissant
+     qu'au premier passage, sans consentement enregistré. */
+  color: var(--token-white);
   margin: 0;
   font-size: 0.875rem;
   line-height: 1.5;
