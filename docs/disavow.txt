@@ -1,13 +1,27 @@
 # Fichier de désaveu de liens — actionnuisibles13.com
 #
-# Contexte : l'audit SEONCLIC du 22/09/2026 relève 211 liens entrants depuis
-# 140 domaines, 32,2 % sans catégorie identifiable, verdict « dangereux ».
-# Aucun de ces liens n'a été commandé. Le dernier dépôt datait de 4 jours avant
-# le relevé : le flux est ACTIF, l'objectif premier est de l'arrêter.
-#
 # ──────────────────────────────────────────────────────────────────────────
-# CE FICHIER NE FAIT RIEN TANT QU'IL N'EST PAS DÉPOSÉ À LA MAIN.
-# Rien dans ce dépôt de code ne peut le soumettre à Google.
+# NE PAS DÉPOSER. Constat du 23/09/2026, Search Console > Liens :
+#
+#     Liens externes — Total : 1   (bymodule.io, ancre « voir le site »)
+#
+# L'audit SEONCLIC du 22/09/2026 annonçait 211 liens depuis 140 domaines et un
+# verdict « dangereux ». Ce chiffre vient de l'index d'un outil tiers, pas de
+# celui de Google : Search Console, seule source faisant foi pour ce que Google
+# comptabilise réellement, n'en voit qu'un.
+#
+# Il n'y a donc rien à désavouer. Déposer ce fichier en l'état effacerait toute
+# liste existante sans rien apporter — l'outil remplace intégralement le fichier
+# précédent à chaque dépôt.
+#
+# L'autorité de domaine mesurée à 7/100 se lit dès lors autrement : avec un seul
+# lien entrant, c'est une absence de notoriété, pas une toxicité. Le levier n'est
+# pas le désaveu mais l'acquisition de liens légitimes — annuaires
+# professionnels, presse locale, partenaires, fédérations du métier.
+#
+# À rouvrir seulement si Search Console fait apparaître un afflux de domaines
+# référents sans rapport avec l'activité. La marche à suivre ci-dessous reste
+# valable pour ce jour-là.
 # ──────────────────────────────────────────────────────────────────────────
 #
 # MARCHE À SUIVRE
