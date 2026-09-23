@@ -365,10 +365,15 @@ function renderThematiqueBody(t) {
     .map(([titre, texte]) => `<section><h2>${escapeHtml(titre)}</h2><p>${escapeHtml(texte)}</p></section>`)
     .join('\n      ');
 
+  const sections = (t.sections || [])
+    .map((s) => `<section><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.body)}</p></section>`)
+    .join('\n      ');
+
   return `<article>
       <h1>${escapeHtml(t.title)}</h1>
       <p>${escapeHtml(t.description)}</p>
       ${blocs}
+      ${sections}
       <p>${escapeHtml(SITE_NAME)} intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. ${escapeHtml(ADRESSE_LIGNE)} — Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }

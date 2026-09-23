@@ -13,7 +13,9 @@ function titleToSlug(title) {
     .replace(/-+/g, '-');
 }
 
-export const thematiques = [
+import { thematiquesSections } from './thematiques-sections.js';
+
+const registre = [
   {
     slug: titleToSlug('Dératisation rats et souris'),
     name: 'Rats et souris',
@@ -29,7 +31,7 @@ export const thematiques = [
       comment:
         'Signes d\'une infestation de rats ou souris : crottes, traces de passage, bruits dans les cloisons ou les combles, câbles rongés, denrées abîmées, nids ou matériaux rongés. Une détection précoce permet un traitement plus simple et économique.',
       reflexe:
-        'En cas de présence de rongeurs, évitez les produits en grande surface : mauvaise efficacité et risques pour la santé. Contactez un professionnel pour un diagnostic et un devis gratuit. Nous intervenons chez les particuliers, en entreprise et en établissement recevant du public.',
+        'En cas de présence de rongeurs, évitez les produits en grande surface : mauvaise efficacité et risques pour la santé. Contactez un professionnel pour faire établir un état des lieux chiffré, sans frais. Logements, locaux d\'entreprise et établissements recevant du public sont concernés.',
     },
   },
   {
@@ -83,7 +85,7 @@ export const thematiques = [
       comment:
         'Les nids blancs et soyeux dans les pins sont typiques de la chenille processionnaire du pin. Les processions au sol (file de chenilles) sont un autre signe. Pour le chêne, les nids sont fixés sur les branches. En cas de doute, faites identifier par un professionnel.',
       reflexe:
-        'Évitez tout contact avec les chenilles et les nids. Ne pas laisser les animaux s\'approcher des zones infestées. Contactez-nous pour un diagnostic et un plan d\'intervention (destruction des nids, traitement préventif). Devis gratuit dans les Bouches-du-Rhône.',
+        'Évitez tout contact avec les chenilles et les nids. Ne pas laisser les animaux s\'approcher des zones infestées. Contactez-nous pour faire évaluer les arbres concernés et arrêter la méthode adaptée à la saison (destruction des nids, traitement préventif). Devis gratuit dans les Bouches-du-Rhône.',
     },
   },
   {
@@ -101,7 +103,7 @@ export const thematiques = [
       comment:
         'Signes évocateurs : piqûres alignées ou groupées au réveil, traces de sang sur les draps, déjections noires, œufs et exuvies, odeur caractéristique en cas d\'infestation importante. Les punaises se cachent dans les coutures du matelas, le sommier, les fentes et derrière les plinthes.',
       reflexe:
-        'En cas de suspicion, évitez de déplacer literie et meubles sans précaution pour ne pas étendre l\'infestation. Contactez un professionnel pour un diagnostic et un devis. Nous intervenons chez les particuliers et les professionnels (hôtels, résidences) dans les Bouches-du-Rhône.',
+        'En cas de suspicion, évitez de déplacer literie et meubles sans précaution pour ne pas étendre l\'infestation. Contactez un professionnel pour une évaluation de l\'étendue réelle, sans frais. Logements, hôtels et résidences relèvent du même protocole dans les Bouches-du-Rhône.',
     },
   },
   {
@@ -119,7 +121,7 @@ export const thematiques = [
       comment:
         'Présence d\'insectes marron/noirs à carapace, souvent la nuit ; œufs (oothèques), exuvies et déjections dans les recoins ; odeur désagréable en cas de forte infestation. Les blattes germaniques et orientales sont les plus courantes en habitat.',
       reflexe:
-        'Ne vous contentez pas d\'insecticides en spray : ils dispersent souvent les cafards sans éliminer les nids. Faites appel à un professionnel pour un diagnostic et un plan de désinsectisation. Devis gratuit pour particuliers et professionnels dans les Bouches-du-Rhône.',
+        'Ne vous contentez pas d\'insecticides en spray : ils dispersent souvent les cafards sans éliminer les nids. Faites appel à un professionnel afin d\'établir l\'ampleur des foyers et la marche à suivre. Estimation sans frais, particuliers comme professionnels, dans les Bouches-du-Rhône.',
     },
   },
   {
@@ -141,6 +143,11 @@ export const thematiques = [
     },
   },
 ];
+
+// Rattache le contenu long, tenu à part comme pour les communes.
+export const thematiques = registre.map((t) =>
+  thematiquesSections[t.slug] ? { ...t, sections: thematiquesSections[t.slug] } : t
+);
 
 export function getThematiqueBySlug(slug) {
   return thematiques.find((t) => t.slug === slug);

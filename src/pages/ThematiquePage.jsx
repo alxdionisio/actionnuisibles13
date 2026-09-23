@@ -113,6 +113,16 @@ function ThematiquePage() {
             <h2>Quel réflexe adopter ?</h2>
             <p>{linkifyThematiques(content.reflexe)}</p>
 
+            {/* Contenu long propre au nuisible. Ces pages ressortaient
+                « explorées, actuellement non indexées » : ~170 mots et des
+                tournures partagées entre toutes les paires. */}
+            {thematique.sections?.map((section) => (
+              <section key={section.title} className="ville-section-locale">
+                <h2>{section.title}</h2>
+                <p>{linkifyThematiques(section.body)}</p>
+              </section>
+            ))}
+
             <h2>Autres nuisibles que nous traitons</h2>
             <p>
               Nous intervenons aussi contre les{' '}
