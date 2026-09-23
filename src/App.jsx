@@ -76,7 +76,7 @@ function App() {
             {/* Croisés nuisible × ville : routes déclarées une à une depuis les
                 données, jamais en catch-all /:slug, qui capterait tout avant la 404. */}
             {croises.map((c) => (
-              <Route key={c.slug} path={`/${c.slug}`} element={<CroisePage />} />
+              <Route key={c.slug} path={`/${c.slug}`} element={<CroisePage croise={c} />} />
             ))}
             <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialitePage />} />

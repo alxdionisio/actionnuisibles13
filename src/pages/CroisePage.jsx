@@ -1,8 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { Link } from '../components/AppLink';
 import Seo from '../components/Seo';
-import { croises } from '../data/croises';
 import { getVilleBySlug } from '../data/villes';
 import { thematiques } from '../data/thematiques';
 import { SITE_URL, SITE_NAME, ORGANIZATION_ID } from '../utils/siteConfig';
@@ -15,11 +13,14 @@ import { CtaArrowIcon } from '../components/CtaArrowIcon';
  * annonce « Dératisation et désinsectisation à X », la page thématique porte le
  * nuisible sans la commune. Le maillage renvoie vers les deux, pour que cette
  * page reste une entrée et non un cul-de-sac.
+ *
+ * Le croisé est passé en prop par App.jsx, et non retrouvé via useParams :
+ * ces routes ont un chemin littéral (/punaises-de-lit-istres) et ne déclarent
+ * donc aucun paramètre. Lire useParams() y renvoyait undefined, et la page
+ * affichait « Page introuvable » alors que le serveur avait servi le bon HTML —
+ * un défaut invisible à curl, qui ne voit que le rendu statique.
  */
-function CroisePage() {
-  const { slug } = useParams();
-  const croise = croises.find((c) => c.slug === slug);
-
+function CroisePage({ croise }) {
   if (!croise) {
     return (
       <>
