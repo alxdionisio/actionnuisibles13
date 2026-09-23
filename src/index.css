@@ -1688,7 +1688,7 @@ p {
 }
 
 .about-approach-label {
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-text);
   font-weight: 600;
 }
 
@@ -3397,7 +3397,7 @@ p {
 }
 
 .contact-section-label--light {
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-text);
 }
 
 .contact-map-title {
@@ -3584,7 +3584,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-text);
   margin: 0;
 }
 
