@@ -38,7 +38,7 @@ export const thematiquesSections = {
     {
       title: "Ce qui ferme une ouverture, et ce qui n'y change rien",
       body:
-        "Un jeune rongeur franchit un jour bien plus mince qu'on ne l'imagine : dès lors que la tête passe, le corps suit. D'où l'inventaire préalable des entrées — seuils, grilles descellées, traversées de câbles et de canalisations, jonctions de bardage, chatières de couverture. Le matériau décide du reste. Mousse expansive, silicone, laine de verre et bois tendre sont percés en quelques nuits ; une tôle, un grillage à maille serrée scellé au mortier ou une plaque métallique résistent. Côté dissuasion, les émetteurs à ultrasons vendus au grand public n'ont jamais démontré d'effet durable : l'animal s'accoutume, et un bâtiment chauffé et approvisionné demeure attirant malgré le bruit. Huiles essentielles et naphtaline relèvent de la même illusion.",
+        "Un jeune rongeur franchit un jour bien plus mince qu'on ne l'imagine : dès lors que la tête passe, le corps suit. D'où l'inventaire préalable des entrées : seuils, grilles descellées, traversées de câbles et de canalisations, jonctions de bardage, chatières de couverture. Le matériau décide du reste. Mousse expansive, silicone, laine de verre et bois tendre sont percés en quelques nuits ; une tôle, un grillage à maille serrée scellé au mortier ou une plaque métallique résistent. Côté dissuasion, les émetteurs à ultrasons vendus au grand public n'ont jamais démontré d'effet durable : l'animal s'accoutume, et un bâtiment chauffé et approvisionné demeure attirant malgré le bruit. Huiles essentielles et naphtaline relèvent de la même illusion.",
     },
   ],
   'destruction-nid-de-guepes': [
@@ -50,7 +50,7 @@ export const thematiquesSections = {
     {
       title: "La piqûre : ce qui est banal et ce qui ne l'est pas",
       body:
-        "Une atteinte isolée provoque douleur, rougeur et gonflement localisé pendant quelques heures à deux jours ; le froid soulage. Trois situations sortent de ce cadre. Une réaction qui s'étend bien au-delà du point touché et s'aggrave après plusieurs heures ; des signes généraux — plaques à distance, visage enflé, gêne respiratoire, vertiges, vomissements — qui imposent d'appeler les secours sans attendre ; enfin une atteinte de la bouche ou de la gorge, après ingestion d'une boisson où l'insecte s'était posé, dont l'œdème peut fermer les voies aériennes. La guêpe, au dard lisse, frappe plusieurs fois sans se détacher ; l'abeille abandonne son dard et sa glande, qu'on retire en raclant plutôt qu'en pinçant.",
+        "Une atteinte isolée provoque douleur, rougeur et gonflement localisé pendant quelques heures à deux jours ; le froid soulage. Trois situations sortent de ce cadre. Une réaction qui s'étend bien au-delà du point touché et s'aggrave après plusieurs heures ; des signes généraux (plaques à distance, visage enflé, gêne respiratoire, vertiges, vomissements) qui imposent d'appeler les secours sans attendre ; enfin une atteinte de la bouche ou de la gorge, après ingestion d'une boisson où l'insecte s'était posé, dont l'œdème peut fermer les voies aériennes. La guêpe, au dard lisse, frappe plusieurs fois sans se détacher ; l'abeille abandonne son dard et sa glande, qu'on retire en raclant plutôt qu'en pinçant.",
     },
     {
       title: "Après la neutralisation : les retardataires et l'emplacement",
@@ -67,7 +67,7 @@ export const thematiquesSections = {
     {
       title: 'Nid primaire, nid secondaire, et la question du moment',
       body:
-        "Le frelon asiatique change d'adresse en cours de saison. Au printemps, la fondatrice élève seule une petite sphère qui n'excède guère le volume d'une orange, sous une avancée de toit, dans un abri de jardin ou un coffret de compteur. Lorsque l'effectif grossit, la colonie délaisse ce premier ouvrage pour en édifier un second, fréquemment très haut dans un arbre, où elle culmine en fin d'été. Cette boule volumineuse apparaît aux yeux de tous à la chute des feuilles, en novembre et décembre — précisément quand elle est vide et que les futures fondatrices se sont déjà dispersées pour hiverner. Agir à ce stade ne modifie en rien l'année suivante : seul un nid encore actif compte.",
+        "Le frelon asiatique change d'adresse en cours de saison. Au printemps, la fondatrice élève seule une petite sphère qui n'excède guère le volume d'une orange, sous une avancée de toit, dans un abri de jardin ou un coffret de compteur. Lorsque l'effectif grossit, la colonie délaisse ce premier ouvrage pour en édifier un second, fréquemment très haut dans un arbre, où elle culmine en fin d'été. Cette boule volumineuse apparaît aux yeux de tous à la chute des feuilles, en novembre et décembre : précisément quand elle est vide et que les futures fondatrices se sont déjà dispersées pour hiverner. Agir à ce stade ne modifie en rien l'année suivante : seul un nid encore actif compte.",
     },
     {
       title: "Statut de l'espèce et pression sur les ruchers",
@@ -89,19 +89,19 @@ export const thematiquesSections = {
     {
       title: "Ce que les méthodes préventives font, et ce qu'elles ne font pas",
       body:
-        "Trois approches circulent, de portées inégales. Les pièges à phéromone attirent les mâles durant le vol estival : ils renseignent sur l'intensité et sur les dates, sans réduire sensiblement la ponte. Les traitements biologiques appliqués à l'automne reposent sur une bactérie qui n'agit que sur de jeunes larves l'ayant ingérée, ce qui suppose une application précoce, atteignant le houppier, et par temps calme — trois conditions rarement réunies sur un grand sujet isolé. Les nichoirs à mésanges relèvent d'une régulation lente et partielle, utile en accompagnement, sans prise sur une infestation déclarée. Aucune de ces voies ne dispense de s'occuper des poches déjà formées lorsque l'arbre borde un lieu fréquenté.",
+        "Trois approches circulent, de portées inégales. Les pièges à phéromone attirent les mâles durant le vol estival : ils renseignent sur l'intensité et sur les dates, sans réduire sensiblement la ponte. Les traitements biologiques appliqués à l'automne reposent sur une bactérie qui n'agit que sur de jeunes larves l'ayant ingérée, ce qui suppose une application précoce, atteignant le houppier, et par temps calme : trois conditions rarement réunies sur un grand sujet isolé. Les nichoirs à mésanges relèvent d'une régulation lente et partielle, utile en accompagnement, sans prise sur une infestation déclarée. Aucune de ces voies ne dispense de s'occuper des poches déjà formées lorsque l'arbre borde un lieu fréquenté.",
     },
   ],
   'elimination-punaises-de-lit': [
     {
       title: 'Punaise, puce, moustique : la lésion ne suffit pas à trancher',
       body:
-        "Les marques se ressemblent trop d'une espèce à l'autre pour fonder un diagnostic. La puce concentre ses atteintes sur les chevilles et le bas des jambes, et suppose presque toujours un animal ou une habitation restée close. Le moustique s'en prend aux parties découvertes, dedans comme dehors, et démange immédiatement. La punaise touche les zones en contact avec le drap — épaules, dos, bras — et la réaction peut n'apparaître que le lendemain, voire bien plus tard, ce qui brouille toute chronologie. S'ajoutent des causes étrangères à tout insecte : intolérance à un textile, à une lessive, affection de la peau. Une preuve matérielle est seule décisive : l'insecte, une mue translucide, un point sombre qui s'étale au frottement.",
+        "Les marques se ressemblent trop d'une espèce à l'autre pour fonder un diagnostic. La puce concentre ses atteintes sur les chevilles et le bas des jambes, et suppose presque toujours un animal ou une habitation restée close. Le moustique s'en prend aux parties découvertes, dedans comme dehors, et démange immédiatement. La punaise touche les zones en contact avec le drap (épaules, dos, bras) et la réaction peut n'apparaître que le lendemain, voire bien plus tard, ce qui brouille toute chronologie. S'ajoutent des causes étrangères à tout insecte : intolérance à un textile, à une lessive, affection de la peau. Une preuve matérielle est seule décisive : l'insecte, une mue translucide, un point sombre qui s'étale au frottement.",
     },
     {
       title: "La résistance aux insecticides, et ce qu'elle disqualifie",
       body:
-        "Les populations actuelles sont, en grande partie, peu sensibles aux familles d'insecticides les plus répandues dans le commerce : cuticule épaissie, enzymes de détoxication, mutation de la cible nerveuse. Un aérosol pris en rayon a donc toutes les chances de supprimer quelques individus directement atteints et de laisser intacte la population dissimulée. Diffuseurs et fumigènes font pire : le brouillard ne gagne pas les fentes où l'insecte se tient, et son caractère irritant pousse les survivants à se répandre vers les pièces et les logements voisins. De là le poids, dans les protocoles actuels, de ce qui ne relève pas de la chimie — action de la chaleur, vapeur, aspiration, mise sous housse des couchages.",
+        "Les populations actuelles sont, en grande partie, peu sensibles aux familles d'insecticides les plus répandues dans le commerce : cuticule épaissie, enzymes de détoxication, mutation de la cible nerveuse. Un aérosol pris en rayon a donc toutes les chances de supprimer quelques individus directement atteints et de laisser intacte la population dissimulée. Diffuseurs et fumigènes font pire : le brouillard ne gagne pas les fentes où l'insecte se tient, et son caractère irritant pousse les survivants à se répandre vers les pièces et les logements voisins. De là le poids, dans les protocoles actuels, de ce qui ne relève pas de la chimie : action de la chaleur, vapeur, aspiration, mise sous housse des couchages.",
     },
     {
       title: 'Location et hébergement : le cadre juridique',
@@ -123,14 +123,14 @@ export const thematiquesSections = {
     {
       title: 'Ce que la blatte laisse derrière elle',
       body:
-        "Le risque ne se limite pas au passage de l'insecte sur les denrées. Mues, fragments de cuticule et déjections s'accumulent en poussière fine dans les rangements, sous les appareils et derrière les plinthes décollées ; ils comptent parmi les allergènes domestiques les mieux documentés, liés à des manifestations respiratoires chez l'enfant en habitat dense. Cette poussière demeure active après la disparition des insectes : une opération qui s'arrête à la mortalité laisse en place ce qui déclenche les symptômes. Le nettoyage qui suit — aspiration des recoins avec un filtrage adapté, dépose des baguettes décollées, lavage des surfaces de rangement — appartient donc au traitement, et non à la remise en ordre.",
+        "Le risque ne se limite pas au passage de l'insecte sur les denrées. Mues, fragments de cuticule et déjections s'accumulent en poussière fine dans les rangements, sous les appareils et derrière les plinthes décollées ; ils comptent parmi les allergènes domestiques les mieux documentés, liés à des manifestations respiratoires chez l'enfant en habitat dense. Cette poussière demeure active après la disparition des insectes : une opération qui s'arrête à la mortalité laisse en place ce qui déclenche les symptômes. Le nettoyage qui suit (aspiration des recoins avec un filtrage adapté, dépose des baguettes décollées, lavage des surfaces de rangement) appartient donc au traitement, et non à la remise en ordre.",
     },
   ],
   'traitement-contre-les-fourmis': [
     {
       title: "Identifier l'espèce avant de fixer un objectif",
       body:
-        "Trois cas reviennent, et la conduite à tenir diffère à chaque fois. La fourmi d'Argentine, minuscule et brune, très implantée sur le pourtour méditerranéen, forme des réseaux de nids qui ne se combattent pas entre eux et couvrent des quartiers entiers : sur le périmètre d'une seule maison, on gère une pression permanente plutôt qu'on n'élimine une colonie. La fourmi pharaon, jaunâtre et à peine visible, vit dans les bâtiments chauffés et quitte rarement les gaines et les cloisons. La fourmi charpentière, grande et sombre, ne se nourrit pas de bois mais y creuse ses galeries, et trahit par la sciure qu'elle rejette une charpente ou une poutre restée humide — le dommage matériel est là, pas sur le plan de travail.",
+        "Trois cas reviennent, et la conduite à tenir diffère à chaque fois. La fourmi d'Argentine, minuscule et brune, très implantée sur le pourtour méditerranéen, forme des réseaux de nids qui ne se combattent pas entre eux et couvrent des quartiers entiers : sur le périmètre d'une seule maison, on gère une pression permanente plutôt qu'on n'élimine une colonie. La fourmi pharaon, jaunâtre et à peine visible, vit dans les bâtiments chauffés et quitte rarement les gaines et les cloisons. La fourmi charpentière, grande et sombre, ne se nourrit pas de bois mais y creuse ses galeries, et trahit par la sciure qu'elle rejette une charpente ou une poutre restée humide : le dommage matériel est là, pas sur le plan de travail.",
     },
     {
       title: 'Pourquoi le produit qui tue vite échoue',

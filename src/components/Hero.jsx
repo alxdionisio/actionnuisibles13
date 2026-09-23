@@ -19,7 +19,7 @@ function Hero() {
                 href="https://share.google/KoJ2aX73JmkZ0x0en"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="5/5 note moyenne des avis Google — voir les avis"
+                aria-label="5/5 note moyenne des avis Google, voir les avis"
                 onClick={() => track('reviews_click', { from: 'hero', destination: 'google_business_profile' })}
               >
                 <span className="hero-ratings-google" aria-hidden="true">

@@ -70,7 +70,7 @@ export const villesSections = {
     {
       title: "Les abords des étangs de Citis, d'Engrenier et du Pourra",
       body:
-        "La commune est entourée de plans d'eau saumâtres et de zones humides. Roselières, fossés et friches offrent aux rongeurs un habitat extérieur permanent, et donc un réservoir qui se reconstitue rapidement après un traitement. Les maisons et cabanons situés en limite de ces secteurs subissent des intrusions répétées plutôt que des infestations continues, avec un pic à l'automne lorsque la végétation est fauchée et que les températures baissent. Pour ces adresses, l'efficacité tient surtout à la protection périphérique du bâtiment — grilles d'aération, bas de portes, passages de réseaux — davantage qu'au traitement intérieur.",
+        "La commune est entourée de plans d'eau saumâtres et de zones humides. Roselières, fossés et friches offrent aux rongeurs un habitat extérieur permanent, et donc un réservoir qui se reconstitue rapidement après un traitement. Les maisons et cabanons situés en limite de ces secteurs subissent des intrusions répétées plutôt que des infestations continues, avec un pic à l'automne lorsque la végétation est fauchée et que les températures baissent. Pour ces adresses, l'efficacité tient surtout à la protection périphérique du bâtiment (grilles d'aération, bas de portes, passages de réseaux) davantage qu'au traitement intérieur.",
     },
     {
       title: 'Saint-Blaise, la garrigue et les pins',
@@ -219,7 +219,7 @@ export const villesSections = {
     {
       title: 'À quelques mètres du milieu marin',
       body:
-        "Certaines parcelles se trouvent à moins de dix mètres du rivage, sur une côte placée en zone de protection marine. Cette proximité contraint la pose de tout dispositif extérieur : un poste doit être fixé, fermé, tenu à l'écart des cheminements de ruissellement, et ne peut rester sur un replat rocheux que balaie le premier coup de mer. La réponse penche donc vers l'exclusion — grilles, bas de portes, obturation des fourreaux — plus que vers un équipement laissé dehors.",
+        "Certaines parcelles se trouvent à moins de dix mètres du rivage, sur une côte placée en zone de protection marine. Cette proximité contraint la pose de tout dispositif extérieur : un poste doit être fixé, fermé, tenu à l'écart des cheminements de ruissellement, et ne peut rester sur un replat rocheux que balaie le premier coup de mer. La réponse penche donc vers l'exclusion (grilles, bas de portes, obturation des fourreaux) plus que vers un équipement laissé dehors.",
     },
   ],
   'ensues-la-redonne': [
@@ -253,7 +253,7 @@ export const villesSections = {
     {
       title: 'Une adresse qui se trouve mal',
       body:
-        "Sainte-Croix et Saint-Pierre relèvent administrativement de Martigues, dont le centre se situe à plusieurs kilomètres. Les points d'adresse de ces écarts sont mal restitués par les applications de navigation : chemins privés dépourvus de nom, numérotation discontinue, lieux-dits que l'on retrouve ailleurs dans le département. Un rendez-vous convenu sur la seule adresse postale se solde régulièrement par un détour de vingt minutes. Mieux vaut s'entendre sur un repère visible depuis la voie — un portail, un croisement, un bâtiment identifiable — et préciser d'emblée si la fin du parcours emprunte une piste que tout véhicule ne peut pas prendre.",
+        "Sainte-Croix et Saint-Pierre relèvent administrativement de Martigues, dont le centre se situe à plusieurs kilomètres. Les points d'adresse de ces écarts sont mal restitués par les applications de navigation : chemins privés dépourvus de nom, numérotation discontinue, lieux-dits que l'on retrouve ailleurs dans le département. Un rendez-vous convenu sur la seule adresse postale se solde régulièrement par un détour de vingt minutes. Mieux vaut s'entendre sur un repère visible depuis la voie (un portail, un croisement, un bâtiment identifiable) et préciser d'emblée si la fin du parcours emprunte une piste que tout véhicule ne peut pas prendre.",
     },
   ],
   'chateauneuf-les-martigues': [
@@ -287,7 +287,7 @@ export const villesSections = {
     {
       title: 'Des halls dont les ouvertures ne se referment jamais vraiment',
       body:
-        "L'activité aéronautique locale suppose des bâtiments de très grande dimension, dont les portes se mesurent en dizaines de mètres et sont manœuvrées plusieurs fois par jour. Une fermeture de ce gabarit ne devient pas hermétique au sens où on l'entend pour une porte d'habitation : il subsiste toujours un jeu en partie basse, des rails et des tableaux latéraux ouverts. Dans un volume pareil, écarter l'animal par la seule fermeture n'a guère de sens ; le raisonnement se déplace vers les cheminements intérieurs et vers les annexes — vestiaires, salles de pause, magasins de pièces — qui concentrent l'eau et la nourriture.",
+        "L'activité aéronautique locale suppose des bâtiments de très grande dimension, dont les portes se mesurent en dizaines de mètres et sont manœuvrées plusieurs fois par jour. Une fermeture de ce gabarit ne devient pas hermétique au sens où on l'entend pour une porte d'habitation : il subsiste toujours un jeu en partie basse, des rails et des tableaux latéraux ouverts. Dans un volume pareil, écarter l'animal par la seule fermeture n'a guère de sens ; le raisonnement se déplace vers les cheminements intérieurs et vers les annexes (vestiaires, salles de pause, magasins de pièces) qui concentrent l'eau et la nourriture.",
     },
     {
       title: "Le noyau villageois en pente vers la rive",
@@ -304,7 +304,7 @@ export const villesSections = {
     {
       title: 'Des logements calfeutrés et des façades percées',
       body:
-        "Sous le cône de bruit des pistes, une grande partie du parc a reçu des menuiseries renforcées, une ventilation mécanique et, très souvent, une climatisation. Les fenêtres demeurent closes une bonne part de l'année, l'été compris. Deux effets en découlent. Chaque équipement ajouté a percé un mur — sortie de ventilation, liaison frigorifique, évacuation de condensats — et ces traversées, rarement rebouchées avec soin, offrent des points de passage aussi bien en haut qu'en bas de façade. Par ailleurs, un logement peu aéré garde ses odeurs et son humidité, ce qui retarde le moment où une présence se remarque.",
+        "Sous le cône de bruit des pistes, une grande partie du parc a reçu des menuiseries renforcées, une ventilation mécanique et, très souvent, une climatisation. Les fenêtres demeurent closes une bonne part de l'année, l'été compris. Deux effets en découlent. Chaque équipement ajouté a percé un mur (sortie de ventilation, liaison frigorifique, évacuation de condensats) et ces traversées, rarement rebouchées avec soin, offrent des points de passage aussi bien en haut qu'en bas de façade. Par ailleurs, un logement peu aéré garde ses odeurs et son humidité, ce qui retarde le moment où une présence se remarque.",
     },
     {
       title: 'Un parc pavillonnaire homogène, et ses combles isolés',
@@ -338,7 +338,7 @@ export const villesSections = {
     {
       title: 'Le vieux village adossé à la roche',
       body:
-        "Les maisons du noyau ancien s'appuient contre la barre rocheuse que surmonte la chapelle, et leurs pièces arrière sont à demi enterrées, fraîches et humides en toute saison. Cette configuration n'attire pas la même espèce que les immeubles récents : on y rencontre surtout la blatte orientale, qui préfère les endroits frais et bas — caves, vides sanitaires, canalisations —, remonte par les évacuations et se déplace au sol plus qu'en hauteur. La confondre avec sa cousine germanique conduit à porter l'effort sur les cuisines, alors que la population se tient en dessous, dans les regards et les fourreaux de réseau.",
+        "Les maisons du noyau ancien s'appuient contre la barre rocheuse que surmonte la chapelle, et leurs pièces arrière sont à demi enterrées, fraîches et humides en toute saison. Cette configuration n'attire pas la même espèce que les immeubles récents : on y rencontre surtout la blatte orientale, qui préfère les endroits frais et bas (caves, vides sanitaires, canalisations), remonte par les évacuations et se déplace au sol plus qu'en hauteur. La confondre avec sa cousine germanique conduit à porter l'effort sur les cuisines, alors que la population se tient en dessous, dans les regards et les fourreaux de réseau.",
     },
     {
       title: "Un plateau bâti d'un seul tenant",
@@ -375,19 +375,19 @@ export const villesSections = {
     {
       title: 'La campagne oléicole et les moulins',
       body:
-        "De novembre à janvier, la récolte converge vers les moulins et les coopératives, et le rythme des lieux change entièrement : réception en vrac, caisses en attente, et surtout des sous-produits en quantité — grignons, margines, feuilles — entreposés le temps d'être évacués. Cette ressource surgit en quelques jours, se concentre sur un point précis, puis disparaît au printemps. Les rongeurs ne s'en vont pas avec elle : l'effectif monté pendant la campagne se reporte sur les bâtiments alentour. Le moment le plus utile pour regarder les abords et les aires de dépôt se situe donc avant l'ouverture, non pendant.",
+        "De novembre à janvier, la récolte converge vers les moulins et les coopératives, et le rythme des lieux change entièrement : réception en vrac, caisses en attente, et surtout des sous-produits en quantité (grignons, margines, feuilles) entreposés le temps d'être évacués. Cette ressource surgit en quelques jours, se concentre sur un point précis, puis disparaît au printemps. Les rongeurs ne s'en vont pas avec elle : l'effectif monté pendant la campagne se reporte sur les bâtiments alentour. Le moment le plus utile pour regarder les abords et les aires de dépôt se situe donc avant l'ouverture, non pendant.",
     },
   ],
   'marseille': [
     {
       title: 'Ce que le trottoir remet en circulation',
       body:
-        "Dans les arrondissements centraux, un sommier posé au pied d'un immeuble reste rarement seul longtemps : il est photographié, proposé, chargé dans un utilitaire ou emporté par quelqu'un du quartier, parfois le soir même. Ce réemploi de proche en proche explique une part des arrivées de punaises de lit dans des logements où rien ne s'était jamais produit : l'insecte voyage avec le meuble, pas avec l'habitant. Un couchage sorti d'un appartement atteint doit donc être rendu impropre à la récupération avant la descente — housse fermée, structure sciée ou marquée au feutre large. Et tout lot rapporté d'une brocante gagne à être ouvert dehors, coutures et rainures comprises.",
+        "Dans les arrondissements centraux, un sommier posé au pied d'un immeuble reste rarement seul longtemps : il est photographié, proposé, chargé dans un utilitaire ou emporté par quelqu'un du quartier, parfois le soir même. Ce réemploi de proche en proche explique une part des arrivées de punaises de lit dans des logements où rien ne s'était jamais produit : l'insecte voyage avec le meuble, pas avec l'habitant. Un couchage sorti d'un appartement atteint doit donc être rendu impropre à la récupération avant la descente : housse fermée, structure sciée ou marquée au feutre large. Et tout lot rapporté d'une brocante gagne à être ouvert dehors, coutures et rainures comprises.",
     },
     {
       title: 'Un commerce de bouche sous des appartements',
       body:
-        "Beaucoup d'immeubles anciens superposent une boutique au rez-de-chaussée, des logements aux étages et une cave voûtée en dessous, laquelle se prolonge parfois sous l'adresse mitoyenne. Cet empilement ouvre une communication verticale qu'aucune des parties ne maîtrise seule : conduit d'extraction, percements réalisés au fil des installations, escalier de cave, anciennes fosses maçonnées. Les blattes suivent la chaleur et montent ; les occupants du premier étage alertent, le commerçant est désigné, et le foyer se tient pourtant dans le volume intermédiaire — plénum, gaine, vide de plancher — dont nul ne se considère responsable.",
+        "Beaucoup d'immeubles anciens superposent une boutique au rez-de-chaussée, des logements aux étages et une cave voûtée en dessous, laquelle se prolonge parfois sous l'adresse mitoyenne. Cet empilement ouvre une communication verticale qu'aucune des parties ne maîtrise seule : conduit d'extraction, percements réalisés au fil des installations, escalier de cave, anciennes fosses maçonnées. Les blattes suivent la chaleur et montent ; les occupants du premier étage alertent, le commerçant est désigné, et le foyer se tient pourtant dans le volume intermédiaire (plénum, gaine, vide de plancher) dont nul ne se considère responsable.",
     },
     {
       title: 'Des chambres louées une par une',
@@ -426,12 +426,12 @@ export const villesSections = {
     {
       title: 'Les délaissés des grandes voies',
       body:
-        "Les infrastructures routières qui traversent la commune laissent derrière elles des morceaux de terrain sans usage : triangles pris entre deux bretelles, bandes coincées entre un merlon antibruit et la clôture des premières maisons, talus que rien ne dessert. Ces espaces ne sont parcourus par personne et reçoivent ce dont on veut se débarrasser sans faire le détour — gravats, déchets verts, sacs jetés par-dessus. Le résultat est une réserve abritée du vent et du passage, à moins de cent mètres de jardins dont les occupants cherchent chez eux une explication qui ne s'y trouve pas. Signaler le dépôt au service qui a la charge de l'emprise change davantage la situation, à terme, que trois campagnes menées sur les parcelles riveraines.",
+        "Les infrastructures routières qui traversent la commune laissent derrière elles des morceaux de terrain sans usage : triangles pris entre deux bretelles, bandes coincées entre un merlon antibruit et la clôture des premières maisons, talus que rien ne dessert. Ces espaces ne sont parcourus par personne et reçoivent ce dont on veut se débarrasser sans faire le détour : gravats, déchets verts, sacs jetés par-dessus. Le résultat est une réserve abritée du vent et du passage, à moins de cent mètres de jardins dont les occupants cherchent chez eux une explication qui ne s'y trouve pas. Signaler le dépôt au service qui a la charge de l'emprise change davantage la situation, à terme, que trois campagnes menées sur les parcelles riveraines.",
     },
     {
       title: 'Les cabines des poids lourds',
       body:
-        "L'activité de transport installée ici amène chaque nuit des ensembles routiers à stationner sur les aires et dans les cours d'entreprise. Une cabine est un lieu de vie : couchette, textiles, provisions, appareils de chauffage ou de cuisson. On y retrouve donc les mêmes désordres que dans une chambre — blattes germaniques logées dans les rangements de la console, punaises de lit dans les coutures du matelas — avec deux écarts qui comptent. Le volume est minuscule, ce qui concentre la population et rend les indices visibles vite ; et le véhicule repart, ce qui interdit le déroulement habituel et ramène régulièrement une infestation contractée à plusieurs centaines de kilomètres. Pour une société qui exploite plusieurs ensembles, la question se pose à l'échelle du parc et de la salle de repos, non du seul camion qui a alerté.",
+        "L'activité de transport installée ici amène chaque nuit des ensembles routiers à stationner sur les aires et dans les cours d'entreprise. Une cabine est un lieu de vie : couchette, textiles, provisions, appareils de chauffage ou de cuisson. On y retrouve donc les mêmes désordres que dans une chambre (blattes germaniques logées dans les rangements de la console, punaises de lit dans les coutures du matelas) avec deux écarts qui comptent. Le volume est minuscule, ce qui concentre la population et rend les indices visibles vite ; et le véhicule repart, ce qui interdit le déroulement habituel et ramène régulièrement une infestation contractée à plusieurs centaines de kilomètres. Pour une société qui exploite plusieurs ensembles, la question se pose à l'échelle du parc et de la salle de repos, non du seul camion qui a alerté.",
     },
   ],
   'septemes-les-vallons': [
@@ -448,19 +448,19 @@ export const villesSections = {
     {
       title: 'Un fond de vallon que tout emprunte',
       body:
-        "La commune s'allonge au creux d'un vallon étroit qu'elle partage avec les grandes voies de circulation. Le sol y est compté : les fonds de jardin arrivent au contact direct des emprises, sans espace intermédiaire, et le bâti ancien longe une chaussée où l'arrêt d'un véhicule se discute avant de se décider. Deux effets concrets. Les chantiers menés de nuit sur ces réseaux — entretien, remplacement, reprise de la végétation — provoquent des reports soudains vers les habitations les plus proches, sans rapport avec la façon dont elles sont tenues. Et l'étroitesse interdit d'improviser : le déploiement d'une échelle, l'atteinte de l'arrière d'une maison mitoyenne ou le passage par une cour voisine se tranchent pendant l'appel, jamais une fois le véhicule à l'arrêt.",
+        "La commune s'allonge au creux d'un vallon étroit qu'elle partage avec les grandes voies de circulation. Le sol y est compté : les fonds de jardin arrivent au contact direct des emprises, sans espace intermédiaire, et le bâti ancien longe une chaussée où l'arrêt d'un véhicule se discute avant de se décider. Deux effets concrets. Les chantiers menés de nuit sur ces réseaux (entretien, remplacement, reprise de la végétation) provoquent des reports soudains vers les habitations les plus proches, sans rapport avec la façon dont elles sont tenues. Et l'étroitesse interdit d'improviser : le déploiement d'une échelle, l'atteinte de l'arrière d'une maison mitoyenne ou le passage par une cour voisine se tranchent pendant l'appel, jamais une fois le véhicule à l'arrêt.",
     },
   ],
   'plan-de-cuques': [
     {
       title: "Les piscines et la soif du mois d'août",
       body:
-        "Au plus fort de l'été, l'eau est dans ce secteur la ressource la plus rare, et les guêpes la cherchent là où elle est maintenue : margelle humide, local de filtration, robinet qui goutte, goutteurs d'arrosage, gamelle laissée dehors. D'où une situation courante et mal lue — une terrasse rendue impraticable par un défilé d'insectes alors qu'aucun nid ne se trouve sur le terrain. Séparer les deux cas évite une dépense sans objet : des ouvrières venues boire repartent toutes dans le même azimut et leur nombre varie fortement selon l'heure et la chaleur, tandis qu'une colonie établie sur place entretient un flux dans les deux sens vers un endroit précis, y compris à la tombée du jour. Dans le premier cas, le travail consiste à supprimer les prises d'eau accessibles, puis à chercher la colonie chez le voisin ou dans la lisière.",
+        "Au plus fort de l'été, l'eau est dans ce secteur la ressource la plus rare, et les guêpes la cherchent là où elle est maintenue : margelle humide, local de filtration, robinet qui goutte, goutteurs d'arrosage, gamelle laissée dehors. D'où une situation courante et mal lue : une terrasse rendue impraticable par un défilé d'insectes alors qu'aucun nid ne se trouve sur le terrain. Séparer les deux cas évite une dépense sans objet : des ouvrières venues boire repartent toutes dans le même azimut et leur nombre varie fortement selon l'heure et la chaleur, tandis qu'une colonie établie sur place entretient un flux dans les deux sens vers un endroit précis, y compris à la tombée du jour. Dans le premier cas, le travail consiste à supprimer les prises d'eau accessibles, puis à chercher la colonie chez le voisin ou dans la lisière.",
     },
     {
       title: "Sous la toiture, ce n'est pas toujours une souris",
       body:
-        "Les maisons appuyées au massif hébergent régulièrement, entre plafond et couverture, un animal que l'on prend pour un rongeur de maison : le lérot ou le loir, venus du boisement voisin passer la mauvaise saison dans un comble isolé. L'identification n'est pas un détail de vocabulaire. La taille, les bruits — des déplacements lourds et des objets qui roulent, plutôt que de fins grattements —, l'aspect des déjections et le mode d'entrée diffèrent, et la réponse avec eux : sur ces espèces, seule la fermeture des accès en toiture tient dans le temps, au niveau des rives, des chatières et des tuiles de ventilation. Un appât disposé avant d'avoir identifié l'occupant est au mieux sans effet, et prive au passage de l'information qui aurait orienté le travail.",
+        "Les maisons appuyées au massif hébergent régulièrement, entre plafond et couverture, un animal que l'on prend pour un rongeur de maison : le lérot ou le loir, venus du boisement voisin passer la mauvaise saison dans un comble isolé. L'identification n'est pas un détail de vocabulaire. La taille, les bruits (des déplacements lourds et des objets qui roulent, plutôt que de fins grattements), l'aspect des déjections et le mode d'entrée diffèrent, et la réponse avec eux : sur ces espèces, seule la fermeture des accès en toiture tient dans le temps, au niveau des rives, des chatières et des tuiles de ventilation. Un appât disposé avant d'avoir identifié l'occupant est au mieux sans effet, et prive au passage de l'information qui aurait orienté le travail.",
     },
     {
       title: "Les puces, au retour d'une maison restée fermée",
@@ -477,12 +477,12 @@ export const villesSections = {
     {
       title: 'Des jardins qui sont en réalité des bois',
       body:
-        "Entre le vieux village et Calas, le parcellaire compte quantité de terrains de plusieurs milliers de mètres carrés couverts de pins et de chênes, avec une maison au milieu. Le propriétaire parle de son jardin ; pour ce qui nous occupe, c'est un boisement, et la nuance décide de ce qui peut raisonnablement être entrepris. Traiter un hectare de sous-bois n'a pas de sens : ce qui en a, c'est une couronne autour des constructions, où l'on reprend le contact entre le sol forestier et le bâti — bûcher écarté des murs, branches basses dégagées de la couverture, grilles d'aération et vide sanitaire remis en état, réserves extérieures closes. Le reste de la parcelle demeure ce qu'il est, avec la faune qui va avec, et ce n'est pas un demi-résultat.",
+        "Entre le vieux village et Calas, le parcellaire compte quantité de terrains de plusieurs milliers de mètres carrés couverts de pins et de chênes, avec une maison au milieu. Le propriétaire parle de son jardin ; pour ce qui nous occupe, c'est un boisement, et la nuance décide de ce qui peut raisonnablement être entrepris. Traiter un hectare de sous-bois n'a pas de sens : ce qui en a, c'est une couronne autour des constructions, où l'on reprend le contact entre le sol forestier et le bâti : bûcher écarté des murs, branches basses dégagées de la couverture, grilles d'aération et vide sanitaire remis en état, réserves extérieures closes. Le reste de la parcelle demeure ce qu'il est, avec la faune qui va avec, et ce n'est pas un demi-résultat.",
     },
     {
       title: "Le golf, l'arrosage nocturne et ce qui longe les limites",
       body:
-        "Le parcours occupe une vaste surface irriguée au milieu de collines sèches, avec ses pièces d'eau, ses herbes hautes et ses bâtiments d'exploitation. Deux aspects intéressent ceux qui le bordent. L'arrosage de nuit maintient en pleine saison une humidité qui n'existe nulle part alentour, et cette humidité rassemble les insectes puis, derrière eux, ce qui s'en nourrit, sur une frange de quelques dizaines de mètres de part et d'autre des clôtures. Par ailleurs, les locaux d'exploitation — remise à tondeuses, stockage de produits et d'engrais, atelier, cuisine du club — ne s'examinent pas comme les zones de jeu : ce sont des espaces de stockage et de préparation, avec leurs propres exigences de contrôle et leurs propres horaires d'accès.",
+        "Le parcours occupe une vaste surface irriguée au milieu de collines sèches, avec ses pièces d'eau, ses herbes hautes et ses bâtiments d'exploitation. Deux aspects intéressent ceux qui le bordent. L'arrosage de nuit maintient en pleine saison une humidité qui n'existe nulle part alentour, et cette humidité rassemble les insectes puis, derrière eux, ce qui s'en nourrit, sur une frange de quelques dizaines de mètres de part et d'autre des clôtures. Par ailleurs, les locaux d'exploitation (remise à tondeuses, stockage de produits et d'engrais, atelier, cuisine du club) ne s'examinent pas comme les zones de jeu : ce sont des espaces de stockage et de préparation, avec leurs propres exigences de contrôle et leurs propres horaires d'accès.",
     },
   ],
   'bouc-bel-air': [
@@ -523,7 +523,7 @@ export const villesSections = {
     {
       title: 'Une terre à tuiles, et des terriers qui tiennent',
       body:
-        "L'argile tirée d'ici a fait vivre des tuileries, et c'est toujours elle qui compose une bonne part des sols communaux. Cette matière possède une propriété qui pèse sur la lutte contre les rongeurs : creusée en galerie, elle se tient. Là où un terrain sableux s'affaisse et contraint l'animal à recommencer ailleurs, l'argile garde un terrier ramifié, stable d'une année sur l'autre, dont les entrées se rouvrent en une nuit. Boucher un orifice avec la terre du tas d'à côté ne mène donc nulle part, le conduit demeurant intact en dessous. L'obturation ne prend son sens qu'avec un matériau impossible à reprendre — grillage à maille fine enterré, mortier, pierre calée — appliqué à l'entrée principale comme aux issues de secours, qui vont rarement par une seule.",
+        "L'argile tirée d'ici a fait vivre des tuileries, et c'est toujours elle qui compose une bonne part des sols communaux. Cette matière possède une propriété qui pèse sur la lutte contre les rongeurs : creusée en galerie, elle se tient. Là où un terrain sableux s'affaisse et contraint l'animal à recommencer ailleurs, l'argile garde un terrier ramifié, stable d'une année sur l'autre, dont les entrées se rouvrent en une nuit. Boucher un orifice avec la terre du tas d'à côté ne mène donc nulle part, le conduit demeurant intact en dessous. L'obturation ne prend son sens qu'avec un matériau impossible à reprendre (grillage à maille fine enterré, mortier, pierre calée) appliqué à l'entrée principale comme aux issues de secours, qui vont rarement par une seule.",
     },
     {
       title: 'Une limite communale qui ne se voit pas sur le terrain',
@@ -533,7 +533,7 @@ export const villesSections = {
     {
       title: "Après la pluie, un terrain qu'on ne parcourt pas",
       body:
-        "Ce même sol argileux ferme certains accès pendant plusieurs jours à la suite d'un épisode pluvieux : chemins de desserte, fonds de parcelle et abords de hangar tournent au gras et au collant, où un véhicule chargé s'enlise. Deux effets concrets en découlent. Le repérage au-dehors — suivre une coulée, relever des gueules de terrier, placer un dispositif au bon endroit — réclame un sol portant et se mène mal dans ces conditions ; reporter de quelques jours vaut mieux que de trancher sur un terrain où plus rien ne se lit. Quant à l'échelle, la perche ou le matériel lourd, ils exigent une assise ferme, absente tant que le sol n'a pas ressuyé. Autant l'annoncer en convenant de la date.",
+        "Ce même sol argileux ferme certains accès pendant plusieurs jours à la suite d'un épisode pluvieux : chemins de desserte, fonds de parcelle et abords de hangar tournent au gras et au collant, où un véhicule chargé s'enlise. Deux effets concrets en découlent. Le repérage au-dehors (suivre une coulée, relever des gueules de terrier, placer un dispositif au bon endroit) réclame un sol portant et se mène mal dans ces conditions ; reporter de quelques jours vaut mieux que de trancher sur un terrain où plus rien ne se lit. Quant à l'échelle, la perche ou le matériel lourd, ils exigent une assise ferme, absente tant que le sol n'a pas ressuyé. Autant l'annoncer en convenant de la date.",
     },
   ],
 };

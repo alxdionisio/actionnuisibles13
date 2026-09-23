@@ -60,7 +60,7 @@ export const croises = [
       },
       {
         title: "Ce que le voisinage et la copropriété ont à organiser",
-        body: "Les parties privatives relèvent de chaque occupant, mais l'échelle du problème dépasse la porte d'entrée. Concrètement, il faut un interlocuteur unique — syndic, bailleur ou conseil syndical — pour recenser les logements à examiner, retenir une même fenêtre de passage pour les appartements contigus et transmettre les consignes de préparation avant la date arrêtée. Un traitement étalé sur plusieurs semaines, logement après logement, laisse aux punaises le temps de regagner les surfaces déjà traitées. Dans un immeuble sans syndic actif, l'accord amiable entre voisins reste la seule voie praticable, et il s'obtient plus facilement avant que le sujet ne devienne conflictuel.",
+        body: "Les parties privatives relèvent de chaque occupant, mais l'échelle du problème dépasse la porte d'entrée. Concrètement, il faut un interlocuteur unique (syndic, bailleur ou conseil syndical) pour recenser les logements à examiner, retenir une même fenêtre de passage pour les appartements contigus et transmettre les consignes de préparation avant la date arrêtée. Un traitement étalé sur plusieurs semaines, logement après logement, laisse aux punaises le temps de regagner les surfaces déjà traitées. Dans un immeuble sans syndic actif, l'accord amiable entre voisins reste la seule voie praticable, et il s'obtient plus facilement avant que le sujet ne devienne conflictuel.",
       },
     ],
   },
@@ -80,11 +80,11 @@ export const croises = [
       },
       {
         title: 'Pinèdes, cabanons et bâtiments peu fréquentés',
-        body: "Les parcelles bordées de pins et les terrains en lisière de boisement ajoutent une difficulté : le feuillage dense masque un nid jusqu'à ce qu'il ait pris du volume. Il en va de même de toute construction dont personne n'approche pendant des mois — cabanon de fond de jardin, local de pompe de piscine, remise à outils, combles non aménagés. Le nid s'y découvre au moment où l'on rouvre la porte, alors que la colonie est en pleine activité. Faire le tour de ces locaux au printemps, quand la fondatrice bâtit seule un nid de la taille d'une noix, évite cette découverte tardive.",
+        body: "Les parcelles bordées de pins et les terrains en lisière de boisement ajoutent une difficulté : le feuillage dense masque un nid jusqu'à ce qu'il ait pris du volume. Il en va de même de toute construction dont personne n'approche pendant des mois : cabanon de fond de jardin, local de pompe de piscine, remise à outils, combles non aménagés. Le nid s'y découvre au moment où l'on rouvre la porte, alors que la colonie est en pleine activité. Faire le tour de ces locaux au printemps, quand la fondatrice bâtit seule un nid de la taille d'une noix, évite cette découverte tardive.",
       },
       {
         title: "Le cycle de la colonie, et pourquoi ne pas s'en charger soi-même",
-        body: "Une colonie de guêpes part d'une fondatrice unique au printemps, croît tout l'été et atteint son effectif maximal en fin de saison, quand les ouvrières défendent le nid le plus vivement et que les fruits tombés les rapprochent des terrasses. S'en occuper soi-même à ce stade cumule trois risques : la réaction de défense d'une colonie nombreuse, la position adoptée pour l'atteindre — échelle, pente de toiture, trappe de comble — et l'usage d'aérosols qui excitent les ouvrières sans atteindre le couvain au fond d'une cavité. Une personne allergique ne doit se trouver ni sur place, ni à proximité pendant l'opération.",
+        body: "Une colonie de guêpes part d'une fondatrice unique au printemps, croît tout l'été et atteint son effectif maximal en fin de saison, quand les ouvrières défendent le nid le plus vivement et que les fruits tombés les rapprochent des terrasses. S'en occuper soi-même à ce stade cumule trois risques : la réaction de défense d'une colonie nombreuse, la position adoptée pour l'atteindre (échelle, pente de toiture, trappe de comble) et l'usage d'aérosols qui excitent les ouvrières sans atteindre le couvain au fond d'une cavité. Une personne allergique ne doit se trouver ni sur place, ni à proximité pendant l'opération.",
       },
     ],
   },
@@ -156,7 +156,7 @@ export const croises = [
       },
       {
         title: 'Ce que la coordination exige dans les faits',
-        body: "Une opération à l'échelle d'une cage d'escalier repose sur des décisions qu'un occupant seul ne peut pas prendre. Le gestionnaire — bailleur social, syndic ou propriétaire unique — doit arrêter un périmètre englobant les parties communes, les locaux à déchets et les gaines accessibles, et pas uniquement les appartements ayant signalé le problème. Il faut ensuite une date commune par colonne, une consigne écrite remise assez tôt pour que chacun libère le dessous de son évier, et une réponse pour les logements vacants ou fermés, qui resteraient sinon des réservoirs. Le passage suivant se prépare dans les mêmes conditions.",
+        body: "Une opération à l'échelle d'une cage d'escalier repose sur des décisions qu'un occupant seul ne peut pas prendre. Le gestionnaire (bailleur social, syndic ou propriétaire unique) doit arrêter un périmètre englobant les parties communes, les locaux à déchets et les gaines accessibles, et pas uniquement les appartements ayant signalé le problème. Il faut ensuite une date commune par colonne, une consigne écrite remise assez tôt pour que chacun libère le dessous de son évier, et une réponse pour les logements vacants ou fermés, qui resteraient sinon des réservoirs. Le passage suivant se prépare dans les mêmes conditions.",
       },
     ],
   },

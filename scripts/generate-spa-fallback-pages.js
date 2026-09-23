@@ -306,11 +306,11 @@ function renderHead({ title, description, canonical, ogImage, schemas, type = 'w
 
 function renderArticleBody(a) {
   const items = a.numberedItems
-    .map((it) => `<li><strong>${escapeHtml(it.title)}</strong> — ${escapeHtml(it.text)}</li>`)
+    .map((it) => `<li><strong>${escapeHtml(it.title)}</strong> : ${escapeHtml(it.text)}</li>`)
     .join('\n        ');
   return `<article>
       <h1>${escapeHtml(a.title)}</h1>
-      <p><em>Publié le ${escapeHtml(a.date)} — Catégorie : ${escapeHtml(a.category)}</em></p>
+      <p><em>Publié le ${escapeHtml(a.date)}, catégorie : ${escapeHtml(a.category)}</em></p>
       <h2>${escapeHtml(a.introHeading)}</h2>
       <p>${escapeHtml(a.introParagraph)}</p>
       <ol>
@@ -336,7 +336,7 @@ function renderVilleBody(v) {
       ${(v.sections || [])
         .map((s) => `<section><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.body)}</p></section>`)
         .join('\n      ')}
-      <p>${escapeHtml(SITE_NAME)} — ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)} — Email : ${escapeHtml(ENTREPRISE.email)} — Devis gratuit.</p>
+      <p>${escapeHtml(SITE_NAME)}, ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}, email : ${escapeHtml(ENTREPRISE.email)}. Devis gratuit.</p>
     </article>`;
 }
 
@@ -345,7 +345,7 @@ function renderFaqBody(items) {
     .map((it) => `<section><h2>${escapeHtml(it.question)}</h2><p>${escapeHtml(it.answer)}</p></section>`)
     .join('\n      ');
   return `<article>
-      <h1>Foire aux questions — Lutte anti-nuisibles dans les Bouches-du-Rhône</h1>
+      <h1>Foire aux questions : lutte anti-nuisibles dans les Bouches-du-Rhône</h1>
       ${qa}
     </article>`;
 }
@@ -375,7 +375,7 @@ function renderThematiqueBody(t) {
       <p>${escapeHtml(t.description)}</p>
       ${blocs}
       ${sections}
-      <p>${escapeHtml(SITE_NAME)} intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. ${escapeHtml(ADRESSE_LIGNE)} — Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
+      <p>${escapeHtml(SITE_NAME)} intervient dans les Bouches-du-Rhône pour ${escapeHtml(t.name.toLowerCase())}. ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
 
@@ -383,7 +383,7 @@ function renderServiceBody(s) {
   return `<article>
       <h1>${escapeHtml(s.title)}</h1>
       <p>${escapeHtml(s.description)}</p>
-      <p>Service proposé par ${escapeHtml(SITE_NAME)} dans les Bouches-du-Rhône. ${escapeHtml(ADRESSE_LIGNE)} — Contact : ${escapeHtml(ENTREPRISE.telephoneAffiche)} — ${escapeHtml(ENTREPRISE.email)}.</p>
+      <p>Service proposé par ${escapeHtml(SITE_NAME)} dans les Bouches-du-Rhône. ${escapeHtml(ADRESSE_LIGNE)}. Contact : ${escapeHtml(ENTREPRISE.telephoneAffiche)}, ${escapeHtml(ENTREPRISE.email)}.</p>
     </article>`;
 }
 
@@ -430,7 +430,7 @@ function renderCroiseBody(c) {
       ${sections}
       <p>Voir aussi <a href="/thematique/${escapeHtml(c.thematiqueSlug)}/">${escapeHtml(c.nuisible)}</a>
       et <a href="/intervention/${escapeHtml(c.villeSlug)}/">dératisation et désinsectisation à ${escapeHtml(c.ville)}</a>.</p>
-      <p>${escapeHtml(SITE_NAME)} — ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
+      <p>${escapeHtml(SITE_NAME)}, ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
 
@@ -545,7 +545,7 @@ pages.push({
 });
 pages.push({
   pathname: 'faq',
-  title: 'FAQ — Foire aux questions anti-nuisibles',
+  title: 'FAQ : foire aux questions anti-nuisibles',
   description: "Réponses aux questions fréquentes sur la dératisation, la désinsectisation, les délais d'intervention, la sécurité des traitements et les garanties.",
   schemas: [ORGANIZATION_SCHEMA, faqPageSchema(faqItems), breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'FAQ', path: '/faq' }])],
 });

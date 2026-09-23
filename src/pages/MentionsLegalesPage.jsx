@@ -77,7 +77,7 @@ export default function MentionsLegalesPage() {
                   <Mention label="Assurance responsabilité civile professionnelle">
                     {[assuranceRcPro.assureur, assuranceRcPro.police && `contrat n° ${assuranceRcPro.police}`]
                       .filter(Boolean)
-                      .join(' — ')}
+                      .join(', ')}
                   </Mention>
                   <Mention label="Couverture géographique">{assuranceRcPro.couverture}</Mention>
                 </>
@@ -85,10 +85,10 @@ export default function MentionsLegalesPage() {
 
               <h2>Hébergement</h2>
               <p>
-                L’hébergement du site est assuré par <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://support.github.com/" target="_blank" rel="noopener noreferrer">support.github.com</a>).
+                L’hébergement du site est assuré par <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis, <a href="https://support.github.com/" target="_blank" rel="noopener noreferrer">support.github.com</a>).
               </p>
               <p>
-                Le nom de domaine est géré par <strong>OVH</strong> (OVH SAS, 2 rue Kellermann, 59100 Roubaix, France — <a href="https://www.ovh.com/" target="_blank" rel="noopener noreferrer">www.ovh.com</a>).
+                Le nom de domaine est géré par <strong>OVH</strong> (OVH SAS, 2 rue Kellermann, 59100 Roubaix, France, <a href="https://www.ovh.com/" target="_blank" rel="noopener noreferrer">www.ovh.com</a>).
               </p>
 
               <h2>Propriété intellectuelle</h2>

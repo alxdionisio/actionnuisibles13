@@ -46,7 +46,7 @@ function ContactPage() {
                     4v1234567890) : elle ne désignait aucun lieu. La forme
                     ?q=…&output=embed résout l'adresse sans clé API. */}
                 <iframe
-                  title={`Carte — ${SITE_NAME}, ${ADRESSE_LIGNE}`}
+                  title={`Carte : ${SITE_NAME}, ${ADRESSE_LIGNE}`}
                   src={`https://www.google.com/maps?q=${encodeURIComponent(`${ADRESSE_LIGNE}, France`)}&output=embed&hl=fr`}
                   width="100%"
                   height="400"
