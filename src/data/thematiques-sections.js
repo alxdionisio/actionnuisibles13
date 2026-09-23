@@ -143,4 +143,72 @@ export const thematiquesSections = {
         "Les besoins d'une colonie évoluent au fil de l'année : élevage du couvain au printemps, avec une demande en protéines et en matières grasses ; recherche de sucres le reste du temps. Un appât délaissé n'est donc pas forcément mauvais, c'est parfois le mauvais moment. L'apparition soudaine d'individus ailés à l'intérieur ne signale pas une arrivée venue du dehors mais un nid déjà établi dans un mur, un vide de plancher ou un encadrement, qui libère ses sexués ; l'épisode dure quelques heures et le renseignement, lui, vaut pour longtemps. Dehors enfin, les pucerons fixés sur un rosier ou un arbuste sécrètent un miellat que les fourmis exploitent et défendent : traiter la plante réduit la ressource, et éloigner les branches du mur supprime la passerelle.",
     },
   ],
+  'demoustication-moustique-tigre': [
+    {
+      title: "Un insecte qui ne vient pas de loin",
+      body:
+        "Contrairement au moustique commun des zones humides, le tigre effectue toute sa vie dans un rayon très réduit, de l'ordre de cent à quelques centaines de mètres autour de son lieu de naissance. Cette particularité change tout : les femelles qui piquent sur une terrasse sont presque toujours nées dans le jardin, chez le voisin immédiat ou dans la copropriété. Il devient alors inutile d'incriminer un marais lointain ou un cours d'eau, la source est à portée de regard. Le revers de cette sédentarité, c'est qu'un seul récipient négligé à deux pas entretient la nuisance de tout un ensemble de maisons, et qu'une parcelle traitée seule reste exposée tant que la mitoyenne ne l'est pas. La discussion entre riverains fait donc partie du travail, au même titre que l'inspection.",
+    },
+    {
+      title: 'Quelques centimètres cubes suffisent à la ponte',
+      body:
+        "Le tigre ne pond pas dans les étendues d'eau : il lui faut un volume minuscule, parfois quelques centimètres cubes, à l'abri et souvent sombre. La liste des contenants concernés surprend par sa banalité. Soucoupes de pots, seaux, arrosoirs, bâches repliées, pneus entreposés, jouets d'enfants, pieds de parasol creux, gouttières encombrées de feuilles, regards d'évacuation, siphons de terrasse peu utilisés, réserves d'eau de pluie non couvertes, vases de cimetière. Les œufs sont déposés au-dessus du niveau, contre la paroi, et attendent la prochaine mise en eau, y compris après plusieurs mois de sécheresse : vider un récipient sans en frotter les bords laisse donc la ponte intacte. Une averse, un arrosage, et le cycle reprend en une semaine à peine sous la chaleur estivale.",
+    },
+    {
+      title: "Jusqu'où va une opération privée, et où commence la collectivité",
+      body:
+        "Une opération menée sur un terrain privé porte sur ce terrain. Les applications dirigées vers la végétation où les adultes se reposent perdent leur effet au bout de quelques jours, et n'empêchent pas l'arrivée de femelles voisines ; elles touchent par ailleurs d'autres insectes présents sur le feuillage, ce qui justifie de les réserver aux situations où la gêne est réelle et les gîtes déjà supprimés. Les pièges pondoirs et les bornes à CO2 relèvent de la même logique de réduction partielle. Au-delà de la clôture, la compétence appartient aux acteurs publics : la surveillance du moustique tigre et les traitements sur l'espace collectif sont organisés à l'échelle départementale, avec un signalement des habitants via les dispositifs prévus par les communes et l'agence régionale de santé. Un particulier gêné par un foyer situé sur un terrain communal ou une voie publique a donc intérêt à le signaler plutôt qu'à traiter chez lui.",
+    },
+  ],
+  'traitement-des-termites': [
+    {
+      title: "Le bois est consommé par l'intérieur",
+      body:
+        "Les ouvriers évitent la lumière et l'air sec. Ils consomment la partie tendre du bois en respectant une mince pellicule extérieure, qui conserve l'aspect d'une pièce intacte : un montant de porte peut être évidé sur toute sa longueur sans qu'aucune ouverture n'apparaisse. Le diagnostic repose donc sur des indices indirects. Un poinçon enfoncé sans résistance, un son mat sous le maillet, un léger affaissement de surface valent davantage qu'un examen visuel. À l'intérieur, les galeries suivent le fil du bois et sont tapissées d'un enduit terreux mêlé d'excréments, détail qui les distingue des cavités propres laissées par d'autres ravageurs. Papier, carton et isolants tendres sont attaqués au passage, ce qui explique des archives ou des plinthes rongées loin de toute charpente. Une colonie reste par ailleurs active plusieurs années au même endroit tant que l'humidité qui l'a attirée subsiste.",
+    },
+    {
+      title: 'Capricorne, vrillette, termite : trois traces à ne pas confondre',
+      body:
+        "Trois ravageurs du bois sont couramment confondus, et leurs traces ne se lisent pas de la même façon. Le capricorne des maisons s'attaque aux résineux : sa larve creuse des galeries larges, et l'adulte sort par un orifice ovale de quelques millimètres, laissant une vermoulure grossière ; on entend parfois un grignotement régulier dans une charpente silencieuse. La petite et la grosse vrillette percent au contraire des trous parfaitement ronds, d'un à trois millimètres, accompagnés d'une poudre fine qui coule sur le sol. Le termite, lui, ne perce aucun trou de sortie et ne rejette pas de sciure : rien ne tombe, rien ne s'entend. Sa signature est extérieure, ces cordonnets de terre agglomérée larges comme un crayon qui franchissent une maçonnerie pour relier le sol au bois.",
+    },
+    {
+      title: 'Déclaration en mairie et zones délimitées par arrêté',
+      body:
+        "Le code de la construction et de l'habitation encadre la lutte contre les termites. Lorsqu'un immeuble bâti ou non bâti est contaminé, l'occupant, ou à défaut le propriétaire, en fait la déclaration à la mairie ; la démarche incombe au détenteur du bien, et non à l'intervenant technique. Le préfet peut par ailleurs délimiter par arrêté des zones contaminées ou susceptibles de l'être à court terme. Dans ces périmètres, la vente d'un immeuble bâti s'accompagne d'un état relatif à la présence de termites, établi par un diagnostiqueur certifié et joint au dossier de diagnostic technique, et une démolition peut être soumise à une obligation d'incinération ou de traitement des bois sur place. La liste des communes concernées évolue : elle se vérifie auprès de la préfecture ou de la mairie avant toute transaction.",
+    },
+  ],
+  'depigeonnage-et-protection-anti-pigeons': [
+    {
+      title: "Pourquoi on écarte l'oiseau au lieu de le supprimer",
+      body:
+        "Le pigeon biset et sa forme citadine appartiennent à la faune sauvage, et à ce titre la destruction, la capture et le transport d'oiseaux ne sont pas laissés à l'initiative d'un occupant. Les opérations éventuelles de régulation relèvent de décisions administratives encadrées, prises au niveau départemental, et le nourrissage est interdit par de nombreux règlements sanitaires communaux. Il faut donc retenir la logique inverse de celle appliquée aux insectes ou aux rongeurs : on modifie le bâtiment pour qu'il cesse d'offrir un appui, une cavité ou une ressource, et la colonie se reporte ailleurs d'elle-même. Effaroucheurs sonores, leurres de rapace et gels répulsifs relèvent du même principe, avec une limite connue : l'oiseau s'y habitue vite lorsque le site reste confortable.",
+    },
+    {
+      title: 'Ce que les fientes abîment, et les précautions de nettoyage',
+      body:
+        "Les déjections sont acides et chargées en sels : déposées en couche, elles ternissent la pierre, piquent le zinc et l'acier peint, décollent les revêtements d'étanchéité et finissent par obstruer chéneaux et descentes, avec des infiltrations à la clé. Le volume accumulé sous un dortoir surcharge en outre les rives et les plafonds rapportés. Le versant sanitaire impose ses propres précautions : une fiente sèche se réduit en poussière au moindre balayage, et c'est cette poussière inhalée qui pose problème, tout comme les acariens, puces et autres parasites qui quittent un nid abandonné pour gagner l'intérieur. Le nettoyage se fait donc humidifié, avec protection respiratoire, gants et vêtements dédiés, avant désinfection puis pose des dispositifs, jamais l'inverse.",
+    },
+    {
+      title: 'Filet, pointes, câble tendu : à quoi tient le choix',
+      body:
+        "Aucun dispositif ne convient partout, et un choix mal ajusté se voit en quelques semaines. Le filet ferme un volume entier, loggia, cour intérieure, sous-face de charpente ou verrière ; il exige un maillage adapté à l'espèce, une tension régulière et des points d'ancrage sains, faute de quoi un oiseau se glisse derrière et s'y trouve piégé. Les pointes conviennent aux surfaces étroites, appuis de fenêtre, corniches, enseignes, à condition de couvrir toute la profondeur : une bande posée trop en retrait laisse un rebord libre où les oiseaux se réinstallent aussitôt. Les câbles tendus sur ressorts, plus discrets, rendent un perchoir instable sans masquer la façade, argument décisif sur un bâtiment vu depuis la rue ou soumis à l'avis d'un architecte. Dans tous les cas, la durabilité tient à la préparation du support : un scellement sur une pierre farineuse ou sur un enduit gonflé par les infiltrations ne tiendra pas une saison.",
+    },
+  ],
+  'traitement-contre-les-mouches': [
+    {
+      title: 'Trois mouches, trois adresses différentes',
+      body:
+        "La mouche domestique, grise et rayée sur le thorax, se développe sur les matières organiques humides : fond de poubelle, litière, fumier, compost trop azoté. Une présence continue désigne un gisement voisin, et non des visiteuses venues d'ailleurs. Les minuscules mouches noires qui décollent quand on arrose une plante verte sont des sciarides : leurs larves consomment le terreau maintenu détrempé, et le problème se règle en laissant sécher le substrat, jamais avec un insecticide d'ambiance. La mouche à viande, plus grosse, bleue ou verte et métallique, suit une autre logique : elle pond sur un cadavre, et une apparition brutale de gros individus lourds dans une pièce fermée fait d'abord penser à un rongeur mort dans une cloison, un conduit ou sous un plancher.",
+    },
+    {
+      title: "Chercher le support de ponte, pas les adultes",
+      body:
+        "Un adulte vit quelques semaines et une femelle dépose plusieurs centaines d'œufs ; le passage de l'œuf à la mouche volante demande une poignée de jours par temps chaud. Toute action qui ne vise que les individus en vol travaille donc sur la partie la plus renouvelable de la population, et la pièce se garnit de nouveau dès le lendemain. La recherche du support de ponte prime sur tout le reste : examiner le dessous et les charnières des conteneurs, les siphons et avaloirs où stagne un dépôt gras, les regards, les caillebotis, les interstices sous un équipement fixe. Un point d'ombre, de tiédeur et d'humidité suffit. Le nettoyage mécanique de ce support, brossage compris, retire le milieu de développement ; c'est lui qui fait la différence, pas la pulvérisation.",
+    },
+    {
+      title: 'Cuisine collective et local à déchets',
+      body:
+        "En restauration collective et en commerce alimentaire, la question dépasse la gêne. L'insecte se pose alternativement sur un déchet et sur une denrée, régurgite pour dissoudre ce qu'il consomme, et transporte sur ses pattes ce qu'il a piétiné : c'est un vecteur reconnu de contaminations digestives, et sa présence au-dessus d'un poste de travail est relevée en contrôle d'hygiène. Les leviers sont d'abord matériels. Conteneurs à couvercle ferme et lavés au jet, local à déchets ventilé, siphonné et refroidi si possible, sortie des bacs calée sur l'horaire de collecte, rideaux à lanières ou sas sur les portes maintenues ouvertes, moustiquaires en bon état sur les ouvrants de cuisine. Les pièges lumineux à plaque adhésive complètent ce dispositif à l'intérieur, à distance des zones de préparation, mais ils comptent les mouches plus qu'ils ne les suppriment.",
+    },
+  ],
 };

@@ -142,6 +142,78 @@ const registre = [
         'Colmater les petites fissures et garder les plans de travail et les denrées propres peut limiter les entrées. Pour une invasion installée, un traitement professionnel est plus efficace. Contactez-nous pour un devis gratuit dans les Bouches-du-Rhône.',
     },
   },
+  {
+    slug: titleToSlug('Démoustication moustique tigre'),
+    name: 'Moustiques',
+    title: 'Démoustication moustique tigre - Bouches-du-Rhône',
+    description:
+      'Démoustication dans les Bouches-du-Rhône : repérage et suppression des gîtes larvaires du moustique tigre, limites du traitement des adultes, rôle des communes.',
+    keywords: 'démoustication, moustique tigre, gîtes larvaires, moustiques, Bouches-du-Rhône',
+    content: {
+      intro:
+        'Le moustique tigre s\'est installé durablement dans le département et pique en plein jour, jusque sur les terrasses et les balcons. Action Nuisibles 13 intervient sur la démoustication des extérieurs privés, avec un repérage des points d\'eau stagnante qui alimentent les éclosions.',
+      pourquoi:
+        'Un traitement d\'adultes ne tient que quelques jours : de nouvelles femelles émergent aussitôt des réservoirs voisins. Un intervenant regarde donc d\'abord ce qui produit les larves, coupelles, gouttières, regards, avant d\'envisager la moindre application, et explique au propriétaire ce qui relève de son entretien.',
+      comment:
+        'Piqûres diurnes, insecte petit, noir, rayé de blanc, vol bas autour des chevilles : la signature du tigre diffère du moustique commun, actif au crépuscule. Cherchez ensuite les larves, petits vers frétillants remontant respirer à la surface d\'un seau, d\'un vase ou d\'une soucoupe oubliée.',
+      reflexe:
+        'Videz chaque semaine tout ce qui retient de l\'eau, et couvrez les réserves d\'arrosage : ce geste pèse davantage qu\'un produit. Si la gêne persiste malgré cela, parlons-en, nous examinerons la parcelle ensemble. Pour l\'espace public, le signalement se fait auprès de votre commune.',
+    },
+  },
+  {
+    slug: titleToSlug('Traitement des termites'),
+    name: 'Termites',
+    title: 'Traitement des termites - Bouches-du-Rhône',
+    description:
+      'Termite souterrain dans les Bouches-du-Rhône : cordonnets de terre, bois évidé de l\'intérieur, différences avec capricorne et vrillette, déclaration en mairie.',
+    keywords: 'termites, termite souterrain, charpente, bois, diagnostic, Bouches-du-Rhône',
+    content: {
+      intro:
+        'Le termite souterrain travaille à l\'abri de la lumière et creuse le bois par l\'intérieur, si bien qu\'une poutre peut sonner creux alors que sa surface paraît saine. Action Nuisibles 13 intervient dans le département sur le diagnostic et le traitement des charpentes et des ouvrages atteints.',
+      pourquoi:
+        'La colonie ne se voit pas : elle occupe le sol et progresse à couvert vers les bois de construction. Reconnaître son passage, distinguer l\'ouvrage actif de dégâts anciens et suivre les galeries jusqu\'à leur départ demande un examen méthodique, que le remplacement d\'une pièce abîmée ne remplace jamais.',
+      comment:
+        'Cherchez des cordonnets de terre plaqués sur un mur, une plinthe ou un bas de cloison, un parquet qui fléchit, un chambranle qui s\'enfonce sous le doigt, une peinture boursouflée. Au printemps, des individus ailés sombres peuvent apparaître près d\'une fenêtre puis perdre leurs quatre ailes égales.',
+      reflexe:
+        'Ne démontez rien et ne repeignez pas avant d\'avoir fait regarder l\'ouvrage : une pièce déposée efface les indices qui servent à situer le départ des galeries. Décrivez-nous ce que vous observez, nous conviendrons d\'un examen sur place. Le signalement en mairie relève ensuite du propriétaire.',
+    },
+  },
+  {
+    slug: titleToSlug('Dépigeonnage et protection anti-pigeons'),
+    name: 'Pigeons',
+    title: 'Dépigeonnage et protection anti-pigeons dans le 13',
+    description:
+      'Dépigeonnage dans les Bouches-du-Rhône : exclusion par filets, pics et câbles, nettoyage et désinfection des fientes, cadre applicable à une espèce sauvage.',
+    keywords: 'dépigeonnage, pigeons, filets, pics, fientes, Bouches-du-Rhône',
+    content: {
+      intro:
+        'Les pigeons installés sur un bâtiment y reviennent tant que les appuis, les corniches et les combles ouverts restent accessibles. Action Nuisibles 13 traite ces situations dans le département par des dispositifs d\'exclusion posés sur les points de repos, complétés par le nettoyage des surfaces souillées.',
+      pourquoi:
+        'L\'oiseau relève de la réglementation sur la faune sauvage : on ne le détruit pas à sa convenance, on lui retire l\'accès. Choisir entre filet, pics, câble tendu ou obturation suppose de lire la façade, sa hauteur, son exposition, et les contraintes propres aux bâtiments anciens.',
+      comment:
+        'Fientes accumulées sous un rebord, plumes et duvet dans une gouttière, roucoulements matinaux au-dessus d\'un faux plafond, branchages d\'un nid dans un conduit d\'aération ou derrière un volet condamné. Une traînée blanche verticale sur une façade indique un perchoir occupé depuis longtemps.',
+      reflexe:
+        'Cessez tout apport de nourriture, y compris indirect par les miettes et les graines destinées aux petits oiseaux, et n\'allez pas gratter les fientes à sec. Envoyez-nous des photos de la façade et des zones souillées, elles orientent déjà le choix des dispositifs.',
+    },
+  },
+  {
+    slug: titleToSlug('Traitement contre les mouches'),
+    name: 'Mouches',
+    title: 'Traitement contre les mouches - Bouches-du-Rhône',
+    description:
+      'Mouches dans les Bouches-du-Rhône : identifier l\'espèce pour trouver le gîte larvaire, cas des cuisines collectives et des locaux à déchets, mesures utiles.',
+    keywords: 'mouches, mouche domestique, sciarides, gîte larvaire, Bouches-du-Rhône',
+    content: {
+      intro:
+        'Une pièce envahie de mouches signale presque toujours une matière en décomposition à proximité : un sac oublié, une canalisation encrassée, un animal mort dans un vide. Action Nuisibles 13 recherche ce foyer de ponte dans le département, parce qu\'un local pulvérisé sans cela se repeuple aussitôt.',
+      pourquoi:
+        'Trois espèces au moins se partagent ces signalements, et chacune renvoie à une source différente. Reconnaître laquelle est en cause oriente la recherche vers le bon endroit : un local à déchets, un terreau détrempé ou un cadavre inaccessible ne se règlent pas du tout de la même manière.',
+      comment:
+        'Comptez les individus et regardez où ils se tiennent : quelques sujets contre une vitre relèvent du hasard, une nuée constante au même endroit désigne un gîte voisin. Des asticots visibles, une odeur douceâtre ou de petits points noirs collés au plafond confirment un développement sur place.',
+      reflexe:
+        'Avant d\'acheter une bombe ou un ruban, remontez la piste : bac à graisses, siphon rarement utilisé, litière, compost, vide sanitaire, plante trop arrosée. Si la source vous échappe ou reste hors d\'atteinte, appelez-nous, la recherche du gîte fait partie du travail, pas un préalable à votre charge.',
+    },
+  },
 ];
 
 // Rattache le contenu long, tenu à part comme pour les communes.

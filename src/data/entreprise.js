@@ -214,6 +214,10 @@ export const ORGANIZATION = omitEmpty({
     'Élimination punaises de lit',
     'Traitement cafards et blattes',
     'Traitement contre les fourmis',
+    'Démoustication',
+    'Traitement des termites',
+    'Dépigeonnage',
+    'Traitement des mouches',
   ],
   knowsAbout: [
     'Lutte anti-nuisibles',
