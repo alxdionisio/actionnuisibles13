@@ -251,4 +251,126 @@ export const villesSections = {
         "Sainte-Croix et Saint-Pierre relèvent administrativement de Martigues, dont le centre se situe à plusieurs kilomètres. Les points d'adresse de ces écarts sont mal restitués par les applications de navigation : chemins privés dépourvus de nom, numérotation discontinue, lieux-dits que l'on retrouve ailleurs dans le département. Un rendez-vous convenu sur la seule adresse postale se solde régulièrement par un détour de vingt minutes. Mieux vaut s'entendre sur un repère visible depuis la voie — un portail, un croisement, un bâtiment identifiable — et préciser d'emblée si la fin du parcours emprunte une piste que tout véhicule ne peut pas prendre.",
     },
   ],
+  'chateauneuf-les-martigues': [
+    {
+      title: 'Le marais de Bolmon et ses roubines',
+      body:
+        "La commune borde le Bolmon et le marais qui le prolonge, drainés par un lacis de roubines et de fossés entretenus de longue date. Ce maillage humide forme un couloir continu : le surmulot y progresse à couvert sur plusieurs centaines de mètres, franchissant des séparations qu'il ignore. Les habitations et les exploitations établies en bordure subissent ainsi une pression dont la source ne leur appartient pas. Ce qui se décide à cette lisière tient à peu de chose : un regard d'évacuation mal refermé, un fourreau laissé ouvert sous le portail, un sac d'aliment pour animaux entreposé dehors.",
+    },
+    {
+      title: 'La Mède, entre la rade, la voie ferrée et le site industriel',
+      body:
+        "Le quartier de La Mède forme un village en soi, resserré entre le rivage, la ligne de chemin de fer et l'emprise industrielle qui lui a donné sa physionomie. Les logements y occupent une bande étroite, avec des courettes fermées, des remises et des garages bâtis au plus près de la voie. Pour celui qui habite là, la question utile ne porte pas sur ce qui se passe derrière la clôture de l'établissement voisin, sur quoi il n'a aucune prise, mais sur la manière dont sa propre parcelle se referme : seuils, ventilations basses, joints de dalle, rangement du bois et des conteneurs.",
+    },
+    {
+      title: "Les vallons de la Nerthe et le ruissellement d'orage",
+      body:
+        "Derrière la commune, le versant de la chaîne descend par des vallons courts et pentus qui rassemblent l'eau en quelques minutes lors des épisodes d'automne. Ces pluies produisent un effet mécanique que l'on anticipe rarement : les collecteurs se mettent en charge, et ce qui logeait à l'intérieur est chassé vers le haut, par les avaloirs, les tampons et les cours situées en contrebas. Des apparitions soudaines et simultanées dans plusieurs maisons d'une même rue, au lendemain d'une forte pluie, n'ont donc rien d'une coïncidence. Ces journées-là sont aussi celles où les défauts d'étanchéité se repèrent le mieux.",
+    },
+    {
+      title: 'Les fosses désaffectées des maisons raccordées',
+      body:
+        "L'urbanisation par tranches a laissé quantité de maisons autrefois pourvues d'un assainissement individuel, puis raccordées au tout-à-l'égout. Fosse, bac dégraisseur et conduites abandonnées demeurent le plus souvent en place, vides, non comblés, et reliés au bâtiment par un départ que plus personne ne sait localiser. Cela fait un volume tiède, couvert et invisible, à quelques mètres des pièces habitées : l'une des origines les plus tenaces d'une présence que rien, à l'intérieur, ne vient expliquer. Retrouver le plan de l'ancienne installation, ou à défaut sonder le sol le long de la façade, précède utilement toute autre démarche.",
+    },
+  ],
+  'marignane': [
+    {
+      title: 'Les entrepôts, leurs palettiers et la question de la hauteur',
+      body:
+        "Les plateformes de stockage implantées autour de la commune se distinguent moins par leur surface au sol que par leur élévation : les marchandises y sont rangées dans des palettiers de plusieurs niveaux, desservis par des chariots à mât. Un rongeur parvenu au troisième ou au quatrième niveau y trouve un refuge calme et sec, hors d'atteinte de tout matériel disposé en partie basse ; les indices, eux, retombent en allée et se remarquent tard. L'examen d'un tel bâtiment suit donc les allées et les hauteurs plutôt que sa périphérie, et la présence d'un cariste détermine ce qu'il sera possible d'observer.",
+    },
+    {
+      title: 'Des halls dont les ouvertures ne se referment jamais vraiment',
+      body:
+        "L'activité aéronautique locale suppose des bâtiments de très grande dimension, dont les portes se mesurent en dizaines de mètres et sont manœuvrées plusieurs fois par jour. Une fermeture de ce gabarit ne devient pas hermétique au sens où on l'entend pour une porte d'habitation : il subsiste toujours un jeu en partie basse, des rails et des tableaux latéraux ouverts. Dans un volume pareil, écarter l'animal par la seule fermeture n'a guère de sens ; le raisonnement se déplace vers les cheminements intérieurs et vers les annexes — vestiaires, salles de pause, magasins de pièces — qui concentrent l'eau et la nourriture.",
+    },
+    {
+      title: "Le noyau villageois en pente vers la rive",
+      body:
+        "Le vieux Marignane s'organise autour de son église et du château, sur un terrain incliné vers l'eau. Les canalisations du secteur convergent donc toutes vers le bas, et les regards de point bas sont les premiers à porter des traces. Le bâti y est serré : immeubles remaniés, arrière-cours partagées, commerces alimentaires dont les réserves occupent d'anciens niveaux enterrés. Un signalement isolé dans l'une de ces boutiques renseigne mal sur l'origine. C'est l'ordre dans lequel les adresses d'une même rue ont commencé à signaler quelque chose, plutôt que la tenue du local visité, qui donne le sens de la progression.",
+    },
+    {
+      title: 'Les cuisines collectives et leur fenêtre de nuit',
+      body:
+        "Les bassins d'emploi de la commune font vivre un nombre important de cuisines produisant pour des centaines de couverts : chambres froides, laverie, monte-charge, local de déconditionnement, en service du petit matin au début de l'après-midi. Le créneau exploitable se réduit alors à quelques heures nocturnes, entre le dernier nettoyage et la première mise en route. L'essentiel s'y joue avant l'arrivée : plans dégagés, denrées protégées, appareils écartés du mur, siphons atteignables. Une équipe prévenue la veille rend le passage productif ; un office laissé en l'état le ramène à un simple tour d'observation.",
+    },
+  ],
+  'saint-victoret': [
+    {
+      title: 'Des logements calfeutrés et des façades percées',
+      body:
+        "Sous le cône de bruit des pistes, une grande partie du parc a reçu des menuiseries renforcées, une ventilation mécanique et, très souvent, une climatisation. Les fenêtres demeurent closes une bonne part de l'année, l'été compris. Deux effets en découlent. Chaque équipement ajouté a percé un mur — sortie de ventilation, liaison frigorifique, évacuation de condensats — et ces traversées, rarement rebouchées avec soin, offrent des points de passage aussi bien en haut qu'en bas de façade. Par ailleurs, un logement peu aéré garde ses odeurs et son humidité, ce qui retarde le moment où une présence se remarque.",
+    },
+    {
+      title: 'Un parc pavillonnaire homogène, et ses combles isolés',
+      body:
+        "Les maisons ont été livrées par séries rapprochées, selon quelques modèles seulement : mêmes combles perdus, mêmes coffres de volets, même vide sanitaire ventilé par des grilles au ras du sol. Une conséquence pratique en découle. Lorsqu'une rue signale des rongeurs, le détail constructif par lequel ils entrent est presque toujours le même d'un pavillon à l'autre, et se vérifie chez le voisin en quelques minutes. Les combles réisolés par soufflage méritent une attention particulière : le matériau se prête au nid, masque les galeries, et la présence se manifeste par des bruits de plafond bien avant que des déjections soient découvertes.",
+    },
+    {
+      title: 'La promiscuité comme contrainte de déroulement',
+      body:
+        "Sur des terrains de cette taille, une opération menée dans un jardin se déroule à trois ou quatre mètres de la terrasse d'à côté, parfois sous une fenêtre ouverte. Cela change la préparation plus que la technique : prévenir les riverains immédiats, s'assurer que les ouvrants donnant sur la zone sont fermés, rentrer les animaux, retirer le linge étendu et les jouets d'extérieur. Le voisin non averti qui sort au mauvais moment constitue le risque principal de la demi-heure qui suit. Ce repérage se fait au moment de convenir de l'horaire, pas une fois sur place.",
+    },
+  ],
+  'gignac-la-nerthe': [
+    {
+      title: 'La tranchée ferroviaire et la tête du tunnel',
+      body:
+        "La ligne vers Marseille traverse le territoire communal avant de s'enfoncer sous la chaîne de la Nerthe par un ouvrage long de plusieurs kilomètres. Aux abords de l'entrée, la voie court en déblai, entre des talus raides et des murs de soutènement. Il en résulte une bande linéaire close, sans fréquentation, dont la végétation n'est reprise qu'à intervalles espacés : les rongeurs y vivent sans rapport avec les maisons voisines, dont les fonds de jardin donnent pourtant sur la clôture du domaine ferroviaire. Le riverain n'a aucun droit d'agir au-delà de celle-ci ; son travail porte sur sa propre bordure, qu'il gagne à traiter comme une ligne à tenir.",
+    },
+    {
+      title: 'Les bastides rattrapées par la construction',
+      body:
+        "Avant les cinquante dernières années, le territoire se partageait entre mas et domaines agricoles. Plusieurs subsistent, cernés désormais de rues résidentielles, et ont gardé ce qui les accompagnait : hangars, écuries, aires de stockage, vergers, parfois quelques bêtes. Une propriété de cette nature fournit à elle seule le gîte et le couvert, et approvisionne sans interruption un quartier qui, lui, ne présente aucune faiblesse particulière. Les habitants cherchent alors la cause chez eux et ne la trouvent pas, puisqu'elle se tient sur une parcelle dont aucun d'eux n'est propriétaire.",
+    },
+    {
+      title: 'Les résidences récentes et leurs espaces communs',
+      body:
+        "Une part des constructions neuves prend la forme d'ensembles clos, dont la voirie intérieure, les plantations, le bassin de rétention et le local à conteneurs relèvent de la collectivité des copropriétaires et non de l'un d'entre eux. Or c'est précisément là que la difficulté se loge : au pied du talus planté, dans le regard d'eaux pluviales, derrière le local à déchets. Le propriétaire qui fait traiter son logement agit sur une surface où rien ne niche, pendant que la bande commune demeure inchangée. Tant que la décision n'a pas été portée devant l'instance qui administre ces espaces, la situation se reproduit à l'identique.",
+    },
+  ],
+  'vitrolles': [
+    {
+      title: 'Le vieux village adossé à la roche',
+      body:
+        "Les maisons du noyau ancien s'appuient contre la barre rocheuse que surmonte la chapelle, et leurs pièces arrière sont à demi enterrées, fraîches et humides en toute saison. Cette configuration n'attire pas la même espèce que les immeubles récents : on y rencontre surtout la blatte orientale, qui préfère les endroits frais et bas — caves, vides sanitaires, canalisations —, remonte par les évacuations et se déplace au sol plus qu'en hauteur. La confondre avec sa cousine germanique conduit à porter l'effort sur les cuisines, alors que la population se tient en dessous, dans les regards et les fourreaux de réseau.",
+    },
+    {
+      title: "Un plateau bâti d'un seul tenant",
+      body:
+        "Les quartiers élevés sur le plateau dans les années soixante-dix ont été conçus en une seule opération, chauffage compris : une chaufferie dessert plusieurs bâtiments par des galeries enterrées, qui portent également l'eau et parfois les courants faibles. Ces ouvrages sont tièdes en toute saison, secs, jamais éclairés, ouverts une ou deux fois l'an tout au plus. Ils relient des immeubles que rien ne rapproche en surface, ce qui explique des signalements concomitants dans des entrées éloignées. Une action limitée aux niveaux habités laisse ce réseau intact, et le réseau réalimente ensuite ce qui a été traité.",
+    },
+    {
+      title: "Les surfaces d'activité laissées vides entre deux baux",
+      body:
+        "Les ensembles commerciaux et tertiaires de la commune comportent des cellules inoccupées, parfois durablement. Une cellule vide ne signale rien, ne reçoit personne, et conserve pourtant ses réseaux, son faux plafond et quelquefois les reliquats de l'activité précédente. Elle sert de base arrière aux voisines, qui font le nécessaire chez elles et ne comprennent pas que cela recommence. L'unité pertinente devient alors le bâtiment entier, combles techniques et réservations de cloison compris, si bien que l'accord du propriétaire des murs compte autant que celui des exploitants en place.",
+    },
+    {
+      title: "La coupure entre la ville et l'étang",
+      body:
+        "Entre les derniers quartiers et la rive, les emprises routières et ferroviaires isolent une bande qu'on ne traverse pas à pied. Peu regardée, elle accumule des broussailles hautes, des remblais et des dépôts laissés là par facilité. Ce couloir entretient une population indépendante de tout bâtiment, qui remonte vers les abords construits aux premiers froids, ou dès qu'un chantier la déloge. Pour les établissements implantés de ce côté, l'échéance est prévisible : elle se prépare à l'arrière-saison, et non le jour où des passages sont constatés à l'intérieur.",
+    },
+  ],
+  'salon-de-provence': [
+    {
+      title: 'Un centre resserré, des livraisons contraintes',
+      body:
+        "La vieille ville tient dans un anneau de boulevards tracé sur l'emplacement des remparts, et l'on n'y accède que par quelques portes et des rues où deux véhicules ne se croisent pas. Restaurants et commerces de bouche y sont approvisionnés sur une plage horaire courte, ce qui amène à poser cartons, cageots et bacs sur le trottoir en attendant de les rentrer. Ce dépôt de quelques heures, répété chaque matin aux mêmes adresses, finit par fixer un itinéraire nocturne entre le caniveau, les grilles d'arbres et l'arrière des boutiques.",
+    },
+    {
+      title: 'Les matinées de marché',
+      body:
+        "Le marché occupe deux fois par semaine des places qui redeviennent ensuite stationnement et lieu de passage. C'est au remballage que tout se décide : les déchets sont rassemblés vite, sur un sol accidenté de pavés disjoints, de grilles d'arbres et de bouches d'évacuation, dont une part échappe au balayage qui suit. S'y ajoutent les véhicules des marchands, caisses et bâches stationnant à proximité dès la veille au soir. Les boutiques installées en bordure observent alors des allées et venues que l'examen de leur propre réserve ne justifie pas, et qu'aucune mesure prise chez elles ne fera cesser.",
+    },
+    {
+      title: "Le canal de Craponne et le calendrier de l'arrosage",
+      body:
+        "L'irrigation de la plaine repose sur un canal ancien et ses ramifications, dont certaines franchissent la ville à ciel ouvert avant de disparaître sous la chaussée. Deux moments de l'année pèsent. La remise en eau noie les berges et refoule vers le haut ce qui s'y était établi ; le chômage hivernal produit l'inverse, en découvrant un fond sec que les rongeurs occupent aussitôt, abrités et tout près des propriétés riveraines. Jardins et entreprises longeant une filiole dépendent donc d'un calendrier qui leur échappe, et qu'il vaut mieux connaître : une action engagée à la veille du retour de l'eau n'a pas la même portée qu'une autre conduite en pleine saison.",
+    },
+    {
+      title: 'La campagne oléicole et les moulins',
+      body:
+        "De novembre à janvier, la récolte converge vers les moulins et les coopératives, et le rythme des lieux change entièrement : réception en vrac, caisses en attente, et surtout des sous-produits en quantité — grignons, margines, feuilles — entreposés le temps d'être évacués. Cette ressource surgit en quelques jours, se concentre sur un point précis, puis disparaît au printemps. Les rongeurs ne s'en vont pas avec elle : l'effectif monté pendant la campagne se reporte sur les bâtiments alentour. Le moment le plus utile pour regarder les abords et les aires de dépôt se situe donc avant l'ouverture, non pendant.",
+    },
+  ],
 };
