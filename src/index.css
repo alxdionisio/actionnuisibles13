@@ -4671,6 +4671,29 @@ p {
   flex-shrink: 0;
 }
 
+/* Croix de fermeture, présente seulement quand un choix est déjà enregistré.
+   44 px de côté : la cible tactile minimale recommandée, sinon elle est
+   impossible à viser au pouce sur un bandeau bas d'écran. */
+.cookie-banner-close {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--token-white);
+  font-size: 1.5rem;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+}
+
+.cookie-banner-close:hover,
+.cookie-banner-close:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .cookie-banner-btn {
   padding: 0.5rem 1rem;
   border-radius: 50px;
