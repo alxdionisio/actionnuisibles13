@@ -373,4 +373,111 @@ export const villesSections = {
         "De novembre à janvier, la récolte converge vers les moulins et les coopératives, et le rythme des lieux change entièrement : réception en vrac, caisses en attente, et surtout des sous-produits en quantité — grignons, margines, feuilles — entreposés le temps d'être évacués. Cette ressource surgit en quelques jours, se concentre sur un point précis, puis disparaît au printemps. Les rongeurs ne s'en vont pas avec elle : l'effectif monté pendant la campagne se reporte sur les bâtiments alentour. Le moment le plus utile pour regarder les abords et les aires de dépôt se situe donc avant l'ouverture, non pendant.",
     },
   ],
+  'marseille': [
+    {
+      title: 'Ce que le trottoir remet en circulation',
+      body:
+        "Dans les arrondissements centraux, un sommier posé au pied d'un immeuble reste rarement seul longtemps : il est photographié, proposé, chargé dans un utilitaire ou emporté par quelqu'un du quartier, parfois le soir même. Ce réemploi de proche en proche explique une part des arrivées de punaises de lit dans des logements où rien ne s'était jamais produit : l'insecte voyage avec le meuble, pas avec l'habitant. Un couchage sorti d'un appartement atteint doit donc être rendu impropre à la récupération avant la descente — housse fermée, structure sciée ou marquée au feutre large. Et tout lot rapporté d'une brocante gagne à être ouvert dehors, coutures et rainures comprises.",
+    },
+    {
+      title: 'Un commerce de bouche sous des appartements',
+      body:
+        "Beaucoup d'immeubles anciens superposent une boutique au rez-de-chaussée, des logements aux étages et une cave voûtée en dessous, laquelle se prolonge parfois sous l'adresse mitoyenne. Cet empilement ouvre une communication verticale qu'aucune des parties ne maîtrise seule : conduit d'extraction, percements réalisés au fil des installations, escalier de cave, anciennes fosses maçonnées. Les blattes suivent la chaleur et montent ; les occupants du premier étage alertent, le commerçant est désigné, et le foyer se tient pourtant dans le volume intermédiaire — plénum, gaine, vide de plancher — dont nul ne se considère responsable.",
+    },
+    {
+      title: 'Des chambres louées une par une',
+      body:
+        "Une grande partie des appartements anciens du centre est partagée entre plusieurs occupants, chacun avec son contrat, ses affaires et ses dates. Chaque emménagement forme alors un point d'entrée autonome, avec ses cartons et sa literie ; la cuisine et la pièce d'eau, communes, ne sont sous la responsabilité effective de personne ; et un départ en cours d'année emporte le mobilier vers une autre adresse du quartier. Réunir une date où toutes les chambres sont ouvertes suppose de passer par le propriétaire ou l'intermédiaire qui gère le lot : un accord obtenu d'un seul résident ne vaut que pour sa porte.",
+    },
+    {
+      title: "La cour, le conteneur et l'heure de sortie",
+      body:
+        "Nombre d'immeubles s'organisent autour d'une cour ou d'un puits de lumière qu'aucune voie ne dessert : on n'y parvient qu'en traversant le hall, quelquefois un appartement. Les bacs y stationnent la journée avant d'être roulés jusqu'à la chaussée, souvent dans une pente, pour un ramassage tardif. Le point faible n'est alors ni la cour ni la chaussée mais l'intervalle entre les deux : sacs laissés au sol le temps d'une manœuvre, dalle lavée mais non rincée, avaloir au bas de la descente.",
+    },
+  ],
+  'le-rove': [
+    {
+      title: 'Bergeries, foin et sacs de granulés',
+      body:
+        "Le Rove demeure une commune d'élevage, avec des troupeaux qui pâturent les collines et des bâtiments où s'entreposent fourrage et aliments. Ce contexte déplace le problème. Une botte de foin, un sac entamé ou une réserve de céréales offrent une ressource que rien n'épuise, et les rongeurs s'établissent dans la masse même du stock plutôt qu'à sa périphérie : tant que les rangs n'ont pas été écartés, ce que l'on relève au sol ne dit rien de l'effectif. La présence continue d'animaux de rente, de chiens au travail et parfois d'un atelier de transformation commande ensuite où chaque chose peut être posée : hors de portée des bêtes, à distance des locaux de traite et de fabrication, en contenant fermé et repéré. S'y ajoute une pression que le rongeur masque souvent, celle des mouches, liée au fumier et aux fortes chaleurs davantage qu'à l'entretien des lieux.",
+    },
+    {
+      title: "Ce que l'on garde en réserve quand le premier commerce est loin",
+      body:
+        "Les habitations réparties sur le territoire achètent en volume : sacs de croquettes, palettes de granulés de chauffage, congélateur au garage, bois pour la saison froide. Ces réserves finissent presque toujours dans une annexe non chauffée dont la porte s'ouvre une fois par semaine. Un sac papier percé par en dessous, quelques granulés répandus derrière une pile, et la souris dispose au même endroit de quoi manger et de quoi nicher, sans avoir à pénétrer dans la maison. Quand elle s'y décide, c'est le garage ou le cellier qu'il faut reprendre, pas la cuisine. Poser les sacs sur une étagère métallique et transvaser dans des bidons rigides met fin à davantage de situations qu'un traitement mené à l'intérieur des pièces de vie.",
+    },
+    {
+      title: 'Les terrains de loisir dans les collines',
+      body:
+        "Une partie des parcelles n'est pas habitée au sens ordinaire : un cabanon monté par étapes, une citerne, quelques fruitiers, aucun raccordement, une venue tous les quinze jours. Ces terrains produisent des situations que l'on ne voit pas ailleurs. Un nid de guêpes y atteint le volume d'un ballon sans avoir dérangé qui que ce soit, et se révèle le jour où le propriétaire revient tailler. Le suivi, surtout, n'y a pas le même sens : une séquence de passages rapprochés suppose quelqu'un sur place pour ouvrir, observer et rendre compte dans l'intervalle. Là où l'on se rend deux fois par mois, mieux vaut viser une action tranchée le jour même que d'ouvrir une séquence dont personne ne suivra le cours.",
+    },
+  ],
+  'les-pennes-mirabeau': [
+    {
+      title: "Des surfaces commerciales sans jour creux",
+      body:
+        "Les grands ensembles commerciaux du plateau tournent sans interruption hebdomadaire, une partie d'entre eux le dimanche compris. Cette continuité a une conséquence directe : il n'existe aucun moment où les surfaces de vente, les galeries et leurs arrières se trouvent simultanément libérées. Ce qui doit être fait se replie donc sur la nuit, entre le départ du dernier client et la première réception, avec ce que cela impose en matière d'éclairage, d'alarme et d'accompagnement par un responsable. Les extérieurs comptent autant que l'intérieur : comptoirs de restauration rapide, files de bacs rangées derrière les cellules et talus plantés qui séparent les parkings composent un ensemble continu où la nourriture ne manque jamais, et dont personne n'a la vue d'ensemble puisque chaque enseigne ne connaît que son propre arrière.",
+    },
+    {
+      title: 'Les délaissés des grandes voies',
+      body:
+        "Les infrastructures routières qui traversent la commune laissent derrière elles des morceaux de terrain sans usage : triangles pris entre deux bretelles, bandes coincées entre un merlon antibruit et la clôture des premières maisons, talus que rien ne dessert. Ces espaces ne sont parcourus par personne et reçoivent ce dont on veut se débarrasser sans faire le détour — gravats, déchets verts, sacs jetés par-dessus. Le résultat est une réserve abritée du vent et du passage, à moins de cent mètres de jardins dont les occupants cherchent chez eux une explication qui ne s'y trouve pas. Signaler le dépôt au service qui a la charge de l'emprise change davantage la situation, à terme, que trois campagnes menées sur les parcelles riveraines.",
+    },
+    {
+      title: 'Les cabines des poids lourds',
+      body:
+        "L'activité de transport installée ici amène chaque nuit des ensembles routiers à stationner sur les aires et dans les cours d'entreprise. Une cabine est un lieu de vie : couchette, textiles, provisions, appareils de chauffage ou de cuisson. On y retrouve donc les mêmes désordres que dans une chambre — blattes germaniques logées dans les rangements de la console, punaises de lit dans les coutures du matelas — avec deux écarts qui comptent. Le volume est minuscule, ce qui concentre la population et rend les indices visibles vite ; et le véhicule repart, ce qui interdit le déroulement habituel et ramène régulièrement une infestation contractée à plusieurs centaines de kilomètres. Pour une société qui exploite plusieurs ensembles, la question se pose à l'échelle du parc et de la salle de repos, non du seul camion qui a alerté.",
+    },
+  ],
+  'septemes-les-vallons': [
+    {
+      title: 'Les conduits maçonnés hérités des fonderies',
+      body:
+        "L'industrie du plomb qui a occupé le site au XIXe siècle a laissé dans le relief des ouvrages sans équivalent alentour : cheminées bâties à flanc de colline et conduits enterrés qui les reliaient aux fourneaux. Ces galeries de faible section passent sous des terrains désormais construits ou plantés, et leur tracé n'est plus connu de personne. Elles constituent un réseau sec, couvert, stable sur la durée, dont les débouchés ressortent en propriété privée, au pied d'un mur ou sous un dallage. Lorsqu'une maison du secteur constate des passages réguliers qu'aucune faiblesse visible n'explique, chercher une bouche ancienne avant de mettre en cause l'assainissement est souvent ce qui fait avancer le diagnostic.",
+    },
+    {
+      title: 'Les logements ouvriers et leur niveau de caves',
+      body:
+        "L'habitat bâti pour les usines a laissé des alignements de petits collectifs et des maisons en bande, sous lesquels un niveau de caves file d'une entrée à l'autre, ventilé par des soupiraux ouverts au ras de la chaussée. Ces caves servent de débarras : piles de cartons, meubles remisés, vêtements, parfois des provisions. Elles ne sont ni éclairées ni visitées, et surtout elles communiquent entre elles. Agir dans un appartement sans descendre à ce niveau ne fait que décaler l'échéance de quelques semaines. Ouvrir ces locaux demande l'accord de celui qui administre l'immeuble, et il faut compter avec les boxes dont la clé s'est perdue au fil des changements d'occupants : ce sont précisément ceux où la population a eu le temps de s'installer.",
+    },
+    {
+      title: 'Un fond de vallon que tout emprunte',
+      body:
+        "La commune s'allonge au creux d'un vallon étroit qu'elle partage avec les grandes voies de circulation. Le sol y est compté : les fonds de jardin arrivent au contact direct des emprises, sans espace intermédiaire, et le bâti ancien longe une chaussée où l'arrêt d'un véhicule se discute avant de se décider. Deux effets concrets. Les chantiers menés de nuit sur ces réseaux — entretien, remplacement, reprise de la végétation — provoquent des reports soudains vers les habitations les plus proches, sans rapport avec la façon dont elles sont tenues. Et l'étroitesse interdit d'improviser : le déploiement d'une échelle, l'atteinte de l'arrière d'une maison mitoyenne ou le passage par une cour voisine se tranchent pendant l'appel, jamais une fois le véhicule à l'arrêt.",
+    },
+  ],
+  'plan-de-cuques': [
+    {
+      title: "Les piscines et la soif du mois d'août",
+      body:
+        "Au plus fort de l'été, l'eau est dans ce secteur la ressource la plus rare, et les guêpes la cherchent là où elle est maintenue : margelle humide, local de filtration, robinet qui goutte, goutteurs d'arrosage, gamelle laissée dehors. D'où une situation courante et mal lue — une terrasse rendue impraticable par un défilé d'insectes alors qu'aucun nid ne se trouve sur le terrain. Séparer les deux cas évite une dépense sans objet : des ouvrières venues boire repartent toutes dans le même azimut et leur nombre varie fortement selon l'heure et la chaleur, tandis qu'une colonie établie sur place entretient un flux dans les deux sens vers un endroit précis, y compris à la tombée du jour. Dans le premier cas, le travail consiste à supprimer les prises d'eau accessibles, puis à chercher la colonie chez le voisin ou dans la lisière.",
+    },
+    {
+      title: "Sous la toiture, ce n'est pas toujours une souris",
+      body:
+        "Les maisons appuyées au massif hébergent régulièrement, entre plafond et couverture, un animal que l'on prend pour un rongeur de maison : le lérot ou le loir, venus du boisement voisin passer la mauvaise saison dans un comble isolé. L'identification n'est pas un détail de vocabulaire. La taille, les bruits — des déplacements lourds et des objets qui roulent, plutôt que de fins grattements —, l'aspect des déjections et le mode d'entrée diffèrent, et la réponse avec eux : sur ces espèces, seule la fermeture des accès en toiture tient dans le temps, au niveau des rives, des chatières et des tuiles de ventilation. Un appât disposé avant d'avoir identifié l'occupant est au mieux sans effet, et prive au passage de l'information qui aurait orienté le travail.",
+    },
+    {
+      title: "Les puces, au retour d'une maison restée fermée",
+      body:
+        "Une habitation en bordure de massif, avec un chat ou un chien qui sort, connaît des arrivées de puces qui ne doivent rien à sa propreté. Le phénomène se manifeste surtout à la rentrée : pendant les semaines d'absence, les cocons installés dans les tapis, les rainures de parquet et les couchages attendent, et l'éclosion se déclenche au passage et aux vibrations. Les occupants reviennent, sont piqués aux chevilles dès la première soirée et en concluent que quelque chose s'est produit pendant leur absence. La suite dépend d'un point que l'on néglige souvent : s'occuper du logement sans s'occuper de l'animal, ou l'inverse, laisse en place la moitié du cycle, tout comme un aspirateur passé sans que le sac soit sorti dans la foulée.",
+    },
+  ],
+  'cabries': [
+    {
+      title: 'Le Réaltor, une eau qui ne tolère pas le ruissellement',
+      body:
+        "Le plan d'eau du Réaltor et ses abords posent une contrainte que l'on ne rencontre nulle part ailleurs sur la commune : cette eau est destinée à l'alimentation, et ce qui se dépose dans son bassin versant immédiat peut l'atteindre par ruissellement. Sur les terrains qui le bordent, cela écarte tout ce qui serait simplement laissé au sol dehors et conduit à des postes arrimés, clos, placés loin des fossés et des points bas. Les berges, avec leur ceinture végétale épaisse et leur eau en toute saison, hébergent par ailleurs des rongeurs qui n'ont besoin d'aucune construction pour vivre à l'année. Les propriétés qui font face en subissent la pression de façon continue, et l'essentiel de ce qu'elles peuvent faire se joue sur quelques mètres : clôture reprise, compost fermé, réserves extérieures mises hors d'atteinte.",
+    },
+    {
+      title: 'Des jardins qui sont en réalité des bois',
+      body:
+        "Entre le vieux village et Calas, le parcellaire compte quantité de terrains de plusieurs milliers de mètres carrés couverts de pins et de chênes, avec une maison au milieu. Le propriétaire parle de son jardin ; pour ce qui nous occupe, c'est un boisement, et la nuance décide de ce qui peut raisonnablement être entrepris. Traiter un hectare de sous-bois n'a pas de sens : ce qui en a, c'est une couronne autour des constructions, où l'on reprend le contact entre le sol forestier et le bâti — bûcher écarté des murs, branches basses dégagées de la couverture, grilles d'aération et vide sanitaire remis en état, réserves extérieures closes. Le reste de la parcelle demeure ce qu'il est, avec la faune qui va avec, et ce n'est pas un demi-résultat.",
+    },
+    {
+      title: "Le golf, l'arrosage nocturne et ce qui longe les limites",
+      body:
+        "Le parcours occupe une vaste surface irriguée au milieu de collines sèches, avec ses pièces d'eau, ses herbes hautes et ses bâtiments d'exploitation. Deux aspects intéressent ceux qui le bordent. L'arrosage de nuit maintient en pleine saison une humidité qui n'existe nulle part alentour, et cette humidité rassemble les insectes puis, derrière eux, ce qui s'en nourrit, sur une frange de quelques dizaines de mètres de part et d'autre des clôtures. Par ailleurs, les locaux d'exploitation — remise à tondeuses, stockage de produits et d'engrais, atelier, cuisine du club — ne s'examinent pas comme les zones de jeu : ce sont des espaces de stockage et de préparation, avec leurs propres exigences de contrôle et leurs propres horaires d'accès.",
+    },
+  ],
 };
