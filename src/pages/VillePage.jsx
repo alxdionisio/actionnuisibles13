@@ -7,7 +7,7 @@ import { villes, getVilleBySlug } from '../data/villes';
 import { croises } from '../data/croises';
 import { thematiques } from '../data/thematiques';
 import { SITE_URL, SITE_NAME, ORGANIZATION_ID } from '../utils/siteConfig';
-import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
+import { absoluteUrl, buildBreadcrumbList, trails } from '../utils/structuredData';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 
 function VillePage() {
@@ -80,11 +80,7 @@ function VillePage() {
     },
   };
   const breadcrumbSchema = buildBreadcrumbList(
-    [
-      { name: 'Accueil', path: '/' },
-      { name: 'Lieux d\'intervention', path: '/#lieux-intervention' },
-      { name: name, path: canonicalPath },
-    ],
+    trails.ville(ville),
     SITE_URL,
   );
 

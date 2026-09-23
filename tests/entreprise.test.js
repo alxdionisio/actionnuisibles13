@@ -80,4 +80,22 @@ if (ENTREPRISE.tvaFranchiseEnBase && !ENTREPRISE.tvaIntracom) {
   assert.equal(fil.itemListElement[1].item, `${CANONICAL_BASE}/contact/`);
 }
 
+// Les fils d'Ariane étaient écrits deux fois — dans chaque page React et dans le
+// script de prerender — et ils ont divergé sans que personne le voie : les pages
+// thématiques déclaraient « Accueil > Services » au runtime et
+// « Accueil > Thématiques (/) » en statique, ce dernier pointant deux fois vers
+// l'accueil. Une seule source les produit désormais ; ce contrôle en vérifie la forme.
+{
+  const { trails, buildBreadcrumbList } = await import('../src/utils/structuredData.js');
+  const { thematiques } = await import('../src/data/thematiques.js');
+  const { CANONICAL_BASE } = await import('../src/data/entreprise.js');
+
+  for (const t of thematiques) {
+    const fil = buildBreadcrumbList(trails.thematique(t), CANONICAL_BASE);
+    const urls = fil.itemListElement.map((i) => i.item);
+    assert.equal(new Set(urls).size, urls.length, `fil thématique avec deux fois la même URL : ${t.slug}`);
+    assert.ok(!urls.slice(1).includes(`${CANONICAL_BASE}/`), `niveau intermédiaire pointant vers l'accueil : ${t.slug}`);
+  }
+}
+
 console.log('entreprise.test.js : OK');

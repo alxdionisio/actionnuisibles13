@@ -31,6 +31,32 @@ export function absoluteUrl(siteUrl, pathname = '/') {
   return `${base}${chemin.endsWith('/') ? chemin : `${chemin}/`}${suffixe}`;
 }
 
+const ACCUEIL = { name: 'Accueil', path: '/' };
+
+/**
+ * Chemins de fil d'Ariane, définis ICI et nulle part ailleurs.
+ *
+ * Ils l'étaient en double — dans chaque page React et dans le script de
+ * prerender — et ils ont fini par diverger : les pages thématiques déclaraient
+ * « Accueil > Services » au runtime et « Accueil > Thématiques (/) » en
+ * statique, ce second fil pointant deux fois vers la page d'accueil. Le défaut
+ * a vécu des mois dans du JSON-LD que personne ne regarde.
+ *
+ * Google recommande un chemin de navigation plausible plutôt qu'un décalque de
+ * l'arborescence d'URL : c'est pourquoi un croisé publié à la racine
+ * (/punaises-de-lit-istres/) déclare sa commune comme parent, et pourquoi une
+ * thématique déclare /services, qui les liste réellement.
+ */
+export const trails = {
+  thematique: (t) => [ACCUEIL, { name: 'Services', path: '/services' }, { name: t.name, path: `/thematique/${t.slug}` }],
+  service: (s) => [ACCUEIL, { name: 'Services', path: '/services' }, { name: s.title, path: `/services/${s.slug}` }],
+  article: (a) => [ACCUEIL, { name: 'Articles', path: '/articles' }, { name: a.title, path: `/articles/${a.slug}` }],
+  // Pas de page de listing des communes : la section vit sur l'accueil, et
+  // l'ancre le dit honnêtement plutôt que d'inventer une page intermédiaire.
+  ville: (v) => [ACCUEIL, { name: "Lieux d'intervention", path: '/#lieux-intervention' }, { name: v.name, path: `/intervention/${v.slug}` }],
+  croise: (c) => [ACCUEIL, { name: c.ville, path: `/intervention/${c.villeSlug}` }, { name: c.nuisible, path: `/${c.slug}` }],
+};
+
 /**
  * Fil d'Ariane à deux niveaux (Accueil → page), pour les pages statiques.
  * Seo.jsx supprime le JSON-LD prérendu à l'hydratation : une page qui ne

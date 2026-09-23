@@ -30,6 +30,7 @@ import { thematiques as thematiquesData } from '../src/data/thematiques.js';
 import {
   absoluteUrl as urlAbsolue,
   buildBreadcrumbList,
+  trails,
   parseFrenchDateToIso,
 } from '../src/utils/structuredData.js';
 
@@ -573,11 +574,7 @@ for (const a of articles) {
     schemas: [
       ORGANIZATION_SCHEMA,
       articleSchema(a),
-      breadcrumbSchema([
-        { name: 'Accueil', path: '/' },
-        { name: 'Articles', path: '/articles' },
-        { name: a.title, path: `/articles/${a.slug}` },
-      ]),
+      breadcrumbSchema(trails.article(a)),
     ],
   });
 }
@@ -593,11 +590,7 @@ for (const v of villes) {
       ORGANIZATION_SCHEMA,
       placeSchema(v),
       villeServiceSchema(v),
-      breadcrumbSchema([
-        { name: 'Accueil', path: '/' },
-        { name: "Lieux d'intervention", path: '/#lieux-intervention' },
-        { name: v.name, path: `/intervention/${v.slug}` },
-      ]),
+      breadcrumbSchema(trails.ville(v)),
     ],
   });
 }
@@ -612,11 +605,7 @@ for (const s of services) {
     schemas: [
       ORGANIZATION_SCHEMA,
       serviceSchema(s),
-      breadcrumbSchema([
-        { name: 'Accueil', path: '/' },
-        { name: 'Services', path: '/services' },
-        { name: s.title, path: `/services/${s.slug}` },
-      ]),
+      breadcrumbSchema(trails.service(s)),
     ],
   });
 }
@@ -631,11 +620,7 @@ for (const t of thematiques) {
     schemas: [
       ORGANIZATION_SCHEMA,
       thematiqueServiceSchema(t),
-      breadcrumbSchema([
-        { name: 'Accueil', path: '/' },
-        { name: 'Thématiques', path: '/' },
-        { name: t.name, path: `/thematique/${t.slug}` },
-      ]),
+      breadcrumbSchema(trails.thematique(t)),
     ],
   });
 }
@@ -662,11 +647,7 @@ for (const c of croises) {
           containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
         },
       },
-      breadcrumbSchema([
-        { name: 'Accueil', path: '/' },
-        { name: c.ville, path: `/intervention/${c.villeSlug}` },
-        { name: c.nuisible, path: `/${c.slug}` },
-      ]),
+      breadcrumbSchema(trails.croise(c)),
     ],
   });
 }

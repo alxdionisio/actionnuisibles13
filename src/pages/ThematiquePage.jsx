@@ -6,7 +6,7 @@ import { linkifyThematiques } from '../components/LinkifyThematiques';
 import { thematiques, getThematiqueBySlug } from '../data/thematiques';
 import { villes } from '../data/villes';
 import { SITE_URL, SITE_NAME, ORGANIZATION_ID, WEBSITE_ID } from '../utils/siteConfig';
-import { absoluteUrl, buildBreadcrumbList } from '../utils/structuredData';
+import { absoluteUrl, buildBreadcrumbList, trails } from '../utils/structuredData';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 import Contact from '../components/Contact';
 
@@ -64,11 +64,7 @@ function ThematiquePage() {
     about: title,
   };
   const breadcrumbSchema = buildBreadcrumbList(
-    [
-      { name: 'Accueil', path: '/' },
-      { name: 'Services', path: '/services' },
-      { name: title, path: canonicalPath },
-    ],
+    trails.thematique(thematique),
     SITE_URL,
   );
 
