@@ -34,6 +34,30 @@ export function absoluteUrl(siteUrl, pathname = '/') {
 const ACCUEIL = { name: 'Accueil', path: '/' };
 
 /**
+ * Schéma Service d'une page ciblée : croisé nuisible × commune, ou page
+ * situationnelle. Défini ici, et non dans chaque consommateur : une première
+ * version vivait en double dans CroisePage.jsx et dans le script de prerender,
+ * et la correction d'un seul des deux a publié une `City` sans nom.
+ */
+export function buildServiceSchema(page, organizationId) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.title,
+    description: page.description,
+    serviceType: page.nuisible,
+    provider: { '@id': organizationId },
+    areaServed: page.ville
+      ? {
+          '@type': 'City',
+          name: page.ville,
+          containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+        }
+      : { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
+  };
+}
+
+/**
  * Chemins de fil d'Ariane, définis ICI et nulle part ailleurs.
  *
  * Ils l'étaient en double — dans chaque page React et dans le script de
@@ -54,7 +78,13 @@ export const trails = {
   // Pas de page de listing des communes : la section vit sur l'accueil, et
   // l'ancre le dit honnêtement plutôt que d'inventer une page intermédiaire.
   ville: (v) => [ACCUEIL, { name: "Lieux d'intervention", path: '/#lieux-intervention' }, { name: v.name, path: `/intervention/${v.slug}` }],
-  croise: (c) => [ACCUEIL, { name: c.ville, path: `/intervention/${c.villeSlug}` }, { name: c.nuisible, path: `/${c.slug}` }],
+  croise: (c) =>
+    c.ville
+      ? [ACCUEIL, { name: c.ville, path: `/intervention/${c.villeSlug}` }, { name: c.nuisible, path: `/${c.slug}` }]
+      // Page situationnelle : pas de commune, le parent est la thématique.
+      // Libellé de feuille tronqué avant le deux-points, un fil d'Ariane
+      // n'ayant pas à reprendre le titre complet de la page.
+      : [ACCUEIL, { name: c.nuisible, path: `/thematique/${c.thematiqueSlug}` }, { name: c.title.split(' : ')[0], path: `/${c.slug}` }],
 };
 
 /**

@@ -4,7 +4,7 @@ import Seo from '../components/Seo';
 import { getVilleBySlug } from '../data/villes';
 import { thematiques } from '../data/thematiques';
 import { SITE_URL, SITE_NAME, ORGANIZATION_ID } from '../utils/siteConfig';
-import { buildBreadcrumbList, trails } from '../utils/structuredData';
+import { buildBreadcrumbList, buildServiceSchema, trails } from '../utils/structuredData';
 import { CtaArrowIcon } from '../components/CtaArrowIcon';
 
 /**
@@ -42,24 +42,14 @@ function CroisePage({ croise }) {
     );
   }
 
+  // `ville` et `villeSlug` sont absents des pages situationnelles
+  // (/nid-de-guepes-sous-toiture), qui valent pour tout le département.
   const { nuisible, ville, title, description, sections, thematiqueSlug, villeSlug } = croise;
   const canonicalPath = `/${croise.slug}`;
   const thematique = thematiques.find((t) => t.slug === thematiqueSlug);
   const villeData = getVilleBySlug(villeSlug);
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: title,
-    description,
-    serviceType: nuisible,
-    provider: { '@id': ORGANIZATION_ID },
-    areaServed: {
-      '@type': 'City',
-      name: ville,
-      containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
-    },
-  };
+  const serviceSchema = buildServiceSchema(croise, ORGANIZATION_ID);
 
   const breadcrumbSchema = buildBreadcrumbList(
     trails.croise(croise),
@@ -116,7 +106,8 @@ function CroisePage({ croise }) {
             </p>
 
             <p>
-              {SITE_NAME} intervient depuis Istres sur {ville} et les communes voisines.{' '}
+              {SITE_NAME} intervient depuis Istres
+              {ville ? ` sur ${ville} et les communes voisines` : ' dans tout le département'}.{' '}
               <Link to="/contact">Demander un devis gratuit</Link>.
             </p>
           </div>

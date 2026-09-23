@@ -21,6 +21,7 @@ import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CroisePage from './pages/CroisePage';
 import { croises } from './data/croises';
+import { situations } from './data/situations';
 import './index.css';
 
 function ScrollToTop() {
@@ -75,7 +76,7 @@ function App() {
             <Route path="/thematique/:slug" element={<ThematiquePage />} />
             {/* Croisés nuisible × ville : routes déclarées une à une depuis les
                 données, jamais en catch-all /:slug, qui capterait tout avant la 404. */}
-            {croises.map((c) => (
+            {[...croises, ...situations].map((c) => (
               <Route key={c.slug} path={`/${c.slug}`} element={<CroisePage croise={c} />} />
             ))}
             <Route path="/mentions-legales" element={<MentionsLegalesPage />} />

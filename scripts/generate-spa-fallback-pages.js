@@ -26,10 +26,12 @@ import {
 } from '../src/data/entreprise.js';
 import { villes as villesData } from '../src/data/villes.js';
 import { croises } from '../src/data/croises.js';
+import { situations } from '../src/data/situations.js';
 import { thematiques as thematiquesData } from '../src/data/thematiques.js';
 import {
   absoluteUrl as urlAbsolue,
   buildBreadcrumbList,
+  buildServiceSchema,
   trails,
   parseFrenchDateToIso,
 } from '../src/utils/structuredData.js';
@@ -428,8 +430,11 @@ function renderCroiseBody(c) {
       <h1>${escapeHtml(c.title)}</h1>
       <p>${escapeHtml(c.description)}</p>
       ${sections}
-      <p>Voir aussi <a href="/thematique/${escapeHtml(c.thematiqueSlug)}/">${escapeHtml(c.nuisible)}</a>
-      et <a href="/intervention/${escapeHtml(c.villeSlug)}/">dératisation et désinsectisation à ${escapeHtml(c.ville)}</a>.</p>
+      <p>Voir aussi <a href="/thematique/${escapeHtml(c.thematiqueSlug)}/">${escapeHtml(c.nuisible)}</a>${
+        c.ville
+          ? ` et <a href="/intervention/${escapeHtml(c.villeSlug)}/">dératisation et désinsectisation à ${escapeHtml(c.ville)}</a>`
+          : ''
+      }.</p>
       <p>${escapeHtml(SITE_NAME)}, ${escapeHtml(ADRESSE_LIGNE)}. Téléphone : ${escapeHtml(ENTREPRISE.telephoneAffiche)}.</p>
     </article>`;
 }
@@ -625,8 +630,8 @@ for (const t of thematiques) {
   });
 }
 
-// Croisés nuisible × ville
-for (const c of croises) {
+// Croisés nuisible × ville, et pages situationnelles (sans commune)
+for (const c of [...croises, ...situations]) {
   pages.push({
     pathname: c.slug,
     title: c.title,
@@ -634,19 +639,7 @@ for (const c of croises) {
     body: renderCroiseBody(c),
     schemas: [
       ORGANIZATION_SCHEMA,
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: c.title,
-        description: c.description,
-        serviceType: c.nuisible,
-        provider: { '@id': ORGANIZATION_ID },
-        areaServed: {
-          '@type': 'City',
-          name: c.ville,
-          containedInPlace: { '@type': 'AdministrativeArea', name: 'Bouches-du-Rhône' },
-        },
-      },
+      buildServiceSchema(c, ORGANIZATION_ID),
       breadcrumbSchema(trails.croise(c)),
     ],
   });
