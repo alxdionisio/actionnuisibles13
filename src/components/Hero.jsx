@@ -11,12 +11,15 @@ function Hero() {
         <div className="hero-left">
           <div className="hero-main-content">
             <div className="hero-texts">
+              {/* aria-label : le nom accessible doit contenir le texte visible
+                  (WCAG 2.5.3), sinon une commande vocale « cliquer sur 5/5 note
+                  moyenne… » n'atteint pas le lien. */}
               <a
                 className="hero-ratings hero-ratings--link"
                 href="https://share.google/KoJ2aX73JmkZ0x0en"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Voir nos avis Google (note moyenne 5 sur 5)"
+                aria-label="5/5 note moyenne des avis Google — voir les avis"
                 onClick={() => track('reviews_click', { from: 'hero', destination: 'google_business_profile' })}
               >
                 <span className="hero-ratings-google" aria-hidden="true">
@@ -62,7 +65,9 @@ function Hero() {
             </div>
             <div className="hero-info-blocks">
               <div className="hero-info-block">
-                <h3 className="hero-info-block-title">Experts certifiés</h3>
+                {/* h2 et non h3 : le seul titre qui précède est le h1 de la page,
+                    et sauter un niveau casse la navigation au lecteur d'écran. */}
+                <h2 className="hero-info-block-title">Experts certifiés</h2>
                 <p className="hero-info-block-desc">Professionnels certifiés, avec une grande expérience</p>
               </div>
             </div>

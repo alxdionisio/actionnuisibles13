@@ -21,6 +21,11 @@
   --primary-color: var(--token-yellow);
   --primary-dark: var(--token-yellow-dark);
   --accent-yellow: var(--token-yellow);
+  /* Le jaune de marque sur blanc plafonne à 1,30:1, très loin des 4,5:1 exigés
+     pour du texte normal. Cette déclinaison sombre atteint 4,80:1 et sert
+     UNIQUEMENT au texte posé sur fond clair. Sur fond sombre, le jaune vif
+     monte à 12,71:1 : boutons et libellés en inverse gardent --accent-yellow. */
+  --accent-yellow-text: #7a7500;
   --text-dark: var(--token-black);
   --text-gray: var(--token-gray-dark);
   --text-light: var(--token-gray);
@@ -1816,7 +1821,7 @@ p {
 }
 
 .section-label {
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-text);
   font-weight: 600;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -2814,7 +2819,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-text);
   margin: 0;
 }
 

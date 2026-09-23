@@ -11,6 +11,13 @@ export function DataProvider({ children }) {
   const [faqItems, setFaqItems] = useState(staticFaq);
 
   useEffect(() => {
+    // Le site public est servi par GitHub Pages, qui n'expose aucune route /api :
+    // ces trois appels y répondaient 404 à chaque chargement, sur les 61 pages.
+    // Le repli sur les données statiques étant silencieux, le défaut ne se voyait
+    // que dans la console — et coûtait des points en bonnes pratiques Lighthouse.
+    // En développement, le proxy Vite les transmet au serveur d'administration.
+    if (!import.meta.env.DEV) return;
+
     Promise.all([
       fetch('/api/articles').then(r => r.ok ? r.json() : null).catch(() => null),
       fetch('/api/services').then(r => r.ok ? r.json() : null).catch(() => null),
